@@ -31,7 +31,7 @@
       definition="ltlmc/cink.k"
       programs="ltlmc/programs"
       extension="cink"
-      exclude="form-peterson.cink form-dekker.cink form-threads.cink peterson-wrong1.cink peterson-wrong2.cink" >
+      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink peterson-wrong1.cink peterson-wrong2.cink" >
       <kompile-option name="-transition" value="kripke" />
       <all-programs>
         <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
@@ -54,6 +54,7 @@
   <test
       definition="call-by-ref/cink.k"
       programs="call-by-ref/programs"
+      exclude="callbyref.cink"
       extensions="cink"
       >
   </test>
