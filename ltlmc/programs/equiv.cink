@@ -1,0 +1,97 @@
+/* 
+
+*/
+
+int dflag1 = 0;
+int dflag2 = 0;
+int dturn = 1;
+int dcritical1 = 0;
+int dcritical2 = 0;
+
+int dekker1() {
+  while (true) {
+    // claim the resource
+    dflag1 = 1; 
+    // wait if the other process is using the resource
+    while (dflag2 == 1) {
+      // if waiting for the resource, also wait our turn
+      if (!(dturn == 1)) {
+        // but release the resource while waiting 
+        dflag1 = 0;
+        while(!(dturn == 1)) { }
+        // Enter dcritical section
+        dcritical1 = 1;
+      }
+    }
+    // dcritical stuff ...
+    // Leave dcritical section
+    dflag1 = 0;
+    dcritical1 = 0;
+    dturn = 2;
+  }
+}
+
+int dekker2() {
+  while (true) {
+    // claim the resource
+    dflag1 = 2; 
+    // wait if the other process is using the resource
+    while (dflag1 == 1) {
+      // if waiting for the resource, also wait our turn
+      if (!(dturn == 2)) {
+        // but release the resource while waiting 
+        dflag2 = 0;
+        while(!(dturn == 2)) { }
+        // Enter dcritical section
+        dcritical2 = 1;
+      }
+    }
+    // dcritical stuff ...
+    // Leave dcritical section
+    dflag2 = 0;
+    dcritical2 = 0;
+    dturn = 2;
+  }
+}
+
+int pflag1 = 0;
+int pflag2 = 0;
+int pturn = 1;
+int pcritical1 = 0;
+int pcritical2 = 0;
+
+int peterson1() {
+  while (true) {
+    pflag1 = 1; pturn = 2;
+    while((pflag2 == 1) && (pturn == 2)) step; // { }
+    // Enter pcritical section
+    pcritical1 = 1;
+    // pcritical stuff ...
+    // Leave pcritical section
+    pcritical1 = 0;
+    pflag1 = 0;
+  }
+}
+
+
+int peterson2() {
+  while (true) {
+    pflag2 = 1; pturn = 1;
+    while((pflag1 == 1) && (pturn == 1)) step; // { }
+    // Enter pcritical section
+    pcritical2 = 1;
+    // pcritical stuff ...
+    // Leave pcritical section
+    pcritical2 = 0;
+    pflag2 = 0;
+  }
+}
+
+
+int main() {
+  std::thread t1(dekker1);
+  std::thread t2(dekker2);
+  std::thread t3(peterson1);
+  std::thread t4(peterson2);
+}
+

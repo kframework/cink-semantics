@@ -1,0 +1,6 @@
+// eq(dcritical1, pcritical1) /\Ltl eq(dcritical2, pcritical2)
+// /\Ltl 
+ ([]Ltl <>Ltl (eq(dcritical1, pcritical1) ))
+///\Ltl eq(dcritical2, pcritical2)))
+
+
