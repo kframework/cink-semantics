@@ -16,6 +16,9 @@ module CINK-LTLMC-SYNTAX
   */
   syntax Pgm ::= LtlFormula
 
+  //@ Labelled statements:
+
+  syntax Stmt ::= Id ":" Stmt 
 
   /*@
     This module combines the syntax of the \Cink language with that of 
@@ -29,13 +32,16 @@ module CINK-LTLMC-SYNTAX
     will be given later, in the main module.  
   */
 
-  syntax Prop ::= "eqTo" "(" Id "," Val ")"
-               |  "lt" "(" Id "," Val ")" 
-               |  "leq" "(" Id "," Val ")" 
-               |  "gt" "(" Id "," Val ")" 
-               |  "geq" "(" Id "," Val ")" 
-               |  "neqTo" "(" Id "," Val ")" 
-               |  "eq" "(" Id "," Id ")"
+  syntax Prop ::= Id
+                | "eqToSum" "(" Id "," Id ")"
+                | "eqTo" "(" Id "," Int ")"
+                | "logInv" "(" Id "," Id "," Id ")"
+                |  "lt" "(" Id "," Val ")" 
+                |  "leq" "(" Id "," Val ")" 
+                |  "gt" "(" Id "," Val ")" 
+                |  "geq" "(" Id "," Val ")" 
+                |  "neqTo" "(" Id "," Val ")" 
+                |  "eq" "(" Id "," Id ")"
 
   syntax Exp ::= "step"
 
@@ -75,6 +81,16 @@ module CINK-LTLMC-SEMANTICS
        =>
        I
 
+  //@ Some additional domain functions:
+ 
+  syntax Int ::= "sumFirstN" "(" Int ")" [function]
+  rule sumFirstN(0) => 0 [anywhere]
+  rule sumFirstN(N:Int) => sumFirstN(N -Int 1) +Int N when N >Int 0 [anywhere]
+
+  syntax Int ::= "pow" "(" Int "," Int ")" [function]
+  rule pow(X:Int, 0) => 1 
+  rule pow(X:Int, Y:Int) => X *Int pow(X, Y -Int 1) when Y >Int 0
+
   /*@
     We are ready now to give the semantics for \texttt{eqTo}$(X,I)$: it is 
     satisfied by a configuration (state) $B$ iff the value of $X$ in $B$ is
@@ -96,6 +112,25 @@ module CINK-LTLMC-SEMANTICS
   rule B:Bag |=Ltl geq(X:Id, I:Int) => true when val(B, X) >=Int I [anywhere]
 
   rule B:Bag |=Ltl eq(X:Id, Y:Id) => true when val(B, X) ==Int val(B, Y) [anywhere]
+
+
+  rule <generatedTop>...
+         <T>...
+           <k> L:Id : S:Stmt ...</k>
+         ...</T>
+       ...</generatedTop>
+       |=Ltl L
+       =>
+       true
+       [anywhere]
+
+
+  rule B:Bag |=Ltl eqToSum(X:Id, Y:Id) => true when val(B, X) ==Int sumFirstN(val(B, Y)) [anywhere]
+
+  rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true when val(B, X) ==Int I [anywhere]
+
+  rule B:Bag |=Ltl logInv(A:Id, X:Id, K:Id) => true when (val(B, X) *Int pow(2, val(B, K)) <=Int val(B, A)) 
+                                                 andBool (val(B, A) <Int (val(B, X) +Int 1) *Int pow(2, val(B, K))) [anywhere]
 
 
   rule [step] : step; => . [kripke, step]
