@@ -7,8 +7,9 @@
   <test
       definition="basic/cink.k"
       programs="basic/programs"
+      results="basic/programs"
       extension="cink"
-      exclude="fact.cink prim.cink"
+      exclude="fact.cink prim.cink sumn.cink"
       >
   </test>
 
@@ -19,6 +20,7 @@
   <test
       definition="threads/cink.k"
       programs="threads/programs"
+      results="threads/programs"
       extension="cink"
       >
   </test>
@@ -30,12 +32,25 @@
   <test
       definition="ltlmc/cink.k"
       programs="ltlmc/programs"
+      results="ltlmc/programs"
       extension="cink"
-      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink peterson-wrong1.cink peterson-wrong2.cink" >
+      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink" >
       <kompile-option name="-transition" value="kripke" />
-      <all-programs>
-        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
-      </all-programs>
+      <program name="ltlmc/programs/dekker.cink">
+        <krun-option name="-ltlmc" value="ltlmc/programs/form-dekker.cink" />
+      </program>
+      <program name="ltlmc/programs/peterson.cink">
+        <krun-option name="-ltlmc" value="ltlmc/programs/form-peterson.cink" />
+      </program>
+      <program name="ltlmc/programs/peterson-wrong1.cink">
+        <krun-option name="-ltlmc" value="ltlmc/programs/form-peterson.cink" />
+      </program>
+      <program name="ltlmc/programs/peterson-wrong2.cink">
+        <krun-option name="-ltlmc" value="ltlmc/programs/form-peterson.cink" />
+      </program>
+      <program name="ltlmc/programs/threads.cink">
+        <krun-option name="-ltlmc" value="ltlmc/programs/form-threads.cink" />
+      </program>
   </test>
 
 <!--
@@ -44,6 +59,7 @@
   <test
       definition="pointers/cink.k"
       programs="pointers/programs"
+      results="pointers/programs"
       extension="cink"
       >
   </test>
@@ -54,8 +70,9 @@
   <test
       definition="call-by-ref/cink.k"
       programs="call-by-ref/programs"
+      results="call-by-ref/programs"
       exclude="callbyref.cink"
-      extensions="cink"
+      extension="cink"
       >
   </test>
  
