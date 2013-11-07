@@ -15,36 +15,17 @@ module CINK-INCR-DECR-SEMANTICS
    "lvalue".
   */ 
 
-  syntax Exp ::= "rvalue" "(" Exp ")" [strict, klabel(rvalue)]
-
-  /*@
-   The rule realizing the conversion is very simple: it replaces the
-   expresion with the value stored at the location given as paraemeter.
-  */
-
-  rule <k>  rvalue(L:Loc => V) ...</k>
-       <store>... L |-> V:RVal ...</store>
-
-  /*@ since the cooling rules for the arithmetic and logic operators depend
-    on the type of the result, i.e. whether it is an lvalue or a rvalue, 
-    we have to disable the strict attribute and manually write the heating
-    and cooling rules.
-  */
-
-  // heating & cooling rules for assignment
-  rule E1:Exp = E2:Exp => rvalue(E2) ~> E1 = HOLE [heat]
-
-  rule rvalue(V:RVal) ~> E:Exp = HOLE => seqpoint ~> E = V  [cool]
-
   /*@ \subsubsection{The prefix increment operator}
     Here is the description of this operator from the manual of 
-    \Cpp 2011 (5.3.2):\\
-    "The operand of prefix ++ is modified by adding 1, or set to true 
+    \Cpp 2011 (5.3.2):
+\begin{quote}
+    The operand of prefix ++ is modified by adding 1, or set to true 
     if it is bool (this use is deprecated). The operand shall be a 
     modifiable lvalue. The type of the operand shall be an arithmetic 
     type or a pointer to a completely-defined object type. 
     The result is the updated operand; it is an lvalue, and it is a 
-    bit-field if the operand is a bit-field."\\
+    bit-field if the operand is a bit-field.
+\end{quote}
     This definition raises some problems.
     We suppose that we want to evaluate the
     expression \texttt{y + (++x)}; since the addition operator is strict in 
@@ -70,7 +51,8 @@ module CINK-INCR-DECR-SEMANTICS
   \subsubsection{The postfix increment operator}
    Here is the description of this operator from the manual of 
   \Cpp 2011 (5.2.6):
-  "The value of a postfix ++ expression is the value of its operand.
+\begin{quote}
+  The value of a postfix ++ expression is the value of its operand.
   [ Note: the value obtained is a copy of
   the original value —end note ] The operand shall be a modifiable lvalue.
   The type of the operand shall be an arithmetic type or a pointer to a
@@ -83,30 +65,13 @@ module CINK-INCR-DECR-SEMANTICS
   ++ is a single evaluation.
   [ Note: Therefore, a function call shall not intervene between the
   lvalue-to-rvalue conversion and the side effect associated with any single
-  postfix ++ operator. —end note ] The result is a prvalue."
-  From the Appendix D: \\
-  "D.1 The use of an operand of type bool with the ++ operator is deprecated 
-  (see 5.3.2 and 5.2.6)."\\
-  Here is the definition for sequenced before:\\
-  "\emph{Sequenced before} is an asymmetric, transitive, pair-wise relation 
-  between evaluations executed by a single
-   thread (1.10), which induces a partial order among those evaluations.
-   Given any two evaluations A and B, if
-   A is sequenced before B, then the execution of A shall precede the execution
-   of B. If A is not sequenced before
-   B and B is not sequenced before A, then A and B are unsequenced.
-  [ Note: The execution of unsequenced
-   evaluations can overlap. — end note ] Evaluations A and B are 
-  indeterminately sequenced when either A
-   is sequenced before B or B is sequenced before A, but it is unspecified 
-  which.
-  [ Note: Indeterminately
-   sequenced evaluations cannot overlap, but either could be executed first.
-   — end note ]\\
-  Every value computation and side effect associated with a full-expression
-  is sequenced before every value
-  computation and side effect associated with the next full-expression
-  to be evaluated."\\
+  postfix ++ operator. —end note ] The result is a prvalue.
+\end{quote}
+  From the Appendix D: 
+\begin{quote}
+  D.1 The use of an operand of type bool with the ++ operator is deprecated 
+  (see 5.3.2 and 5.2.6)."
+\end{quote}
   */
 
   /*@
@@ -121,7 +86,7 @@ module CINK-INCR-DECR-SEMANTICS
   we define a syntax for the side-effects;
   */
 
-  syntax K ::= "$inc" "(" K ")" | "$dec" "(" K ")" | "seqpoint"
+  syntax K ::= "$inc" "(" K ")" | "$dec" "(" K ")"
 
   
   /*@
@@ -136,15 +101,6 @@ module CINK-INCR-DECR-SEMANTICS
        <store>... L |-> V:Int ...</store>
        <sideEffects> . => $inc(L) ...</sideEffects>
 
-  /*@
-    The semantics of a sequence point (when a full-expression is sequenced):
-    the sequence of the side effects is moved from the its cell to the top of
-    the k cell. The side-effects are executed in the reverse order they were
-    evaluated.
-  */
-
-  rule <k> seqpoint => SE ...</k>
-       <sideEffects> SE => . </sideEffects>
 
   //@ The semantics of the side-effects (self-explained);
 

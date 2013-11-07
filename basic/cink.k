@@ -1,4 +1,5 @@
 require "intro.k"
+
 require "imports-intro.k"
 require "syntax-intro.k"
 require "cink-basic-syntax.k"
@@ -34,5 +35,6 @@ module CINK
                   <store color="white"> .Map </store>
                   <in color="magenta" stream="stdin"> .List </in>
                   <out color="Orchid" stream="stdout"> .List </out>
+                  <sideEffects> .K </sideEffects>
                 </T>
 endmodule

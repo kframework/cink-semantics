@@ -20,40 +20,92 @@ module CINK-BASIC-SEMANTICS
    */
 
 
-  syntax Val ::= "noVal" 
+  syntax RVal ::= "noVal" 
                | "lambda" "(" Decls "@" Stmts ")" 
                  [latex(\lambda\,{#1}\mathrel{\bullet}{#2})]
 
+  syntax Val ::= lval(Ref)
+
   syntax Vals ::= List{Val,","}
+
   syntax KResult ::= Val
-  syntax Exp ::= "undefined"
 
   /*@
-  \subsection{Lvalues and Rvalues}
-  We first deal only with lvalues and prvalues. In order to keep the definition
-  as simple as possible, we let the the prvalue as the default category for 
-  expressions and we make explicitly only the category of lvalue expressions:
+    \subsection{Lvalues and Rvalues}
+    We first deal only with lvalues and prvalues. In order to keep the definition
+    as simple as possible, we let the the lvalue as the default category for 
+    expressions and we make explicitly only the category of prvalue expressions:
   */
   
-  syntax K ::= "lvalue" "(" K ")" 
+  syntax Exp ::= "rvalue" "(" Exp ")" [strict, klabel(rvalue)]
 
   /*@
-  As its definition says, the main operator emphasiszing the two categories is
-  the assignment. We use a context declaration to say that the left-hand side 
-  of the assignemnt is a lvalue:
+    As its definition says, the main operator emphasiszing the two categories is
+    the assignment. We use a context declaration to say that the left-hand side 
+    of the assignemnt is a lvalue (by default):
   */
 
-  context (HOLE => lvalue(HOLE)) = _:Exp
+  context HOLE = _:Exp
+
+
+  //@ When an l-value is in an r-value context, evaluate it
+  rule <k> rvalue(lval(L:Ref) => V) ...</k>
+       <store>... L |-> V:RVal ...</store>
+
+ /*@ \subsection{Seqpoints}
 
   /*@
-  The above declaration is equivalent with the following to heating/cooling
-  rules:
-  \begin{align}
-  & E_1 \texttt{~=~} E_2 \Rightarrow lvalue(E_1) \kra HOLE \texttt{~=~} E_2\\
-  &  lvalue(L_1) \kra HOLE \texttt{~=~} E_2 \Rightarrow L_1 \texttt{~=~} E_2
-  \end{align}
-  This assume that the locations must be defined as values:
+    Sequence points are specific to languages where the evaluation of the
+    expressions has side effects. Obviously, this is the case for C and \Cpp
+    languages. Here is the definition for sequenced before from \Cpp manual:
+
+\begin{quote}
+  \emph{Sequenced before} is an asymmetric, transitive, pair-wise relation 
+  between evaluations executed by a single
+   thread (1.10), which induces a partial order among those evaluations.
+   Given any two evaluations A and B, if
+   A is sequenced before B, then the execution of A shall precede the execution
+   of B. If A is not sequenced before
+   B and B is not sequenced before A, then A and B are unsequenced.
+  [ Note: The execution of unsequenced
+   evaluations can overlap. — end note ] Evaluations A and B are 
+  indeterminately sequenced when either A
+   is sequenced before B or B is sequenced before A, but it is unspecified 
+  which.
+  [ Note: Indeterminately
+   sequenced evaluations cannot overlap, but either could be executed first.
+   — end note ]\\
+  Every value computation and side effect associated with a full-expression
+  is sequenced before every value
+  computation and side effect associated with the next full-expression
+  to be evaluated.\\
+  Except where noted, evaluations of operands of individual operators and of 
+  subexpressions of individual expressions are unsequenced.\\
+  [Note: In an expression that is evaluated more than once during the execution
+  of a program, unsequenced and indeterminately sequenced evaluations of its 
+  subexpressions need not be performed consistently in different evaluations.
+  —end note]\\
+  The value computations of the operands of an operator are sequenced before
+  the value computation of the result of the operator. If a side effect on a
+  scalar object is unsequenced relative to either another side effect on the
+  same scalar object or a value computation using the value of the same scalar
+  object, the behavior is undefined.
+\end{quote}
+    In this iteration we define a minimal support for the sequent points.
+    The semantics of a sequence point (when a full-expression is sequenced):
+    the sequence of the side effects is moved from the its cell to the top of
+    the k cell. The side-effects are executed in the reverse order they were
+    evaluated.
   */
+
+  syntax K ::= "seqpoint"
+
+  rule <k> seqpoint => SE ...</k>
+       <sideEffects> SE => . </sideEffects>
+
+  //@ textcolor{red}{TDB: explain "undefined" expression.}
+
+  syntax Exp ::= "undefined"
 
 
   /*@ \subsection{Memory Locations}
@@ -63,7 +115,7 @@ module CINK-BASIC-SEMANTICS
 
 
   syntax Loc ::= "noLoc"
-  syntax LVal ::= Loc 
+  syntax Ref ::= Loc 
 
 
   /*@ \subsection{Auxiliary constructs.} */
@@ -91,6 +143,7 @@ module CINK-BASIC-SEMANTICS
    The following cells are used to give semantics for the basic constructs:
   */
 
+/*
   configuration   <k color="green"> ($PGM:Pgm ~> execute) </k>
                   <env color="LightSkyBlue"> .Map </env>
                   <fstack color="orange"> .List </fstack>
@@ -100,7 +153,7 @@ module CINK-BASIC-SEMANTICS
                   <in color="magenta" stream="stdin"> .List </in>
                   <out color="Orchid" stream="stdout"> .List </out>
 
-
+*/
 
   /*@
     In order to have a minimal set of rules, some syntactic constructs
@@ -181,35 +234,30 @@ module CINK-BASIC-SEMANTICS
   /*@
    The following expressions are strict. 
   */
-  rule I1:Int + I2:Int => I1 +Int I2 [plus,structural]
+  rule I1:Int + I2:Int => I1 +Int I2 [plus]
 
-  rule I1:Int - I2:Int => I1 -Int I2 [structural]
+  rule I1:Int - I2:Int => I1 -Int I2 
 
-  rule I1:Int * I2:Int => I1 *Int I2 [structural]
+  rule I1:Int * I2:Int => I1 *Int I2
 
-  rule I1:Int / I2:Int => I1 /Int I2 when I2 =/=Int 0 [structural]
+  rule I1:Int / I2:Int => I1 /Int I2 when I2 =/=Int 0
  
-  rule I1:Int % I2:Int => I1 %Int I2 when I2 =/=Int 0 [structural]
+  rule I1:Int % I2:Int => I1 %Int I2 when I2 =/=Int 0
 
-  rule I1:Int < I2:Int => (I1 <Int I2) [structural]
+  rule I1:Int < I2:Int => (I1 <Int I2)
 
-  rule I1:Int > I2:Int => (I1 >Int I2) [structural]
+  rule I1:Int > I2:Int => (I1 >Int I2)
 
-  rule I1:Int <= I2:Int => (I1 <=Int I2) [structural]
+  rule I1:Int <= I2:Int => (I1 <=Int I2)
 
-  rule I1:Int == I2:Int => (I1 ==Int I2) [structural]
+  rule I1:Int == I2:Int => (I1 ==Int I2)
  
-  /*@
-   Here are the rules for the expressions having the strict attribute 
-   declared in the syntax.
-  */
-
-  rule true && B:Exp => B [structural]
-  rule false && B:Exp => false [structural]
-  rule true || B:Exp => true [structural]
-  rule false || B:Exp => B [structural]
-  rule ! false  => true [structural]
-  rule ! true => false [structural]
+  rule true && B:Exp => B
+  rule false && B:Exp => false
+  rule true || B:Exp => true
+  rule false || B:Exp => B 
+  rule ! false  => true
+  rule ! true => false 
 
   rule endl => "\n" [structural]
 
@@ -218,26 +266,38 @@ module CINK-BASIC-SEMANTICS
 
 
   /*@
-    The evaluation of a variable name as an r-value:
+    The evaluation of a variable name as an lvalue:
   */
-  rule <k> X:Id => V ...</k>
+  rule <k> X:Id => lval(L) ...</k>
        <env>... X |-> L:Loc ...</env>
-       <store>... L |-> V:Val ...</store>
        [kripke(mem-lookup)]
-  /*@
-    An identifier seen as a lvalue is evaluated to its location: 
-  */
-  rule <k> lvalue(X:Id => L) ...</k>
-       <env>... X |-> L:Loc ...</env>
-       [lookup]
-
 
   /*@
     The memory update is given by the assignment operator.
     An assignemnt, after the reduction of the arguments, has in the lef-hand
-    side a location ($=$ the lvalue designated by the lhs.)
+    side a location ($=$ the lvalue designated by the lhs.) and in the 
+    right-hand side an rvalue.
+    From \Cpp manual:
+\begin{quote}
+The assignment operator (=) and the compound assignment operators all group
+ right-to-left. All require a modifiable lvalue as their left operand and 
+return an lvalue referring to the left operand. The result in all
+cases is a bit-field if the left operand is a bit-field. In all cases,
+ the assignment is sequenced after the value computation of the right and 
+left operands, and before the value computation of the assignment expression.
+With respect to an indeterminately-sequenced function call, the operation of
+ a compound assignment is a single evaluation.\\
+[ Note: Therefore, a function call shall not intervene between the 
+lvalue-to-rvalue conversion and the side effect associated with any single 
+compound assignment operator. —end note ]
+\end{quote}
   */
-  rule [update] : <k> L:Loc = V:Val  => V ...</k>
+
+  syntax K ::= "update" "(" Ref "," Val ")"
+
+  rule lval(L:Ref) = V:Val => seqpoint ~> update(L, V)
+
+  rule [update] : <k> update(L:Loc, V:Val)  => lval(L) ...</k>
        <store>... L |-> (_ => V) ...</store>
        [update, kripke]
 
@@ -289,6 +349,9 @@ module CINK-BASIC-SEMANTICS
   /*@ \subsection{Input/Output Statements.} */
 
   /*@ Writting in the the standard stream \texttt{cout}: */
+
+  context cout << (HOLE => rvalue(HOLE))
+
   rule <k> cout << V:Val => cout  ...</k>  
        <out>... . => (ListItem(V) ListItem(" ")) </out>
        [print-stream, print]
@@ -297,9 +360,9 @@ module CINK-BASIC-SEMANTICS
    In order to read from the standard stream \texttt{cin}, the expression
    from the right-hand side must be evaluated to an l-value:
   */
-  context cin >> (HOLE => lvalue(HOLE))
+  context cin >> HOLE
 
-  rule <k> cin >> L:Loc => cin  ...</k>
+  rule <k> cin >> lval(L:Loc) => cin  ...</k>
        <store>... L |-> (_ => V)  ...</store>
        <in> (ListItem(V:Int) => .)  ...</in>
        [read-stream]
@@ -451,10 +514,10 @@ type (8.3.2)\ldots
     strict. Remains oly to write rules keeping the last value from the list.
   */
 
-  rule return _:Val, V:Val, Vs:Vals ; => return V, Vs ; 
+  rule return _:RVal, V:RVal, Vs:Vals ; => return V, Vs ; 
        [return]
 
-  rule <k> (return V:Val; ~> _) => (V ~> K) </k>
+  rule <k> (return V:RVal; ~> _) => (V ~> K) </k>
        <env> _ => Env </env>
        <fstack> ([Env:Map], K:K) => . ...</fstack>
        [return]

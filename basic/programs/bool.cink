@@ -1,0 +1,9 @@
+int main() {
+  int a = 1, b = 2, c = 3;
+  if ( a < 2 && b >1 || c < 4) 
+    cout << "true";
+  else cout << "false";
+ cout << endl;
+  return 0;
+}
+
