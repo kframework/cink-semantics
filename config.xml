@@ -9,7 +9,7 @@
       programs="basic/programs"
       results="basic/programs"
       extension="cink"
-      exclude="fact.cink prim.cink sumn.cink"
+      exclude="fact.cink prim.cink sumn.cink io1.cink"
       >
   </test>
 
@@ -61,6 +61,7 @@
       programs="pointers/programs"
       results="pointers/programs"
       extension="cink"
+      exclude="io.cink"
       >
   </test>
 

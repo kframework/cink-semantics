@@ -8,8 +8,8 @@ module CINK-POINTERS-SYNTAX
 
   imports CINK-BASIC-SYNTAX
 
-  syntax Exp ::= "*" Exp [indirect]
-               | "&" Exp [ampersand]
+  syntax Exp ::= "*" Exp [strict, context(rvalue), result(Ref), indirect]
+               | "&" Exp [strict, ampersand]
 
   syntax priorities  indirect  > assign read write greatthan lessequal
   syntax priorities  ampersand > assign read write greatthan lessequal
@@ -50,37 +50,20 @@ module CINK-POINTERS-SEMANTICS
 
   rule isAliasExp(& E:Exp) => true
 
-  context _:PrimType & _:Id = (HOLE => lvalue(HOLE));
+  context _:PrimType & _:Id = HOLE;
 
-  rule <k> T:PrimType & X:Id = L:Loc; => . ...</k>
+  rule <k> T:PrimType & X:Id = lval(L:Loc); => . ...</k>
        <env> Env:Map => Env[L/X] </env>
 
 
   /*@ The indirect operator */
-  context *(HOLE => lvalue(HOLE))
-  context lvalue(*(HOLE => lvalue(HOLE)))
 
-  rule <k> lvalue((* L:Loc) => L' ) ...</k>
-       <store>... L |-> L':Loc ...</store> 
-
-  rule <k> * L:Loc => V ...</k>
-       <store>... L |-> L':Loc  L' |-> V:Val ...</store>
-
-  context lvalue(&(HOLE => lvalue(HOLE)))
-
-  /*@ A pointer to a location is an lvalue */
-
-  rule isLVal(& L:Loc) => true
+  rule * L:Ref => lval(L)
 
   /*@ The type of "\& L" is "pointer to the type of L",
    hence the type of "* \& L" is "type of L". L is evaluated as an
    rvalue that implies that the result is the value stored at L. */
 
-  rule <k> * & L:Loc => V ...</k>
-       <store>... L |-> V ...</store>
-
-  
-  rule <k> & X:Id => L ...</k>
-       <env>... X |-> L:Loc ...</env>
+  rule & lval(L:Ref) => L 
   
 endmodule

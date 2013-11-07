@@ -19,7 +19,7 @@ type (8.3.2)\ldots
 \end{quote}
 */
 
-  context evaluate((HOLE => lvalue(HOLE)), _:Exps) to _:Vals
+  context evaluate(HOLE, _:Exps) to _:Vals
           following  (T:Type (& X:Id)::Exp, _:Decls);
 
 
@@ -27,7 +27,7 @@ type (8.3.2)\ldots
       bound to the formal parameter. This is achieved by exactly one rule:
   */
 
-  rule <k> bind((L:LVal, Vs:Vals) => Vs)
+  rule <k> bind((lval(L:Ref), Vs:Vals) => Vs)
            to((T:Type & X:Id, Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[L/X] </env> 

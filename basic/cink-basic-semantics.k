@@ -350,9 +350,15 @@ compound assignment operator. —end note ]
 
   /*@ Writting in the the standard stream \texttt{cout}: */
 
-  context cout << (HOLE => rvalue(HOLE))
+  context cout << (HOLE => rvalue(HOLE)) [result(RVal)] 
 
-  rule <k> cout << V:Val => cout  ...</k>  
+// these should be the rules for the above context declaration (we have to add the default result sort for rvalue):
+/* 
+  rule cout << E:Exp => rvalue(E) ~> cout << HOLE [heat]
+
+  rule rvalue(V:RVal) ~> cout << HOLE => cout << V [cool]
+*/
+  rule <k> cout << V:RVal => cout  ...</k>  
        <out>... . => (ListItem(V) ListItem(" ")) </out>
        [print-stream, print]
 

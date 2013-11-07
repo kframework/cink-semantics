@@ -32,6 +32,7 @@ module CINK
                   <store color="white"> .Map </store>
                   <in color="magenta" stream="stdin"> .List </in>
                   <out color="Orchid" stream="stdout"> .List </out>
+                  <sideEffects> .K </sideEffects>
                 </T>
 endmodule
 

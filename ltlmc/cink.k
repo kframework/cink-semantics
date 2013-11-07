@@ -35,7 +35,7 @@ module CINK
                   <br/>
                   <in color="magenta" stream="stdin"> .List </in>
                   <out color="Orchid" stream="stdout"> .List </out>
-                  <nextLoc> 0 </nextLoc>
+                  <sideEffects> .K </sideEffects>
                 </T>
 
 endmodule
