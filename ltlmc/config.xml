@@ -1,0 +1,13 @@
+<tests>
+    <test
+      definition="cink.k"
+      programs="programs"
+      results="programs"
+      extension="cink"
+      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink peterson.cink peterson-wrong1.cink peterson-wrong2.cink threads.cink" >
+      <kompile-option name="-transition" value="kripke" />
+      <program name="dekker.cink">
+        <krun-option name="-ltlmc" value="programs/form-dekker.cink" />
+      </program>
+    </test>
+</tests>

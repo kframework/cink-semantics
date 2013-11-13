@@ -36,20 +36,20 @@
       extension="cink"
       exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink" >
       <kompile-option name="-transition" value="kripke" />
-      <program name="ltlmc/programs/dekker.cink">
-        <krun-option name="-ltlmc" value="ltlmc/programs/form-dekker.cink" />
+      <program name="dekker.cink">
+        <krun-option name="-ltlmc" value="form-dekker.cink" />
       </program>
-      <program name="ltlmc/programs/peterson.cink">
-        <krun-option name="-ltlmc" value="ltlmc/programs/form-peterson.cink" />
+      <program name="peterson.cink">
+        <krun-option name="-ltlmc" value="form-peterson.cink" />
       </program>
-      <program name="ltlmc/programs/peterson-wrong1.cink">
-        <krun-option name="-ltlmc" value="ltlmc/programs/form-peterson.cink" />
+      <program name="peterson-wrong1.cink">
+        <krun-option name="-ltlmc" value="form-peterson.cink" />
       </program>
-      <program name="ltlmc/programs/peterson-wrong2.cink">
-        <krun-option name="-ltlmc" value="ltlmc/programs/form-peterson.cink" />
+      <program name="peterson-wrong2.cink">
+        <krun-option name="-ltlmc" value="form-peterson.cink" />
       </program>
-      <program name="ltlmc/programs/threads.cink">
-        <krun-option name="-ltlmc" value="ltlmc/programs/form-threads.cink" />
+      <program name="threads.cink">
+        <krun-option name="-ltlmc" value="form-threads.cink" />
       </program>
   </test>
 
