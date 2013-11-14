@@ -1,0 +1,12 @@
+<!--
+    Cink threads
+-->
+<tests>
+  <test
+      definition="cink.k"
+      programs="programs"
+      results="programs"
+      extension="cink"
+      >
+  </test>
+</tests>

@@ -1,0 +1,15 @@
+
+<!--
+    Cink call-by-ref
+-->
+<tests>
+  <test
+      definition="cink.k"
+      programs="programs"
+      results="programs"
+      exclude="callbyref.cink"
+      extension="cink"
+      >
+  </test>
+</tests>
+

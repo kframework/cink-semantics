@@ -1,0 +1,13 @@
+<!--
+    Cink basic
+-->
+<tests>
+  <test
+      definition="cink.k"
+      programs="programs"
+      results="programs"
+      extension="cink"
+      exclude="fact.cink prim.cink sumn.cink io1.cink"
+      >
+  </test>
+</tests>

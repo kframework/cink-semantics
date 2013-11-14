@@ -1,0 +1,14 @@
+<!--
+    Cink pointers
+-->
+<tests>
+  <test
+      definition="cink.k"
+      programs="programs"
+      results="programs"
+      extension="cink"
+      exclude="io.cink"
+      >
+  </test>
+</tests>
+

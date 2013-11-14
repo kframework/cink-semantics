@@ -1,13 +1,28 @@
+<!--
+    Cink ltlmc
+-->
 <tests>
     <test
       definition="cink.k"
       programs="programs"
       results="programs"
       extension="cink"
-      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink peterson.cink peterson-wrong1.cink peterson-wrong2.cink threads.cink" >
+      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink" >
       <kompile-option name="-transition" value="kripke" />
       <program name="dekker.cink">
         <krun-option name="-ltlmc" value="programs/form-dekker.cink" />
+      <program name="peterson.cink">
+        <krun-option name="-ltlmc" value="form-peterson.cink" />
+      </program>
+      <program name="peterson-wrong1.cink">
+        <krun-option name="-ltlmc" value="form-peterson.cink" />
+      </program>
+      <program name="peterson-wrong2.cink">
+        <krun-option name="-ltlmc" value="form-peterson.cink" />
+      </program>
+      <program name="threads.cink">
+        <krun-option name="-ltlmc" value="form-threads.cink" />
+      </program>
       </program>
     </test>
 </tests>
