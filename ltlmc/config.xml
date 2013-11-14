@@ -11,18 +11,18 @@
       <kompile-option name="-transition" value="kripke" />
       <program name="dekker.cink">
         <krun-option name="-ltlmc" value="programs/form-dekker.cink" />
+      </program>
       <program name="peterson.cink">
-        <krun-option name="-ltlmc" value="form-peterson.cink" />
+        <krun-option name="-ltlmc" value="programs/form-peterson.cink" />
       </program>
       <program name="peterson-wrong1.cink">
-        <krun-option name="-ltlmc" value="form-peterson.cink" />
+        <krun-option name="-ltlmc" value="programs/form-peterson.cink" />
       </program>
       <program name="peterson-wrong2.cink">
-        <krun-option name="-ltlmc" value="form-peterson.cink" />
+        <krun-option name="-ltlmc" value="programs/form-peterson.cink" />
       </program>
       <program name="threads.cink">
-        <krun-option name="-ltlmc" value="form-threads.cink" />
-      </program>
+        <krun-option name="-ltlmc" value="programs/form-threads.cink" />
       </program>
     </test>
 </tests>
