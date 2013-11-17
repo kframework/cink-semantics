@@ -10,19 +10,19 @@
       exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink" >
       <kompile-option name="-transition" value="kripke" />
       <program name="dekker.cink">
-        <krun-option name="-ltlmc" value="programs/form-dekker.cink" />
+        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="peterson.cink">
-        <krun-option name="-ltlmc" value="programs/form-peterson.cink" />
+        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="peterson-wrong1.cink">
-        <krun-option name="-ltlmc" value="programs/form-peterson.cink" />
+        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="peterson-wrong2.cink">
-        <krun-option name="-ltlmc" value="programs/form-peterson.cink" />
+        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="threads.cink">
-        <krun-option name="-ltlmc" value="programs/form-threads.cink" />
+        <krun-option name="-ltlmc" value="~Ltl([]Ltl eqTo(r, 1))" />
       </program>
     </test>
 </tests>
