@@ -221,7 +221,7 @@ module CINK-BASIC-SEMANTICS
     of the main function.
   */
 
-  rule <k> execute => String2Id("main")(); </k>
+  rule <k> execute => String2Id("main")(.Exps); </k>
        <env> Env:Map </env>
        <genv> . => Env:Map </genv>
        [main, structural]
@@ -420,8 +420,6 @@ type (8.3.2)\ldots
     second a cooling-like one).
    */
 
-  rule E:Exp() => E(.Exps) [macro]
-
   rule <k> lambda(Xl:Decls @ Sts:Stmts)(El:Exp)
            =>
            evaluate append(El,.Exps) to .Exps following Xl; ~>
@@ -546,7 +544,7 @@ type (8.3.2)\ldots
 
   //@ Append function:
 
-  syntax Exp ::= ".Exps"
+  syntax Val ::= ".Exps"
   syntax Exp ::= "append" "(" Exp "," Exp ")" [function]
   rule append((E:Exp, El:Exp), E') => E, append(El, E')
   rule append(.Exps, .Exps) => .Exps

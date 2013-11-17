@@ -102,8 +102,7 @@ also a prvalue. --end example ]
 
   syntax Exp ::= Id | Val
                | "(" Exp ")"  [bracket]
-               | Exp "(" Exp ")" [strict(1), context(rvalue), result(RVal)]
-               | Exp "(" ")" 
+               | Exp "(" Exps ")" [strict(1), context(rvalue), result(RVal)]
                > left:
                  Exp "*" Exp [left, multiply, strict, context(rvalue), result(RVal)]
                | Exp "/" Exp [left, divide, strict, context(rvalue), result(RVal)]
@@ -139,7 +138,7 @@ also a prvalue. --end example ]
 
   syntax Stmt ::= 
                  Decl ";" [klabel(declStmt)]
-               > Exp ";" [strict]
+               > Exps ";" [strict]
                | "#include" "<iostream>" 
                | "using" "namespace" "std" ";" 
                  [latex(\texttt{using namespace std;})]
@@ -166,5 +165,7 @@ also a prvalue. --end example ]
   */
 
   syntax Decls ::= List{Decl, ","}
+  syntax Exps ::= "" [onlyLabel, klabel('.Exps)]
+                | Exp
  
 endmodule
