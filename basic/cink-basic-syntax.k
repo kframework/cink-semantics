@@ -14,7 +14,7 @@ module CINK-BASIC-SYNTAX
 
   syntax Type ::= PrimType
 
-  syntax Decl ::= Type Exps
+  syntax Decl ::= Type Exp
 
   /*@ \subsection{Values} */
 
@@ -95,14 +95,15 @@ also a prvalue. --end example ]
    */
 
 
-  syntax RVal ::= Bool | Int | String | Ref
+  syntax RVal ::= Bool | Int | String 
 
   syntax Val ::= "cout" | "cin" | RVal
 
 
   syntax Exp ::= Id | Val
                | "(" Exp ")"  [bracket]
-               | Exp "(" Exps ")" [strict(1), context(rvalue), result(RVal)]
+               | Exp "(" Exp ")" [strict(1), context(rvalue), result(RVal)]
+               | Exp "(" ")" 
                > left:
                  Exp "*" Exp [left, multiply, strict, context(rvalue), result(RVal)]
                | Exp "/" Exp [left, divide, strict, context(rvalue), result(RVal)]
@@ -122,12 +123,13 @@ also a prvalue. --end example ]
                > 
                  Exp "||" Exp [left, strict(1), context(rvalue), result(Bool), disjunction]
                > left:
-                 Exp "<<" Exp [left, strict(1), latex({#1}\mathrel{\tt <<}{#2}), write]
-               | Exp ">>" Exp [left, strict(1), latex({#1}\mathrel{\tt >>}{#2}), read]
-               >
+                 Exp "<<" Exp [left, strict(2), context(rvalue), result(RVal), latex({#1}\mathrel{\tt <<}{#2}), write]
+               | Exp ">>" Exp [left, strict, latex({#1}\mathrel{\tt >>}{#2}), read]
+               > 
                  Exp "=" Exp [right, strict(2), context(rvalue), result(RVal), assign]
                >
                  "endl"
+               > Exp "," Exp [left, strict(1), comma]
 
   /*@ \subsection{Statements}
     For now, we include in CinK only (a subset) of the imperative statements:
@@ -135,15 +137,16 @@ also a prvalue. --end example ]
    */
 
 
-  syntax Stmt ::= Exp ";" [strict]
+  syntax Stmt ::= 
+                 Decl ";" [klabel(declStmt)]
+               > Exp ";" [strict]
                | "#include" "<iostream>" 
                | "using" "namespace" "std" ";" 
                  [latex(\texttt{using namespace std;})]
-               | Decl ";" [klabel(declStmt)]
                | "{" "}"
                | "{" Stmts "}"
                | "while" "(" Exp ")" Stmt 
-               | "return" Exps ";" [strict, context(rvalue), result(RVal)]
+               | "return" Exp ";" [strict, context(rvalue), result(RVal)]
                | Decl "(" Decls ")" "{" Stmts "}"
                | "if" "(" Exp ")" Stmt "else" Stmt [strict(1), context(rvalue), result(Bool)]
                >
@@ -162,7 +165,6 @@ also a prvalue. --end example ]
     declarations, which are declared as follows:
   */
 
-  syntax Exps  ::= List{Exp,  ","} [strict]
   syntax Decls ::= List{Decl, ","}
  
 endmodule

@@ -1,0 +1,6 @@
+int main() {
+int x = 5, y = 7;
+cout << "x=" << x << ", y=" << y << endl; //x=5, y=7
+(x = x + 1,y) = 12;
+cout << "x=" << x << ", y=" << y << endl; //x=6, y=12
+}
