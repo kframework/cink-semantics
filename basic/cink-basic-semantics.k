@@ -79,7 +79,7 @@ module CINK-BASIC-SEMANTICS
   to be evaluated.\\
   Except where noted, evaluations of operands of individual operators and of 
   subexpressions of individual expressions are unsequenced.\\
-  [Note: In an expression that is evaluated more than once during the execution
+  {}[Note: In an expression that is evaluated more than once during the execution
   of a program, unsequenced and indeterminately sequenced evaluations of its 
   subexpressions need not be performed consistently in different evaluations.
   —end note]\\
@@ -284,7 +284,7 @@ cases is a bit-field if the left operand is a bit-field. In all cases,
 left operands, and before the value computation of the assignment expression.
 With respect to an indeterminately-sequenced function call, the operation of
  a compound assignment is a single evaluation.\\
-[ Note: Therefore, a function call shall not intervene between the 
+{}[ Note: Therefore, a function call shall not intervene between the 
 lvalue-to-rvalue conversion and the side effect associated with any single 
 compound assignment operator. —end note ]
 \end{quote}
