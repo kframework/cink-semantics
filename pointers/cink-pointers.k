@@ -8,11 +8,15 @@ module CINK-POINTERS-SYNTAX
 
   imports CINK-BASIC-SYNTAX
 
-  syntax Exp ::= "*" Exp [strict, context(rvalue), result(Ref), indirect]
+  syntax Exp ::= "*" Exp [strict, result(Val), indirect]
                | "&" Exp [strict, ampersand]
+               | "new" Type
+               | "new" Type "(" Exp ")" [strict(2), context(rvalue), result(Val), prefer, new] 
+               | "delete" Exp [strict]
 
-  syntax priorities  indirect  > assign read write greatthan lessequal
-  syntax priorities  ampersand > assign read write greatthan lessequal
+  syntax priorities  indirect  > assign read write greatthan lessequal plus minus multiply divide
+  syntax priorities  ampersand > assign read write greatthan lessequal plus minus multiply divide
+  syntax priorities  new > assign read write greatthan lessequal plus minus multiply divide
 
 endmodule
 
@@ -65,5 +69,16 @@ module CINK-POINTERS-SEMANTICS
    rvalue that implies that the result is the value stored at L. */
 
   rule & lval(L:Ref) => L 
+
+  rule <k> new T:Type => L ...</k>
+       <store>... . => (L |-> undefined) ...</store>
+  when fresh(L:Loc)
+
+  rule <k> new T:Type(V:Val) => L ...</k>
+       <store>... . => (L |-> V) ...</store>
+  when fresh(L:Loc)
+
+  rule <k> delete lval(L:Ref) => . ...</k>
+       <store>... (L |-> _) => . ...</store>
   
 endmodule

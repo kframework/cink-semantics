@@ -1,10 +1,22 @@
-require "cink-basic-syntax.k"
-require "cink-basic-semantics.k"
+require "../basic/cink-basic-syntax.k"
+require "../basic/cink-basic-semantics.k"
 
+
+module CINK-INCR-DECR-SYNTAX
+
+  syntax Exp ::= "++" Exp [strict, result(Val), prefinc]
+               | Exp "++" [strict, result(Val), postinc]
+
+  syntax priorities  prefinc  > assign read write greatthan lessequal plus minus multiply divide
+  syntax priorities  postinc  > assign read write greatthan lessequal plus minus multiply divide
+
+endmodule
 
 module CINK-INCR-DECR-SEMANTICS
 
+  imports CINK-INCR-DECR-SYNTAX
   imports CINK-BASIC-SEMANTICS
+  
 
   /*@
    There are cases when an lvalue must be converted into its rvalue.
@@ -26,26 +38,13 @@ module CINK-INCR-DECR-SEMANTICS
     The result is the updated operand; it is an lvalue, and it is a 
     bit-field if the operand is a bit-field.
 \end{quote}
-    This definition raises some problems.
-    We suppose that we want to evaluate the
-    expression \texttt{y + (++x)}; since the addition operator is strict in 
-    both arguments, it will be reduced something like $\it I + lL$ and 
-    in that case $L$ should be evaluated to the value stored into
-    the location $L$. On the other hands, the evaluation of the expression
-    \texttt{++ (++x)} uses the l-value returned by the operator.
-    This is one reason for that we make a clear distinction
-    between r-value and l-value expressions and use the contexts declarations
-    in order to specify how to valuate subexpressions.
   */
 
   //@ The semantics of the the prefix increment
-  context ++ (HOLE => lvalue(HOLE))
-  context lvalue(++ (HOLE => lvalue(HOLE)))
-  rule <k> ++ L:Loc => L ...</k>
+
+  rule <k> ++ lval(L:Ref) => lval(L) ...</k>
        <store>... L |-> (V:Int => V +Int 1) ...</store>
 
-  rule lvalue(++ L:Loc) => ++ L ~> lvalue(HOLE) // [heat]
-  rule L:Loc ~> lvalue(HOLE) => lvalue(L)
 
   /*@
   \subsubsection{The postfix increment operator}
@@ -95,9 +94,7 @@ module CINK-INCR-DECR-SEMANTICS
     the cell with the side-effects:
   */
 
-  context (HOLE => lvalue(HOLE)) ++
-
-  rule <k> L:Loc ++ => V ...</k>
+  rule <k> lval(L:Ref) ++ => V ...</k>
        <store>... L |-> V:Int ...</store>
        <sideEffects> . => $inc(L) ...</sideEffects>
 
@@ -110,6 +107,5 @@ module CINK-INCR-DECR-SEMANTICS
 
   rule <k> $dec(L:Loc) => . ...</k>
        <store>... L |-> (V:Int => V -Int 1) ...</store>
-
  
 endmodule

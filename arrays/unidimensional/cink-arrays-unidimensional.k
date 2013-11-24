@@ -133,7 +133,7 @@ module CINK-ARRAYS-SEMANTICS
 
   rule A:Array + I:Int => select(A, I) 
 
-  context _:Exp[HOLE] = _
+  context _:Exp[(HOLE => rvalue(HOLE)] = _ [result(RVal)]
 
 
   /*@
