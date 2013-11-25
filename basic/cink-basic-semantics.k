@@ -3,6 +3,7 @@ require "cink-basic-syntax.k"
 module CINK-BASIC-SEMANTICS
   imports CINK-BASIC-SYNTAX
 
+
   /*@ \subsection{Values.} 
     The values are a very important syntactic category in the definition
     of any language; with them, we are able to know when the evaluation
@@ -26,8 +27,6 @@ module CINK-BASIC-SEMANTICS
 
   syntax Val ::= lval(Ref)
 
-  syntax Vals ::= List{Val,","}
-
   syntax KResult ::= Val
 
   /*@
@@ -46,7 +45,6 @@ module CINK-BASIC-SEMANTICS
   */
 
   context HOLE = _:Exp
-
 
   //@ When an l-value is in an r-value context, evaluate it
   rule <k> rvalue(lval(L:Ref) => V) ...</k>
@@ -81,7 +79,7 @@ module CINK-BASIC-SEMANTICS
   to be evaluated.\\
   Except where noted, evaluations of operands of individual operators and of 
   subexpressions of individual expressions are unsequenced.\\
-  [Note: In an expression that is evaluated more than once during the execution
+  {}[Note: In an expression that is evaluated more than once during the execution
   of a program, unsequenced and indeterminately sequenced evaluations of its 
   subexpressions need not be performed consistently in different evaluations.
   —end note]\\
@@ -105,7 +103,7 @@ module CINK-BASIC-SEMANTICS
 
   //@ textcolor{red}{TDB: explain "undefined" expression.}
 
-  syntax Exp ::= "undefined"
+  syntax BasicExp ::= "undefined"
 
 
   /*@ \subsection{Memory Locations}
@@ -116,6 +114,7 @@ module CINK-BASIC-SEMANTICS
 
   syntax Loc ::= "noLoc"
   syntax Ref ::= Loc 
+  syntax RVal ::= Ref
 
 
   /*@ \subsection{Auxiliary constructs.} */
@@ -147,6 +146,7 @@ module CINK-BASIC-SEMANTICS
   configuration   <k color="green"> ($PGM:Pgm ~> execute) </k>
                   <env color="LightSkyBlue"> .Map </env>
                   <fstack color="orange"> .List </fstack>
+                  <return> .K </return>
                   <br/>
                   <genv color="SkyBlue"> .Map </genv>
                   <store color="white"> .Map </store>
@@ -167,7 +167,7 @@ module CINK-BASIC-SEMANTICS
     The desugaring rule for statements declaring multiple variables.
    */
 
-  rule T:Type E:Exp, E':Exp, Es:Exps ; => T E; T E'; T Es; [macro]
+  rule T:Type (E:Exp, E':Exp) ; => T E; T E'; [macro]
 
  /*@
     Desugaring rule for variable declarations with initialization.
@@ -205,9 +205,6 @@ module CINK-BASIC-SEMANTICS
   when fresh(L:Loc)
        [structural]
 
-  rule T:Type .Exps; => . [structural]
-
-
   /*@ The following two constructs have no semantics yet;
       they are used now only  for having a full compatibility with \Cpp,
       e.g., the \Cink programs can be 
@@ -224,7 +221,7 @@ module CINK-BASIC-SEMANTICS
     of the main function.
   */
 
-  rule <k> execute => String2Id("main")(.Vals); </k>
+  rule <k> execute => String2Id("main")(.Exps); </k>
        <env> Env:Map </env>
        <genv> . => Env:Map </genv>
        [main, structural]
@@ -287,7 +284,7 @@ cases is a bit-field if the left operand is a bit-field. In all cases,
 left operands, and before the value computation of the assignment expression.
 With respect to an indeterminately-sequenced function call, the operation of
  a compound assignment is a single evaluation.\\
-[ Note: Therefore, a function call shall not intervene between the 
+{}[ Note: Therefore, a function call shall not intervene between the 
 lvalue-to-rvalue conversion and the side effect associated with any single 
 compound assignment operator. —end note ]
 \end{quote}
@@ -300,6 +297,11 @@ compound assignment operator. —end note ]
   rule [update] : <k> update(L:Loc, V:Val)  => lval(L) ...</k>
        <store>... L |-> (_ => V) ...</store>
        [update, kripke]
+
+/*@  The comma operator
+*/
+
+  rule V:Val,E:Exp => E
 
   /*@
 
@@ -326,9 +328,9 @@ compound assignment operator. —end note ]
     value obtained by evaluating the expression. Recall that the statement
     is strict.
    */
-  rule <k> (V:Val; ~> K:K) => K </k> 
-       when K =/=K .K
+  rule V:Val; => .
        [instr-expr]
+
   /*@
     Block. Note that in this iteration we assume that the blocks do not include
     variable declarations. This will be added in a future iteration.\\
@@ -350,23 +352,16 @@ compound assignment operator. —end note ]
 
   /*@ Writting in the the standard stream \texttt{cout}: */
 
-  context cout << (HOLE => rvalue(HOLE)) [result(RVal)] 
+  context HOLE << _
 
-// these should be the rules for the above context declaration (we have to add the default result sort for rvalue):
-/* 
-  rule cout << E:Exp => rvalue(E) ~> cout << HOLE [heat]
-
-  rule rvalue(V:RVal) ~> cout << HOLE => cout << V [cool]
-*/
   rule <k> cout << V:RVal => cout  ...</k>  
-       <out>... . => (ListItem(V) ListItem(" ")) </out>
+       <out>... . => ListItem(V) </out>
        [print-stream, print]
 
   /*@
    In order to read from the standard stream \texttt{cin}, the expression
    from the right-hand side must be evaluated to an l-value:
   */
-  context cin >> HOLE
 
   rule <k> cin >> lval(L:Loc) => cin  ...</k>
        <store>... L |-> (_ => V)  ...</store>
@@ -425,13 +420,15 @@ type (8.3.2)\ldots
     second a cooling-like one).
    */
 
-  rule <k> lambda(Xl:Decls @ Sts:Stmts)(El:Exps)
+  rule <k> lambda(Xl:Decls @ Sts:Stmts)(El:Exp)
            =>
-           evaluate El to .Vals following Xl; ~>
+           evaluate append(El,.Exps) to .Exps following Xl; ~>
            lambda(Xl:Decls @ Sts:Stmts)(HOLE)
        ...</k> 
 
-  rule <k> (Vl:Vals ~> lambda(Xl:Decls @ Sts:Stmts)(HOLE) ~> K:K)
+  rule <k> (evaluate .Exps to Vl following _; 
+         ~> lambda(Xl:Decls @ Sts:Stmts)(HOLE) 
+         ~> K:K)
            => 
            (bind Vl to Xl; ~> Sts ~> return noVal;)
        </k>
@@ -449,7 +446,7 @@ type (8.3.2)\ldots
     the list of formal parameters.
   */
 
-  syntax Exps ::= "evaluate" Exps "to" Vals "following" Decls ";"
+  syntax K ::= "evaluate" K "to" K "following" Decls ";"
 
   /*@
     For a formal parameter declared with the call-by-value mechanism,
@@ -457,7 +454,7 @@ type (8.3.2)\ldots
     specified by by the following contextual declaration:
   */
 
-  context evaluate (HOLE, _:Exps) to _:Vals following (T X:Id, _:Decls);
+  context evaluate (HOLE, _:Exp) to _ following (T X:Id, _:Decls);
 
 
   /*@
@@ -471,12 +468,10 @@ type (8.3.2)\ldots
   */
 
 
-  rule evaluate(V:Val, El:Exps => El) to (Vl:Vals => append(Vl, V))
+  rule evaluate(V:Val, El => El) to (Vl => append(Vl, V))
          following (Dec:Decl, Xl:Decls => Xl);
        [structural]
    
-  rule evaluate .Exps to Vl:Vals following .Decls; => Vl [structural]
-
    /*@
      \subsubsection{Binding mechanisms}
      Similarly to the evaluation rules, the binding rules are also different 
@@ -485,14 +480,14 @@ type (8.3.2)\ldots
      construction:
    */
 
-  syntax K ::= "bind" Vals "to" Decls ";"  
+  syntax K ::= "bind" K "to" Decls ";"  
 
   /*@
   For call-by-value, the passed value $V$ is stored into a new memory location
   which is bound to the formal parameter:
   */
  
-  rule <k> bind((V:Val, Vs:Vals) => Vs)
+  rule <k> bind((V:Val, Vs) => Vs)
            to((T X:Id, Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[L/X] </env>
@@ -504,7 +499,7 @@ type (8.3.2)\ldots
     Finally, once all parameters have been bound, the binding construct 
     dissolves:
    */
-  rule bind .Vals to .Decls; => . [ structural ]
+  rule bind .Exps to .Decls; => . [ structural ]
 
   /*@
     \subsection{Function Return.}
@@ -520,12 +515,10 @@ type (8.3.2)\ldots
     strict. Remains oly to write rules keeping the last value from the list.
   */
 
-  rule return _:RVal, V:RVal, Vs:Vals ; => return V, Vs ; 
-       [return]
-
-  rule <k> (return V:RVal; ~> _) => (V ~> K) </k>
+  rule <k> (return V:Val; ~> _) => (V ~> K) </k>
        <env> _ => Env </env>
        <fstack> ([Env:Map], K:K) => . ...</fstack>
+       <return> _ => V </return>
        [return]
 
   /*@
@@ -547,11 +540,16 @@ type (8.3.2)\ldots
   rule getName(X:Id) => X
   rule getName(T:Type E:Exp) => getName(E)
   rule getName(E1:Exp = E2:Exp) => getName(E1)
+  rule getName(E1:Exp,E2:Exp) => getName(E2)
 
   //@ Append function:
 
-  syntax Vals ::= "append" "(" Vals "," Val ")" [function]
-  rule append(.Vals, V:Val) => V, .Vals
-  rule append((V':Val, Vl:Vals), V:Val) => V', append(Vl, V)
+  syntax Val ::= ".Exps"
+  syntax Exp ::= "append" "(" Exp "," Exp ")" [function]
+  rule append((E:Exp, El:Exp), E') => E, append(El, E')
+  rule append(.Exps, .Exps) => .Exps
+  rule append(.Exps, E:Exp) => E,.Exps
+    when E =/=K .Exps
+  rule append(E:Exp,E') => E, E' [owise]
 
 endmodule

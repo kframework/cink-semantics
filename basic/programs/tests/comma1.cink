@@ -1,0 +1,8 @@
+int main () {
+   int i = 10, b = 20, c= 30;
+   i = b, c;
+   cout << i;
+
+   i = (b, c);
+   cout << i;
+}

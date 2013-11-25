@@ -1,0 +1,15 @@
+.k
+*-kompiled
+*-kompiled-symbolic
+*.pdf
+*.class
+.metadata
+.cache
+.idea
+*~
+junit-reports
+samples/test/
+lib/version.txt
+lib/java/k3.jar
+lib/java/ktest.jar
+release/

@@ -14,21 +14,9 @@ module CINK-BASIC-SYNTAX
 
   syntax Type ::= PrimType
 
-  syntax Decl ::= Type Exps
-
-  /*@ \subsection{Values} */
-
-  /*@ The constants of the builtin types are primitive constructs and therefore
-      they should be values.  
-      The sort \texttt{Val} for values will be extended in the module describing
-      the semantics.
-      \par
-      We prefer to declare \texttt{cin} and \texttt{cout} as values rather 
-      than identifiers; the reason for this decision will be explained later.
-   */
+  syntax Decl ::= Type Exp
 
 
- 
  /*@ \subsection{Expressions} */
 
   /*@
@@ -38,14 +26,36 @@ module CINK-BASIC-SYNTAX
     attribute \texttt{strict}, that specifies the evaluation order of the 
     operands. 
       \par
-      In \Cpp the expressions are splitted in several categories:\\
-\begin{verbatim}
-                       expression
-                        /        \
-                 glvalue         rvalue
-                /       \      /      \
-          lvalue         xvalue        prvalue
-\end{verbatim}
+      In \Cpp the expressions are splitted in several categories:
+
+
+\begin{tikzpicture}[node distance=-1.5cm, auto]
+
+\tikzset{
+    mynode/.style={rectangle, draw=none, thick, fill=none,
+      text width=18em, text centered, minimum height=1em},
+    myarrow/.style={-, >=latex', shorten >=1pt, thick}
+}  
+
+\node[mynode] (exp) {expression};  
+\node[below=1cm of exp] (dummy) {}; 
+\node[mynode, left=of dummy] (glval) {glvalue};  
+\node[mynode, right=of dummy] (rval) {rvalue};
+\node[below=1cm of dummy] (xval) {xvalue};  
+\node[below=1cm of glval] (dummy1) {};
+\node[mynode, left=of dummy1] (lval) {lvalue};  
+\node[below=1cm of rval] (dummy2) {}; 
+\node[mynode, right=of dummy2] (prval) {prvalue};
+
+\draw[myarrow] (exp.south) -- (glval.north);
+\draw[myarrow] (exp.south) -- (rval.north);
+\draw[myarrow] (glval.south) -- (lval.north);
+\draw[myarrow] (glval.south) -- (xval.north);
+\draw[myarrow] (rval.south) -- (xval.north);
+\draw[myarrow] (rval.south) -- (prval.north);
+
+\end{tikzpicture}
+
 \begin{quote}
 -- An lvalue (so called, historically, because lvalues could appear on the 
 left-hand side of an assignment expression) designates a function or an object.
@@ -70,32 +80,39 @@ also a prvalue. --end example ]
       In order to keep the definition as simple as possible, we consider only two
       of these categories: \emph{lvalues} and \emph{rvalues}. This classification
       of expressions is essential in defining their semantics since the evaluation
-      of an lvalues pression is different from a rvalue one.
+      of an lvalues expression is different from a rvalue one.
 
     The arithmetic binary 
     operators are strict in both arguments, hence the behavior of some 
     programs could be undefined or non-determinsitic because the evaluation
     of the arguments could have side-effects. The arguments of a binary aritmetic
-    operator are evaluated as rvalues and this specified by the wrapper component 
-    of the strict attribute. The result value of a binary operator is also a rvalue
-    and this is expressed by the result component of the strict attribute.\\
-\textcolor{red}{TBD: update it with the new syntax.}\\ 
+    operator are evaluated as rvalues and their result values could be integers,
+    booleans, references (locations) \ldots Therefore the value of the strict
+    attribute is a list of two sub-attributes: a \texttt{context} sub-attribute 
+    having as value the label \texttt{rvalue} and a  a \texttt{result} 
+    sub-attribute having as value the result type of the operator.\\ 
     In contrast
     to the other examples, the function call expression is strict only in the
     first argument (the function name) because the evaluation of the arguments
     it is depending on the bindding mechanism of the corresponding argument: 
     this can be call-by-value or call-by-reference. These two mechansims will
-    be explained later. \\
-    \textcolor{red}{TBD: explain the mechanisms with the "specific value type"
-    and"wrapping".}
+    be explained later.
+    \par
 
-    We also consider a subsort \texttt{LVal} for lvalues, which should always refer 
-    memory locations. This subsort will be defined later, in the module giving the 
-    semantics.
+    The constants of the builtin types are primitive constructs for expressions 
+    and therefore they are values.  
+    The sort \texttt{Val} for values will be extended in the module describing
+    the semantics.
+    The subsort \texttt{RVal} is for values that could bet rvalues expressions.
+    \par
+    We prefer to declare \texttt{cin} and \texttt{cout} as values rather 
+    than identifiers; the reason for this decision will be explained later.
    */
 
 
-  syntax RVal ::= Bool | Int | String | Ref
+
+
+  syntax RVal ::= Bool | Int | String 
 
   syntax Val ::= "cout" | "cin" | RVal
 
@@ -122,12 +139,13 @@ also a prvalue. --end example ]
                > 
                  Exp "||" Exp [left, strict(1), context(rvalue), result(Bool), disjunction]
                > left:
-                 Exp "<<" Exp [left, strict(1), latex({#1}\mathrel{\tt <<}{#2}), write]
-               | Exp ">>" Exp [left, strict(1), latex({#1}\mathrel{\tt >>}{#2}), read]
-               >
+                 Exp "<<" Exp [left, strict(2), context(rvalue), result(RVal), latex({#1}\mathrel{\tt <<}{#2}), write]
+               | Exp ">>" Exp [left, strict, latex({#1}\mathrel{\tt >>}{#2}), read]
+               > 
                  Exp "=" Exp [right, strict(2), context(rvalue), result(RVal), assign]
                >
                  "endl"
+               > Exp "," Exp [left, strict(1), comma]
 
   /*@ \subsection{Statements}
     For now, we include in CinK only (a subset) of the imperative statements:
@@ -135,15 +153,16 @@ also a prvalue. --end example ]
    */
 
 
-  syntax Stmt ::= Exp ";" [strict]
+  syntax Stmt ::= 
+                 Decl ";" [klabel(declStmt)]
+               > Exps ";" [strict]
                | "#include" "<iostream>" 
                | "using" "namespace" "std" ";" 
                  [latex(\texttt{using namespace std;})]
-               | Decl ";" [klabel(declStmt)]
                | "{" "}"
                | "{" Stmts "}"
                | "while" "(" Exp ")" Stmt 
-               | "return" Exps ";" [strict, context(rvalue), result(RVal)]
+               | "return" Exp ";" [strict, context(rvalue), result(RVal)]
                | Decl "(" Decls ")" "{" Stmts "}"
                | "if" "(" Exp ")" Stmt "else" Stmt [strict(1), context(rvalue), result(Bool)]
                >
@@ -162,7 +181,8 @@ also a prvalue. --end example ]
     declarations, which are declared as follows:
   */
 
-  syntax Exps  ::= List{Exp,  ","} [strict]
   syntax Decls ::= List{Decl, ","}
+  syntax Exps ::= "" [onlyLabel, klabel('.Exps)]
+                | Exp
  
 endmodule
