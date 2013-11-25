@@ -9,10 +9,10 @@ module CINK-POINTERS-SYNTAX
   imports CINK-BASIC-SYNTAX
 
   syntax Exp ::= "*" Exp [strict, context(rvalue), result(Ref), indirect]
-               | "&" Exp [strict, ampersand]
+//               | "&" Exp [strict, ampersand]
 
   syntax priorities  indirect  > assign read write greatthan lessequal
-  syntax priorities  ampersand > assign read write greatthan lessequal
+//  syntax priorities  ampersand > assign read write greatthan lessequal
 
 endmodule
 
@@ -44,17 +44,18 @@ module CINK-POINTERS-SEMANTICS
   when fresh(L:Loc)
        [ptr-decl, structural]
 
-  /*@
+  /*
   Declaration of an alias:
   */
 
+/*
   rule isAliasExp(& E:Exp) => true
 
   context _:PrimType & _:Id = HOLE;
 
   rule <k> T:PrimType & X:Id = lval(L:Loc); => . ...</k>
        <env> Env:Map => Env[L/X] </env>
-
+*/
 
   /*@ The indirect operator */
 

@@ -20,8 +20,9 @@ module CINK-BASIC-SYNTAX
  /*@ \subsection{Expressions} */
 
   /*@
-    We included in \Cink a small subset of \Cpp language, the missing operators
-    can be easily added in a similar way. Recall that the most important (from
+    We included in \Cink a small subset of operators from \Cpp language,
+    the missing ones
+    could being easily added in a similar way. Recall that the most important (from
     the semantic point of view) thing we have to mention for operators is the
     attribute \texttt{strict}, that specifies the evaluation order of the 
     operands. 
@@ -90,7 +91,9 @@ also a prvalue. --end example ]
     booleans, references (locations) \ldots Therefore the value of the strict
     attribute is a list of two sub-attributes: a \texttt{context} sub-attribute 
     having as value the label \texttt{rvalue} and a  a \texttt{result} 
-    sub-attribute having as value the result type of the operator.\\ 
+    sub-attribute having as value the result type of the arguments.
+    This will be explained later in the module defining semantics, when we 
+    define the values of the language.\\ 
     In contrast
     to the other examples, the function call expression is strict only in the
     first argument (the function name) because the evaluation of the arguments
@@ -110,8 +113,6 @@ also a prvalue. --end example ]
    */
 
 
-
-
   syntax RVal ::= Bool | Int | String 
 
   syntax Val ::= "cout" | "cin" | RVal
@@ -120,6 +121,9 @@ also a prvalue. --end example ]
   syntax Exp ::= Id | Val
                | "(" Exp ")"  [bracket]
                | Exp "(" Exps ")" [strict(1), context(rvalue), result(RVal)]
+               |"++" Exp [strict, result(Val), prefinc]
+               | Exp "++" [strict, result(Val), postinc]
+               | "&" Exp [strict, ampersand]
                > left:
                  Exp "*" Exp [left, multiply, strict, context(rvalue), result(RVal)]
                | Exp "/" Exp [left, divide, strict, context(rvalue), result(RVal)]
@@ -182,7 +186,34 @@ also a prvalue. --end example ]
   */
 
   syntax Decls ::= List{Decl, ","}
+
+  /*@
+  The definition for the list of expressions is more tricky because of the comma
+  operator.
+  According to the \Cpp manual, the expression lists are special comma expressions: 
+\begin{quote}
+In contexts where comma is given a special meaning, 
+[ Example: in lists of arguments to functions (5.2.2)
+and lists of initializers (8.5) —end example ] the comma operator as described 
+in Clause 5 can appear only in parentheses.
+\end{quote}  
+  The main difference between the expression lists and comma expressions is given
+  by the empty list. Therefore we have to separately define it. Mainly, the 
+  following declaration says 1) the empty list \texttt{.Exps} is an expression
+  list (denoted by the sort \texttt{Exps}), and 2) an expression, in particular 
+  any comma expression, is an expression lists. 
+  */
   syntax Exps ::= "" [onlyLabel, klabel('.Exps)]
                 | Exp
- 
+
+  syntax Exp ::= ".Exps"
+
+  /*@
+  A comma expression can be converted into an expression list by a rule of the form
+\begin{verbatim}
+    E => append(E, .Exps)
+\end{verbatim}
+  */
+
 endmodule
+

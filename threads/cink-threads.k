@@ -7,17 +7,20 @@ require "../basic/cink-basic-semantics.k"
 */
 
 module CINK-THREADS-SYNTAX
+  imports CINK-BASIC-SYNTAX
 
-  syntax Stmt ::= "std::thread" Id "(" Exps ")" ";"
+  syntax Stmt ::= "std::thread" Id "(" Id "," Exps ")" ";"
+                | "std::thread" Id "(" Id ")" ";"
 
+  rule std::thread T:Id(F:Id); => std::thread T(F, .Exps); [macro]
 endmodule
 
 module CINK-THREADS-SEMANTICS
-  imports CINK-BASIC-SYNTAX
   imports CINK-THREADS-SYNTAX
 
   syntax K ::= "noName"
 
+/*
   configuration   <threads color="pink">
                     <thread multiplicity="*" color="purple"> 
                       <name color="yellow"> noName </name>
@@ -25,7 +28,7 @@ module CINK-THREADS-SEMANTICS
                       <env color="LightSkyBlue"> .Map </env>
                     </thread>
                   </threads>
-  
+*/
 
   /*@
     \subsection{Threads.}
@@ -81,7 +84,7 @@ implicitly supports a simpler view for more restricted programs. —end note ]
           <env> Env </env>  
         ...</thread>
        )
-       [thread]
+       [kripke(thread)]
 
   /*@
     A thread is finished (and deleted) when the content of its \texttt{k}

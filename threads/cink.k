@@ -25,6 +25,7 @@ module CINK
                       <k color="green"> ($PGM:Pgm ~> execute) </k>
                       <env color="LightSkyBlue"> .Map </env>
                       <fstack color="orange"> .List </fstack>
+                      <return> .K </return>
                     </thread>
                   </threads>
                   <br/>

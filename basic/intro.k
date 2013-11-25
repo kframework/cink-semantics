@@ -24,12 +24,15 @@ an example for teaching classes and is refered in several research papers.
 
 We assume the reader is already familiar with the \K Framework and the 
 \KTool and here we try to share our experiece in defining a languages with some
-specific features, as \Cpp is. 
+specific features, as \Cpp is. We are trying to give semantics to the language
+as close as possible to that from the \Cpp manual (version 2011). Therefore
+the semantics of many constructs are preceded by a quoted text that include
+the semantics description from the manual.
 
 \Cink is developed in several iterations, each iteration adding an incremental 
 contribution.
 
-This file includes the starting iteration, where the basic constructions of 
+This definition includes the starting iteration, where the basic constructions of 
 \Cink as arithmetic and boolean expressions (partial), imperative 
 statements, are defined. The variables can be declared only in
 the main block of the function. 
