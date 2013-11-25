@@ -6,6 +6,6 @@ int main() {
   int a = 5;
   int &b = a;
   b = 10;
-  cout << a << b << endl;
+  cout << a << " " << b << endl;
   return 0;
 }

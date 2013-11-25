@@ -125,12 +125,18 @@ module CINK-LTLMC-SEMANTICS
        [anywhere]
 
 
-  rule B:Bag |=Ltl eqToSum(X:Id, Y:Id) => true when val(B, X) ==Int sumFirstN(val(B, Y)) [anywhere]
+  rule B:Bag |=Ltl eqToSum(X:Id, Y:Id) => true
+       when val(B, X) ==Int sumFirstN(val(B, Y))
+       [anywhere]
 
-  rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true when val(B, X) ==Int I [anywhere]
+  rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true
+       when val(B, X) ==Int I
+       [anywhere]
 
-  rule B:Bag |=Ltl logInv(A:Id, X:Id, K:Id) => true when (val(B, X) *Int pow(2, val(B, K)) <=Int val(B, A)) 
-                                                 andBool (val(B, A) <Int (val(B, X) +Int 1) *Int pow(2, val(B, K))) [anywhere]
+  rule B:Bag |=Ltl logInv(A:Id, X:Id, K:Id) => true
+       when (val(B, X) *Int pow(2, val(B, K)) <=Int val(B, A)) 
+             andBool (val(B, A) <Int (val(B, X) +Int 1) *Int pow(2, val(B, K)))
+       [anywhere]
 
 
   rule [step] : step; => . [kripke, step]
