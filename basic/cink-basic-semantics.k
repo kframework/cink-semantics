@@ -68,15 +68,7 @@ module CINK-BASIC-SEMANTICS
 
   //@ The definition of the strict context \texttt{rvalue}:
   
-  syntax Exp ::= "rvalue" "(" Exp ")" [strict, klabel(rvalue)]
-
-  /*@
-    As its definition says, the main operator emphasiszing the two categories is
-    the assignment. We use a context declaration to say that the left-hand side 
-    of the assignemnt is a lvalue (by default):
-  */
-
-  context HOLE = _:Exp
+  syntax Exp ::= "rvalue" "(" Exp ")" [context(result(RVal)), strict, klabel(rvalue)]
 
   //@ When an lvalue is in an rvalue context, evaluate it
   rule <k> rvalue(lval(L:Ref) => V) ...</k>
@@ -489,8 +481,6 @@ operand is a temporary (12.2), the result is that temporary.
   /*@ \subsection{Input/Output Statements.} */
 
   /*@ Writting in the the standard stream \texttt{cout}: */
-
-  context HOLE << _
 
   rule <k> cout << V:RVal => cout  ...</k>  
        <out>... . => ListItem(V) </out>

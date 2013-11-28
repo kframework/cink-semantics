@@ -120,33 +120,33 @@ also a prvalue. --end example ]
 
   syntax Exp ::= Id | Val
                | "(" Exp ")"  [bracket]
-               | Exp "(" Exps ")" [strict(1), context(rvalue), result(RVal)]
-               |"++" Exp [strict, result(Val), prefinc]
-               | Exp "++" [strict, result(Val), postinc]
+               | Exp "(" Exps ")" [strict(1(context(rvalue)))]
+               | "++" Exp [strict(all(result(Val))), prefinc]
+               | Exp "++" [strict(all(result(Val))), postinc]
                | "&" Exp [strict, ampersand]
                > left:
-                 Exp "*" Exp [left, multiply, strict, context(rvalue), result(RVal)]
-               | Exp "/" Exp [left, divide, strict, context(rvalue), result(RVal)]
-               | Exp "%" Exp [left, latex({#1}\%{#2}), modulo, strict, context(rvalue), result(RVal)] 
+                 Exp "*" Exp [left, multiply, strict(all(context(rvalue)))]
+               | Exp "/" Exp [left, divide, strict(all(context(rvalue)))]
+               | Exp "%" Exp [left, latex({#1}\%{#2}), modulo, strict(all(context(rvalue)))] 
                >  left:
-                 Exp "+" Exp [left, plus, strict, context(rvalue), result(RVal)]
-               | Exp "-" Exp [left, minus, strict, context(rvalue), result(RVal)]
+                 Exp "+" Exp [left, plus, strict(all(context(rvalue)))]
+               | Exp "-" Exp [left, minus, strict(all(context(rvalue)))]
                > left:
-                 Exp "<" Exp  [left, lessthan, strict, context(rvalue), result(RVal)]
+                 Exp "<" Exp  [left, lessthan, strict(all(context(rvalue)))]
                | Exp ">" Exp  [left, greatthan, strict, context(rvalue), result(RVal)]
-               | Exp "<=" Exp [left, latex({#1}\leq{#2}), lessequal, strict, context(rvalue), result(RVal)]
-               | Exp "==" Exp [left, equality, strict, context(rvalue), result(RVal)]
+               | Exp "<=" Exp [left, latex({#1}\leq{#2}), lessequal, strict(all(context(rvalue)))]
+               | Exp "==" Exp [left, equality, strict(all(context(rvalue)))]
                >
-                 "!" Exp [strict, negation, strict, context(rvalue), result(Bool)] 
+                 "!" Exp [strict, negation, strict(all(context(rvalue)))] 
                > 
-                 Exp "&&" Exp [left, strict(1), context(rvalue), result(Bool), latex({#1}\mathrel{\&\&}{#2}), conjunction]
+                 Exp "&&" Exp [left, strict(1(context(rvalue), result(Bool))), latex({#1}\mathrel{\&\&}{#2}), conjunction]
                > 
-                 Exp "||" Exp [left, strict(1), context(rvalue), result(Bool), disjunction]
+                 Exp "||" Exp [left, strict(1(context(rvalue), result(Bool))), disjunction]
                > left:
-                 Exp "<<" Exp [left, strict(2), context(rvalue), result(RVal), latex({#1}\mathrel{\tt <<}{#2}), write]
+                 Exp "<<" Exp [left, strict(1, 2(context(rvalue))), latex({#1}\mathrel{\tt <<}{#2}), write]
                | Exp ">>" Exp [left, strict, latex({#1}\mathrel{\tt >>}{#2}), read]
                > 
-                 Exp "=" Exp [right, strict(2), context(rvalue), result(RVal), assign]
+                 Exp "=" Exp [right, strict(1, 2(context(rvalue))), assign]
                >
                  "endl"
                > Exp "," Exp [left, strict(1), comma]
