@@ -137,7 +137,7 @@ also a prvalue. --end example ]
                | Exp "<=" Exp [left, latex({#1}\leq{#2}), lessequal, strict(all(context(rvalue)))]
                | Exp "==" Exp [left, equality, strict(all(context(rvalue)))]
                >
-                 "!" Exp [strict, negation, strict(all(context(rvalue)))] 
+                 "!" Exp [negation, strict(all(context(rvalue)))] 
                > 
                  Exp "&&" Exp [left, strict(1(context(rvalue), result(Bool))), latex({#1}\mathrel{\&\&}{#2}), conjunction]
                > 
@@ -166,9 +166,9 @@ also a prvalue. --end example ]
                | "{" "}"
                | "{" Stmts "}"
                | "while" "(" Exp ")" Stmt 
-               | "return" Exp ";" [strict, context(rvalue), result(RVal)]
+               | "return" Exp ";" [strict(all(context(rvalue)))]
                | Decl "(" Decls ")" "{" Stmts "}"
-               | "if" "(" Exp ")" Stmt "else" Stmt [strict(1), context(rvalue), result(Bool)]
+               | "if" "(" Exp ")" Stmt "else" Stmt [strict(1(context(rvalue)))]
                >
                  "if" "(" Exp ")" Stmt
 

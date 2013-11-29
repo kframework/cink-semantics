@@ -579,10 +579,28 @@ type (8.3.2)\ldots
   /*@
     For a formal parameter declared with the call-by-value mechanism,
     the corresponding argument expression must be evaluated to an rvalue as
-    specified by by the following contextual declaration:
+    specified by the following contextual declaration:
   */
 
   context evaluate ((HOLE => rvalue(HOLE)), _:Exp) to _ following (T X:Id, _:Decls);
+
+
+/*@
+  For a formal parameter declared with the call-by-reference mechanism,
+  the corresponding argument expression must be evaluated to an lvalue.
+From the \Cpp manual:
+\begin{quote}
+a function can change the values of its non-const parameters, 
+but these changes cannot affect the
+values of the arguments except where a parameter is of a reference 
+type (8.3.2)\ldots
+\end{quote}
+*/
+
+
+  context evaluate(HOLE, _:Exp) to _
+          following  (T:Type (& X:Id)::Exp, _:Decls);
+
 
 
   /*@
@@ -622,6 +640,18 @@ type (8.3.2)\ldots
        <store>... . => L |-> V ...</store>
   when fresh(L:Loc)
        [structural]
+
+
+ /*@ For call-by-reference, the location pointed to by the lvalue is directly
+      bound to the formal parameter. This is achieved by exactly one rule:
+  */
+
+  rule <k> bind((lval(L:Ref), Vs) => Vs)
+           to((T:Type & X:Id, Xl:Decls) => Xl); 
+       ...</k>
+       <env> Env:Map => Env[L/X] </env> 
+
+
 
   /*@
     Finally, once all parameters have been bound, the binding construct 
