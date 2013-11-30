@@ -1,0 +1,40 @@
+true
+<T>
+    <sideEffects>
+        .K
+    </sideEffects>
+    <in>
+        ListItem(#buffer ( "" ))
+        ListItem(#istream ( 0 ))
+    </in>
+    <out>
+        ListItem(#ostream ( 1 ))
+        ListItem(#buffer ( "" ))
+    </out>
+    <control>
+        <k>
+            .K
+        </k>
+        <return>
+            0
+        </return>
+        <fstack>
+            .List
+        </fstack>
+        <env>
+            main |-> #symLoc(1)
+        </env>
+    </control>
+    <genv>
+        main |-> #symLoc(1)
+    </genv>
+    <store>
+        #symLoc(1) |-> lambda ( .Decls @ ((((((((int a) ;) ((a = 1) ;)) ((
+          (int b) ;) ((b = 2) ;))) (((int c) ;) ((c = 3) ;))) (if ( (((a < 2) 
+          && (b > 1)) || (c > 4)) ) ((cout << "true") ;) else ((cout << 
+          "false") ;))) ((cout << endl) ;)) (return 0 ;)) )
+        #symLoc(2) |-> 1
+        #symLoc(3) |-> 2
+        #symLoc(4) |-> 3
+    </store>
+</T>

@@ -1,25 +1,23 @@
-require "../basic/cink-basic-syntax.k"
-require "../basic/cink-basic-semantics.k"
-
+//require "../basic/cink-basic-syntax.k"
+//require "../basic/cink-basic-semantics.k"
+require "../references/cink-references.k"
 
 /*@ \section{The New Modules} */
 
 module CINK-POINTERS-SYNTAX
 
-  imports CINK-BASIC-SYNTAX
+  imports CINK-REFERENCES-SYNTAX
 
-  syntax Exp ::= "*" Exp [strict, context(rvalue), result(Ref), indirect]
-//               | "&" Exp [strict, ampersand]
+  syntax Exp ::= "*" Exp [strict(all(context(rvalue), result(Val))), indirect]
 
   syntax priorities  indirect  > assign read write greatthan lessequal
-//  syntax priorities  ampersand > assign read write greatthan lessequal
 
 endmodule
 
 module CINK-POINTERS-SEMANTICS
 
   imports CINK-POINTERS-SYNTAX
-  imports CINK-BASIC-SEMANTICS
+  imports CINK-REFERENCES-SEMANTICS
 
   /*@ Pointer type: */
 
@@ -40,31 +38,15 @@ module CINK-POINTERS-SEMANTICS
   /*@ Declaration of a pointer variable */
   rule <k> X:Id of T:PtrType; => .  ...</k>      
        <env> Env:Map => Env[L/X] </env>
-       <store>... . => (L |-> undefined) ...</store>
+       <store>... . => (L |-> 0) ...</store>
   when fresh(L:Loc)
        [ptr-decl, structural]
 
-  /*
-  Declaration of an alias:
-  */
-
-/*
-  rule isAliasExp(& E:Exp) => true
-
-  context _:PrimType & _:Id = HOLE;
-
-  rule <k> T:PrimType & X:Id = lval(L:Loc); => . ...</k>
-       <env> Env:Map => Env[L/X] </env>
-*/
 
   /*@ The indirect operator */
 
-  rule * L:Ref => lval(L)
+  rule <k>  * lval(L:Loc) => lval(L') ...</k> 
+       <store>... L |-> L':Loc ...</store>
 
-  /*@ The type of "\& L" is "pointer to the type of L",
-   hence the type of "* \& L" is "type of L". L is evaluated as an
-   rvalue that implies that the result is the value stored at L. */
 
-  rule & lval(L:Ref) => L 
-  
 endmodule

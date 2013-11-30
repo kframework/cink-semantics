@@ -5,11 +5,16 @@ kompile:
 scenario1:
   krun programs/sumn.cink -cIN="ListItem(10)" -cPC="true"
 
+  The location for the sum in the final configuration should store 55.
 scenario2:
   krun programs/sumn.cink -cIN="ListItem(#symInt(n))" -cPC="true"
 
+  The program chose (arbitrarly) the execution path for  n < 0. 
+
 scenario3:
   krun programs/sumn.cink -cIN="ListItem(#symInt(n))" -cPC="true" --search --bound 3
+
+  The three solutions will correspond to n < 0, n= 0, and n = 1.
 */
 int main() {
   int n, i, sum;

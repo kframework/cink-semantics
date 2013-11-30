@@ -2,5 +2,6 @@
   <include file="basic/config.xml" directory="basic/" />
   <include file="threads/config.xml" directory="threads/" />
   <include file="ltlmc/config.xml" directory="ltlmc/" />
+  <include file="references/config.xml" directory="references/" />
   <include file="pointers/config.xml" directory="pointers/" />
 </tests>

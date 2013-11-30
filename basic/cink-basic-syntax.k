@@ -1,18 +1,19 @@
 module CINK-BASIC-SYNTAX
 
-  /*@ \subsection{Declarations}
-    The declarations are used for declaring variables and function names
-    together with their return types.
-    We consider only integer and boolean variables. A return type of a function
-    could be an integer, a boolean, or \texttt{void}. These are called 
-    \emph{primitive types} (or \emph{builtin types}) and their sort is \texttt{PrimType}.
-    The sort \texttt{Type} will be enriched later with array types, pointer types,
-    ans so on.
+  /*@ \subsection{Types}
+   In this iteration we consider only a subset of the fundamental types:
   */
 
-  syntax PrimType ::= "int" | "bool" | "void" 
 
-  syntax Type ::= PrimType
+  syntax FundType ::= "int" | "bool" | "void" 
+
+  syntax Type ::= FundType
+
+  /*@ \subsection{Declarations}
+    The declarations are used to introduce names for variables and function names
+    together with their return types.
+  */
+
 
   syntax Decl ::= Type Exp
 
@@ -21,74 +22,19 @@ module CINK-BASIC-SYNTAX
 
   /*@
     We included in \Cink a small subset of operators from \Cpp language,
-    the missing ones
-    could being easily added in a similar way. Recall that the most important (from
+    the missing ones could being easily added in a similar way.
+    Recall that the most important (from
     the semantic point of view) thing we have to mention for operators is the
     attribute \texttt{strict}, that specifies the evaluation order of the 
     operands. 
       \par
-      In \Cpp the expressions are splitted in several categories:
 
-
-\begin{tikzpicture}[node distance=-1.5cm, auto]
-
-\tikzset{
-    mynode/.style={rectangle, draw=none, thick, fill=none,
-      text width=18em, text centered, minimum height=1em},
-    myarrow/.style={-, >=latex', shorten >=1pt, thick}
-}  
-
-\node[mynode] (exp) {expression};  
-\node[below=1cm of exp] (dummy) {}; 
-\node[mynode, left=of dummy] (glval) {glvalue};  
-\node[mynode, right=of dummy] (rval) {rvalue};
-\node[below=1cm of dummy] (xval) {xvalue};  
-\node[below=1cm of glval] (dummy1) {};
-\node[mynode, left=of dummy1] (lval) {lvalue};  
-\node[below=1cm of rval] (dummy2) {}; 
-\node[mynode, right=of dummy2] (prval) {prvalue};
-
-\draw[myarrow] (exp.south) -- (glval.north);
-\draw[myarrow] (exp.south) -- (rval.north);
-\draw[myarrow] (glval.south) -- (lval.north);
-\draw[myarrow] (glval.south) -- (xval.north);
-\draw[myarrow] (rval.south) -- (xval.north);
-\draw[myarrow] (rval.south) -- (prval.north);
-
-\end{tikzpicture}
-
-\begin{quote}
--- An lvalue (so called, historically, because lvalues could appear on the 
-left-hand side of an assignment expression) designates a function or an object.
-[ Example: If E is an expression of pointer type, then
-*E is an lvalue expression referring to the object or function to which E 
-points. As another example, the result of calling a function whose return type
-is an lvalue reference is an lvalue. --end example ]\\
--- An xvalue (an "eXpiring" value) also refers to an object, usually near
-the end of its lifetime (so that its resources may be moved, for example). 
-An xvalue is the result of certain kinds of expressions involving
-rvalue references (8.3.2). [ Example: The result of calling a function whose 
-return type is an rvalue reference is an xvalue. --end example ]\\
--- A glvalue ("generalized" lvalue) is an lvalue or an xvalue.\\
--- An rvalue (so called, historically, because rvalues could appear on the 
-right-hand side of an assignment expression) is an xvalue, a temporary object 
-(12.2) or subobject thereof, or a value that is not associated with an object.\\
--- A prvalue ("pure" rvalue) is an rvalue that is not an xvalue. 
-[ Example: The result of calling a function whose return type is not a 
-reference is a prvalue. The value of a literal such as 12, 7.3e5, or true is
-also a prvalue. --end example ]
-\end{quote}
-      In order to keep the definition as simple as possible, we consider only two
-      of these categories: \emph{lvalues} and \emph{rvalues}. This classification
-      of expressions is essential in defining their semantics since the evaluation
-      of an lvalues expression is different from a rvalue one.
-
-    The arithmetic binary 
+    The binary 
     operators are strict in both arguments, hence the behavior of some 
     programs could be undefined or non-determinsitic because the evaluation
-    of the arguments could have side-effects. The arguments of a binary aritmetic
+    of the arguments could have side-effects. The arguments of a binary
     operator are evaluated as rvalues and their result values could be integers,
-    booleans, references (locations) \ldots Therefore the value of the strict
+    booleans, locations \ldots. Therefore the value of the strict
     attribute is a list of two sub-attributes: a \texttt{context} sub-attribute 
     having as value the label \texttt{rvalue} and a  a \texttt{result} 
     sub-attribute having as value the result type of the arguments.
@@ -106,44 +52,49 @@ also a prvalue. --end example ]
     and therefore they are values.  
     The sort \texttt{Val} for values will be extended in the module describing
     the semantics.
-    The subsort \texttt{RVal} is for values that could bet rvalues expressions.
+    The subsort \texttt{ScalVal} is for values of the scalar types.
     \par
     We prefer to declare \texttt{cin} and \texttt{cout} as values rather 
     than identifiers; the reason for this decision will be explained later.
    */
 
 
-  syntax RVal ::= Bool | Int | String 
+  syntax ScalVal ::= Bool | Int | String 
 
-  syntax Val ::= "cout" | "cin" | RVal
+  syntax Val ::= "cout" | "cin" | ScalVal
 
 
   syntax Exp ::= Id | Val
                | "(" Exp ")"  [bracket]
-               | Exp "(" Exps ")" [strict(1(context(rvalue)))]
+               | Exp "(" Exps ")" [strict(1(context(rvalue))), funcall]
                | "++" Exp [strict(all(result(Val))), prefinc]
+               | "--" Exp [strict(all(result(Val))), prefdec]
                | Exp "++" [strict(all(result(Val))), postinc]
-               | "&" Exp [strict, ampersand]
+               | Exp "--" [strict(all(result(Val))), postdec]
+//               | "&" Exp [strict, ampersand]
                > left:
-                 Exp "*" Exp [left, multiply, strict(all(context(rvalue)))]
-               | Exp "/" Exp [left, divide, strict(all(context(rvalue)))]
-               | Exp "%" Exp [left, latex({#1}\%{#2}), modulo, strict(all(context(rvalue)))] 
+                 Exp "*" Exp [left, strict(all(context(rvalue))), multiply]
+               | Exp "/" Exp [left, strict(all(context(rvalue))), divide]
+               | Exp "%" Exp [left, strict(all(context(rvalue))), latex({#1}\%{#2}), modulo] 
                >  left:
-                 Exp "+" Exp [left, plus, strict(all(context(rvalue)))]
-               | Exp "-" Exp [left, minus, strict(all(context(rvalue)))]
+                 Exp "+" Exp [left, strict(all(context(rvalue))), plus]
+               | Exp "-" Exp [left, strict(all(context(rvalue))), minus]
                > left:
-                 Exp "<" Exp  [left, lessthan, strict(all(context(rvalue)))]
-               | Exp ">" Exp  [left, greatthan, strict, context(rvalue), result(RVal)]
-               | Exp "<=" Exp [left, latex({#1}\leq{#2}), lessequal, strict(all(context(rvalue)))]
-               | Exp "==" Exp [left, equality, strict(all(context(rvalue)))]
+                 Exp "<" Exp  [left, strict(all(context(rvalue), result(ScalVal))), lessthan]
+               | Exp ">" Exp  [left, strict(all(context(rvalue), result(ScalVal))), greatthan]
+               | Exp "<=" Exp [left, strict(all(context(rvalue), result(ScalVal))), 
+                                     latex({#1}\leq{#2}), lessequal]
+               | Exp "==" Exp [left, equality, strict(all(context(rvalue), result(Val)))]
                >
-                 "!" Exp [negation, strict(all(context(rvalue)))] 
+                 "!" Exp [strict(all(context(rvalue), result(Bool))), negation] 
                > 
-                 Exp "&&" Exp [left, strict(1(context(rvalue), result(Bool))), latex({#1}\mathrel{\&\&}{#2}), conjunction]
+                 Exp "&&" Exp [left, strict(1(context(rvalue), result(Bool))), 
+                               latex({#1}\mathrel{\&\&}{#2}), conjunction]
                > 
                  Exp "||" Exp [left, strict(1(context(rvalue), result(Bool))), disjunction]
                > left:
-                 Exp "<<" Exp [left, strict(1, 2(context(rvalue))), latex({#1}\mathrel{\tt <<}{#2}), write]
+                 Exp "<<" Exp [left, strict(1, 2(context(rvalue))),
+                                     latex({#1}\mathrel{\tt <<}{#2}), write]
                | Exp ">>" Exp [left, strict, latex({#1}\mathrel{\tt >>}{#2}), read]
                > 
                  Exp "=" Exp [right, strict(1, 2(context(rvalue))), assign]
@@ -178,19 +129,21 @@ also a prvalue. --end example ]
   syntax Pgm ::= Stmts 
   syntax Stmts ::= Stmt | Stmts Stmts [left]
 
-  /*@ \subsection{Lists} */
+  /*@ \subsection{List of Declarations} */
 
   /*@
-    The above definitions are using lists of expressions and lists of 
-    declarations, which are declared as follows:
+    The above definitions are using lists of  
+    declarations, which ais declared as follows:
   */
 
   syntax Decls ::= List{Decl, ","}
 
   /*@
+
+  \subsection{List of Expressions}
   The definition for the list of expressions is more tricky because of the comma
   operator.
-  According to the \Cpp manual, the expression lists are special comma expressions: 
+  According to the \Cpp manual (5.18), the expression lists are special comma expressions: 
 \begin{quote}
 In contexts where comma is given a special meaning, 
 [ Example: in lists of arguments to functions (5.2.2)
@@ -209,7 +162,7 @@ in Clause 5 can appear only in parentheses.
   syntax Exp ::= ".Exps"
 
   /*@
-  A comma expression can be converted into an expression list by a rule of the form
+  An expression can be converted into an expression list by a rule of the form
 \begin{verbatim}
     E => append(E, .Exps)
 \end{verbatim}

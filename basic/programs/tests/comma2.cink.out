@@ -1,0 +1,58 @@
+a=1, b=2, c=3, i=0
+a=1, b=2, c=3, i=2
+a=1, b=2, c=3, i=1
+a=3, b=2, c=3, i=5
+a=5, b=2, c=3, i=5
+a=5, b=2, c=3, i=5
+a=5, b=2, c=3, i=3
+<T>
+    <sideEffects>
+        .K
+    </sideEffects>
+    <in>
+        ListItem(#buffer ( "" ))
+        ListItem(#istream ( 0 ))
+    </in>
+    <out>
+        ListItem(#ostream ( 1 ))
+        ListItem(#buffer ( "" ))
+    </out>
+    <control>
+        <k>
+            .K
+        </k>
+        <return>
+            noVal
+        </return>
+        <fstack>
+            .List
+        </fstack>
+        <env>
+            main |-> #symLoc(1)
+        </env>
+    </control>
+    <genv>
+        main |-> #symLoc(1)
+    </genv>
+    <store>
+        #symLoc(1) |-> lambda ( .Decls @ (((((((((((((((((((int a) ;) ((a 
+          = 1) ;)) (((int b) ;) ((b = 2) ;))) (((int c) ;) ((c = 3) ;))) (((
+          int i) ;) ((i = 0) ;))) ((((((((((cout << "a=") << a) << ", b=") << 
+          b) << ", c=") << c) << ", i=") << i) << endl) ;)) ((i = (a , b)) ;))
+           ((((((((((cout << "a=") << a) << ", b=") << b) << ", c=") << c) << 
+          ", i=") << i) << endl) ;)) (((i = a) , b) ;)) ((((((((((cout << "a="
+          ) << a) << ", b=") << b) << ", c=") << c) << ", i=") << i) << endl) 
+          ;)) ((i = ((a = (a + 2)) , (a + b))) ;)) ((((((((((cout << "a=") << 
+          a) << ", b=") << b) << ", c=") << c) << ", i=") << i) << endl) ;)) (
+          ((i = (a = (a + 2))) , (a + b)) ;)) ((((((((((cout << "a=") << a) <<
+           ", b=") << b) << ", c=") << c) << ", i=") << i) << endl) ;)) ((((i 
+          = a) , b) , c) ;)) ((((((((((cout << "a=") << a) << ", b=") << b) <<
+           ", c=") << c) << ", i=") << i) << endl) ;)) ((i = ((a , b) , c)) ;)
+          ) ((((((((((cout << "a=") << a) << ", b=") << b) << ", c=") << c) <<
+           ", i=") << i) << endl) ;)) )
+        #symLoc(2) |-> 5
+        #symLoc(3) |-> 2
+        #symLoc(4) |-> 3
+        #symLoc(5) |-> 3
+    </store>
+</T>

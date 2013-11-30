@@ -1,6 +1,7 @@
 /*
 
-This example exhibits a non-deterministic behavior of a defined program.
+This example includes a program with a non-defined behavior.
+This can be exhibited by showing the non-deterministic behavior of the program.
 
  -- The compiling command
 
@@ -10,7 +11,7 @@ This example exhibits a non-deterministic behavior of a defined program.
 
 	krun programs/sum.cink --search
 
-Two solutions should be reported.
+Three solutions should be reported.
 */
 int main() {
   int x = 0, y;

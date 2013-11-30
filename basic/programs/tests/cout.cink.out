@@ -1,0 +1,36 @@
+8
+<T>
+    <sideEffects>
+        .K
+    </sideEffects>
+    <in>
+        ListItem(#buffer ( "" ))
+        ListItem(#istream ( 0 ))
+    </in>
+    <out>
+        ListItem(#ostream ( 1 ))
+        ListItem(#buffer ( "" ))
+    </out>
+    <control>
+        <k>
+            .K
+        </k>
+        <return>
+            noVal
+        </return>
+        <fstack>
+            .List
+        </fstack>
+        <env>
+            main |-> #symLoc(1)
+        </env>
+    </control>
+    <genv>
+        main |-> #symLoc(1)
+    </genv>
+    <store>
+        #symLoc(1) |-> lambda ( .Decls @ ((((int a) ;) ((a = 8) ;)) (((
+          cout << a) << endl) ;)) )
+        #symLoc(2) |-> 8
+    </store>
+</T>
