@@ -3,5 +3,4 @@
   <include file="threads/config.xml" directory="threads/" />
   <include file="ltlmc/config.xml" directory="ltlmc/" />
   <include file="pointers/config.xml" directory="pointers/" />
-  <include file="call-by-ref/config.xml" directory="call-by-ref/" />
 </tests>
