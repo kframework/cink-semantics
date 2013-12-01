@@ -3,7 +3,8 @@ require "../../pointers/cink-pointers.k"
 
 module CINK-ARRAYS-SYNTAX
 
-  syntax Exp ::= Exp "[" Exp "]" [strict, array]
+  syntax Exp ::= Exp "[" Exp "]" [strict(1, 2(context(rvalue), result(Int))),
+                                  array]
                | Exp "[]" [array] 
 
   syntax priorities  array > multiply read write greatthan lessequal
@@ -81,12 +82,12 @@ module CINK-ARRAYS-SEMANTICS
   </env>
   <store>
     #symLoc(2) |-> store(store(store(const-array(3, undefined),
-                               0, #symLoc(3)),
-                               1, #symLoc(4))
-                               2, #symLoc(5))
-        #symLoc(3) |-> undefined
-        #symLoc(4) |-> undefined
-        #symLoc(5) |-> undefined
+                               0, #symLoc(2)[0]),
+                               1, #symLoc(2)[1])
+                               2, #symLoc(2)[2])
+        #symLoc(2)[0] |-> 0
+        #symLoc(2)[1] |-> 0
+        #symLoc(2)[1] |-> 0
     </store>
   \end{verbatim}
   We use an auxiliary function for allocating locations for members:
@@ -102,22 +103,40 @@ module CINK-ARRAYS-SEMANTICS
            alloc(X of array of N T;, 0)
        ...</k>
        <env>... . => X |-> L </env>
-       <store>... . => L |-> const-array(N, undefined) </store>
+       <store>... . => L |-> const-array(N, 0) </store>
        when fresh(L:Loc)
 
   /*@
   The recursive case:
   */
+  syntax Loc ::= Loc "[" Int "]"
+
+  rule lval(L:Loc)[I:Int] => lval(L[I])
+
+  rule L:Loc[I:Int] + J:Int => L[I +Int J]
+
+  rule [side-effect] :
+       <k> $inc(L:Loc) => . ...</k>
+       <store>... L |-> (L':Loc[I:Int] => L'[I +Int 1]) ...</store>
+       [side-effect(inc)]
+
+
+  rule [side-effect] :
+       <k> $dec(L:Loc) => . ...</k>
+       <store>... L |-> (L':Loc[I:Int] => L'[I -Int 1]) ...</store>
+       [side-effect(dec)]
+
+
   rule <k> alloc(X:Exp of array of N:Int T:Type;, I:Int)
            =>
            alloc(X of array of N T;, I +Int 1)
        ...</k>
-       <env>... X |-> L (. => X[I] |-> L') </env>
+       <env>... X |-> L:Loc (. => X[I] |-> L[I]) </env>
        <store>...
-              (L |-> (A:Array => store(A, I, L')))
-              (. =>  L' |-> undefined)
+              (L |-> (A:Array => store(A, I, L[I])))
+              (. =>  L[I] |-> 0)
        ...</store>
-       when fresh(L':Loc) andBool (I <Int N)
+       when (I <Int N)
 
   /*@
    The base case when all components given by the current index
@@ -127,44 +146,27 @@ module CINK-ARRAYS-SEMANTICS
        when (I >=Int N)
 
   /*@
-  The evaluation of an array component as an rvalue:
+  The evaluation of an array component as an lvalue:
   */
-  rule A:Array [I:Int] => * (A + I)
+  rule A:Array [I:Int] => A + I
 
   rule A:Array + I:Int => select(A, I) 
 
-  context _:Exp[(HOLE => rvalue(HOLE)] = _ [result(RVal)]
+//  context _:Exp[(HOLE => rvalue(HOLE)] = _ [result(ScalVal)]
 
-
-  /*@
-  The evaluation of an array component as an lvalue:
-  */
-  context lvalue(_:Exp[HOLE])
-
-  context lvalue((HOLE => lvalue(HOLE))[_:Exp])
-
-/*
-  rule <k> lvalue(L:Loc[I:Int] => select(A, I) ) ...</k>
-       <store>... L |-> A:Array ...</store>
-*/
-  rule <k> lvalue(L:Loc[I:Int]) => A + I  ...</k>
-       <store>... L |-> A:Array ...</store>
-
-  rule lvalue(A:Array + I:Int) =>  select(A,I) ~> lvalue(HOLE)
-  rule L:Loc ~> lvalue(HOLE) => lvalue(& L)
 
   /*@ 
   Arrays as parameters:
   */
 
-  context evaluate ((HOLE => lvalue(HOLE)), _:Exps) to _:Vals
+  context evaluate (HOLE, _:Exp) to _
           following (T _:Exp[_:Exp], _:Decls);
 
-  context evaluate ((HOLE => lvalue(HOLE)), _:Exps) to _:Vals
+  context evaluate (HOLE, _:Exp) to _
           following (T _:Exp[], _:Decls);
 
   rule <k>
-          bind((L:LVal, Vs:Vals) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
+          bind((L:Loc, Vs) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[L/X] </env>
        [structural]

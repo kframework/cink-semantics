@@ -1,5 +1,7 @@
-require "intro.k"
-require "imports-intro.k"
+require "../../doc-files/preamble.k"
+require "../../doc-files/intro.k"
+require "doc-files/arrays-unidimensional-intro.k"
+require "doc-files/imports-intro.k"
 require "../../basic/cink-basic-syntax.k"
 require "cink-arrays-unidimensional.k"
 
@@ -24,6 +26,10 @@ module CINK
                       <k color="green"> ($PGM:Pgm ~> execute) </k>
                       <env color="LightSkyBlue"> .Map </env>
                       <fstack color="orange"> .List </fstack>
+                      <sideEffects>
+                        <sideEffect multiplicity="*"> .K </sideEffect>
+                      </sideEffects>
+                      <return> .K </return>
                   </control>
                   <br/>
                   <genv color="SkyBlue"> .Map </genv>
