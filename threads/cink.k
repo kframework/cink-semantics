@@ -1,5 +1,7 @@
-require "intro.k"
-require "imports-intro.k"
+require "../doc-files/preamble.k"
+require "../doc-files/intro.k"
+require "doc-files/threads-intro.k"
+require "doc-files/imports-intro.k"
 require "../basic/cink-basic-syntax.k"
 require "../basic/cink-basic-semantics.k"
 require "cink-threads.k"
@@ -26,6 +28,9 @@ module CINK
                       <env color="LightSkyBlue"> .Map </env>
                       <fstack color="orange"> .List </fstack>
                       <return> .K </return>
+                      <sideEffects>
+                        <sideEffect multiplicity="*"> .K </sideEffect>
+                      </sideEffects>
                     </thread>
                   </threads>
                   <br/>
@@ -33,7 +38,6 @@ module CINK
                   <store color="white"> .Map </store>
                   <in color="magenta" stream="stdin"> .List </in>
                   <out color="Orchid" stream="stdout"> .List </out>
-                  <sideEffects> .K </sideEffects>
                 </T>
 endmodule
 

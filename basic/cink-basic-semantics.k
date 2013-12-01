@@ -25,8 +25,9 @@ module CINK-BASIC-SEMANTICS
 
     In order to keep the definition
     as simple as possible, we let the expressions to be evaluated always
-    to lvalues and then use the context \texttt{rvalue} to convert it into 
-    an rvalue whenever this is neede. To be more precise, we consider the
+    to lvalues and then use the context \texttt{rvalue} to convert them into 
+    rvalues whenever this is needed. To be more precise, we consider the
+    example of the
     expression \texttt{++x + y}. According to \Cpp semantics, the evaluation
     of the operator \texttt{++} returns an lvalue. When  the operator
     \texttt{+} is evaluated this must be converted into an rvalue.
@@ -40,26 +41,20 @@ module CINK-BASIC-SEMANTICS
   I2:ScalVal ~> E1 + HOLE => E1 + I2
 \end{verbatim}
     For instance, the above expression will be derived into the following
-    sequence of computations (note that \texttt{rvalue} is strct, too; see
-    below):
+    sequence of computations (note that \texttt{rvalue} is strict, too):
 \begin{verbatim}
   ++x + y => rvalue(y) ~> ++x + HOLE => y ~> rvalue(HOLE) ~> ++x + HOLE 
 \end{verbatim}
-    After the variable \texttt{y} is evaluated to its lvalue (that is a
-    location) $\ell_y$, the expression \texttt{rvalue($\ell_y$)} is 
-    evaluated to \texttt{y} rvalue, i.e. the value stored in the location
-    $\ell_y$. The first argument \texttt{++y} is evaluated in the same way.
-
-    The same value, e.g. a location, could play both roles of lavalue and
+    After the variable \texttt{y} is evaluated to its lvalue and
     rvalue. Therefore we use a label \texttt{lval($v$)} saying that tha value
     $v$ plays the role of lvalue.
 
     We already defined the subset of values that is part of the syntax, 
-    namely the values given by the primitive types. Here we estend the set
+    namely the values given by the scalar types. Here we estend the set
     o values with intermediate constructs needed to execute programs. 
     Such a value is\texttt{noVal}, which "paradoxally" denotes in fact 
     "no value". The lambda abstractions are used for storing the
-    functions. Similar to other \K examples (IMP, IMPPP, SIMPLE), the 
+    functions. Similar to other \K examples (IMP, IMP++, SIMPLE), the 
     functions are stored similar to variables and therefore their definitions
     are seen as values.
    */
@@ -71,7 +66,7 @@ module CINK-BASIC-SEMANTICS
 
   syntax Val ::= lval(Loc)
 
-  //@ The empty expression is a value, as well:
+  //@ The empty expression is a value as well:
 
   rule isVal(.Exps) => true
 
@@ -82,25 +77,37 @@ module CINK-BASIC-SEMANTICS
   
   syntax Exp ::= "rvalue" "(" Exp ")" [context(result(ScalVal)), strict, klabel(rvalue)]
 
-  //@ When an lvalue is in an rvalue context, evaluate it
+  //@ When an lvalue is in an rvalue context, evaluate it:
   rule <k> rvalue(lval(L:Loc) => V) ...</k>
        <store>... L |-> V:ScalVal ...</store>
        [kripke(mem-lookup)]
 
-  /*@ Seqpoints
+  /*@ Seqpoints\\
 
-     In this iteration we define a minimal support for the sequent points.
-    The semantics of a sequence point (when a full-expression is sequenced):
-    the sequence of the side effects is moved from the its cell to the top of
-    the k cell. The side-effects are executed in the reverse order they were
-    evaluated.
+    The semantics of a sequence point consists of executing all the side effects
+    collected in the evaluation of the current expression. This is required,
+    e.g., by the complete evaluation of a full expression and the comma
+    operator.
+    So, the semantical statement "seqpoint" has the role to check that the all
+    side effects are executed, i.e. the cell \textsf{sideEffects} is empty.
   */
 
   syntax K ::= "seqpoint"
 
-  rule <k> seqpoint => SE ...</k>
-       <sideEffects> SE => . </sideEffects>
+  rule [seqpoint] :
+       <k> seqpoint => . ...</k>
+       <sideEffects> . </sideEffects>
+       [seqpoint]
 
+  /*@
+   Thwhe side effects can be also executed concurrently with the other
+   evaluation steps of the current expression:
+  */
+
+  rule [side-effect] :
+       <k> . => SE ...</k>
+       <sideEffects>...  <sideEffect> SE </sideEffect> => . ... </sideEffects>
+       [side-effect]
 
   /*@ \subsection{Auxiliary constructs.} */
 
@@ -112,7 +119,7 @@ module CINK-BASIC-SEMANTICS
   syntax K ::= "execute"
 
  /*@
-   The next two constructors are used for storing the enavironment and the
+   The next two constructors are used for storing the environment and the
    rest of the computation in the call stack (\texttt{fstack}). 
  */
 
@@ -127,18 +134,6 @@ module CINK-BASIC-SEMANTICS
    The following cells are used to give semantics for the basic constructs:
   */
 
-/*
-  configuration   <k color="green"> ($PGM:Pgm ~> execute) </k>
-                  <env color="LightSkyBlue"> .Map </env>
-                  <fstack color="orange"> .List </fstack>
-                  <return> .K </return>
-                  <br/>
-                  <genv color="SkyBlue"> .Map </genv>
-                  <store color="white"> .Map </store>
-                  <in color="magenta" stream="stdin"> .List </in>
-                  <out color="Orchid" stream="stdout"> .List </out>
-
-*/
   
   /*@
     \subsection{Desugaring}
@@ -177,20 +172,24 @@ module CINK-BASIC-SEMANTICS
   rule <k>  (Decl:Decl (Xl:Decls) {Sts:Stmts})::Stmt  => .  ...</k> 
        <env>... . =>  (getName(Decl) |-> L) ...</env>
        <store>... . => (L |-> lambda(Xl @ Sts)) ...</store>
-       when fresh(L:Loc)
+       requires fresh(L:Loc)
        [fun-decl, structural]
 
   /*@
     The rules for variable declarations for the fundamental types:\\
-    \Cpp manual (6.7):\\
+    \Cpp manual (6.7):
+    \begin{quote}
     The zero-initialization (8.5) of all block-scope variables with static 
     storage duration (3.7.1) or thread storage
     duration (3.7.2) is performed before any other initialization takes place.
-    \Cpp manual (8.5):\\
+    \end{quote}
+    \Cpp manual (8.5):
+    \begin{quote}
     To zero-initialize an object or reference of type T means:\\
-     — if T is a scalar type (3.9), the object is set to the value 0 (zero), 
+     - if T is a scalar type (3.9), the object is set to the value 0 (zero), 
     taken as an integral constant expression,
-    converted to T;\\
+    converted to T;
+    \end{quote}
     In this iteration the values and expressions are not typed 
     (this will be discussed latter), so the conversion cannot be realized.
    */
@@ -199,7 +198,7 @@ module CINK-BASIC-SEMANTICS
        <k> T:FundType X:Id; => .  ...</k>      
        <env> Env:Map => Env[L/X] </env>
        <store>... . => (L |-> 0) ...</store>
-  when fresh(L:Loc)
+  requires fresh(L:Loc)
        [structural]
 
 
@@ -235,9 +234,9 @@ module CINK-BASIC-SEMANTICS
 
   rule I1:Int * I2:Int => I1 *Int I2
 
-  rule I1:Int / I2:Int => I1 /Int I2 when I2 =/=Int 0
+  rule I1:Int / I2:Int => I1 /Int I2 requires I2 =/=Int 0
  
-  rule I1:Int % I2:Int => I1 %Int I2 when I2 =/=Int 0
+  rule I1:Int % I2:Int => I1 %Int I2 requires I2 =/=Int 0
 
   rule I1:Int < I2:Int => (I1 <Int I2)
 
@@ -288,29 +287,19 @@ module CINK-BASIC-SEMANTICS
 \begin{quote}
   The value of a postfix ++ expression is the value of its operand.
   [ Note: the value obtained is a copy of
-  the original value —end note ] The operand shall be a modifiable lvalue.
+  the original value -end note ] The operand shall be a modifiable lvalue.
   The type of the operand shall be an arithmetic type or a pointer to a
   complete object type. The value of the operand object is modified by
   adding 1 to it, unless the object is of type bool, in which case it is set
-  to true. [ Note: this use is deprecated, see Annex D. —end note ]
+  to true. [ Note: this use is deprecated, see Annex D. -end note ]
   The value computation of the ++ expression is sequenced before the
-  modification of the operand object. With respect to an 
-  indeterminately-sequenced function call, the operation of postfix
-  ++ is a single evaluation.
-  [ Note: Therefore, a function call shall not intervene between the
-  lvalue-to-rvalue conversion and the side effect associated with any single
-  postfix ++ operator. —end note ] The result is a prvalue.
+  modification of the operand object. \ldots The result is a prvalue.
 \end{quote}
   From the Appendix D: 
 \begin{quote}
   D.1 The use of an operand of type bool with the ++ operator is deprecated 
   (see 5.3.2 and 5.2.6)."
 \end{quote}
-  */
-
-  /*@
-   We add a new cell that collects the side-effects during the evaluation
-   of a full-expression:
   */
 
 
@@ -322,30 +311,42 @@ module CINK-BASIC-SEMANTICS
 
   
   /*@
-    The semantics of the postfix increment/decrement operator:
-    the result value is the 
+    We add a new cell that collects the side-effects during the evaluation
+    of a full-expression. 
+    Therefore the result value is the 
     value  stored at the computed location and its side-effect is added to 
     the cell with the side-effects:
   */
 
-  rule <k> lval(L:Loc) ++ => V ...</k>
+  rule [postinc]:
+       <k> lval(L:Loc) ++ => V ...</k>
        <store>... L |-> V:Int ...</store>
-       <sideEffects> . => $inc(L) ...</sideEffects>
+       <sideEffects> . => <sideEffect> $inc(L) </sideEffect>...</sideEffects>
 
 
-  rule <k> lval(L:Loc) -- => V ...</k>
+  rule [postdec]:
+       <k> lval(L:Loc) -- => V ...</k>
        <store>... L |-> V:Int ...</store>
-       <sideEffects> . => $dec(L) ...</sideEffects>
+       <sideEffects>... . =>  <sideEffect> $dec(L)  </sideEffect> ...</sideEffects>
 
   //@ The semantics of the side-effects (self-explained);
 
-  rule <k> $inc(L:Loc) => . ...</k>
+  rule [side-effect] :
+       <k> $inc(L:Loc) => . ...</k>
        <store>... L |-> (V:Int => V +Int 1) ...</store>
+       [side-effect(inc)]
 
 
-  rule <k> $dec(L:Loc) => . ...</k>
+  rule [side-effect] :
+       <k> $dec(L:Loc) => . ...</k>
        <store>... L |-> (V:Int => V -Int 1) ...</store>
- 
+       [side-effect(dec)]
+
+
+  rule [side-effect] :
+       <k> $update(L:Loc, V:Val) => . ...</k>
+       <store>... L |-> (_ => V) ...</store>
+       [side-effect(dec)]
 
   /*@ \subsection{Memmory operations.} */
 
@@ -365,24 +366,17 @@ module CINK-BASIC-SEMANTICS
 \begin{quote}
 The assignment operator (=) and the compound assignment operators all group
  right-to-left. All require a modifiable lvalue as their left operand and 
-return an lvalue referring to the left operand. The result in all
-cases is a bit-field if the left operand is a bit-field. In all cases,
+return an lvalue referring to the left operand. \ldots . In all cases,
  the assignment is sequenced after the value computation of the right and 
 left operands, and before the value computation of the assignment expression.
-With respect to an indeterminately-sequenced function call, the operation of
- a compound assignment is a single evaluation.\\
-{}[ Note: Therefore, a function call shall not intervene between the 
-lvalue-to-rvalue conversion and the side effect associated with any single 
-compound assignment operator. —end note ]
 \end{quote}
   */
 
-  syntax K ::= "update" "(" Loc "," Val ")"
+  syntax K ::=   "$update" "(" K "," K ")"
 
-  rule lval(L:Loc) = V:Val => seqpoint ~> update(L, V)
-
-  rule [update] : <k> update(L:Loc, V:Val)  => lval(L) ...</k>
+  rule [update] : <k> lval(L:Loc) = V:Val => lval(L) ...</k>
        <store>... L |-> (_ => V) ...</store>
+       <sideEffects>... . =>  <sideEffect> $update(L, V) </sideEffect> ...</sideEffects>
        [update, kripke]
 
 /*@  The comma operator. 
@@ -397,13 +391,12 @@ is sequenced before every value computation and side effect associated with
 the right expression. The type
 and value of the result are the type and value of the right operand; 
 the result is of the same value category
-as its right operand, and is a bit-field if its right operand is a glvalue and 
-a bit-field. If the value of the right
+as its right operand, \ldots. If the value of the right
 operand is a temporary (12.2), the result is that temporary.
 \end{quote}
 */
 
-  rule V:Val,E:Exp => E
+  rule V:Val,E:Exp => seqpoint ~> E
 
   /*@
 
@@ -428,9 +421,15 @@ operand is a temporary (12.2), the result is that temporary.
   /*@
     The semantics of the expression statement consists of removing the
     value obtained by evaluating the expression. Recall that the statement
-    is strict.
+    is strict.\\
+From the \Cpp manual:
+\begin{quote}
+Every value computation and side effect associated with a full-expression
+is sequenced before every value computation and side effect associated with 
+the next full-expression to be evaluated
+\end{quote}
    */
-  rule V:Val; => .
+  rule V:Val; => seqpoint
        [instr-expr]
 
   /*@
@@ -492,10 +491,7 @@ From the \Cpp manual:
 When a function is called, each parameter (8.3.5) shall be initialized 
 (8.5, 12.8, 12.1) with its corresponding
 argument. [ Note: Such initializations are indeterminately sequenced with 
-respect to each other (1.9) - end note ] \ldots\\  
-When a function is called, the parameters that have object 
-type shall have completely-defined
-object type. \ldots \\
+respect to each other (1.9) -end note ] \ldots\\  
 During the initialization of a parameter, an implementation may avoid the 
 construction of extra temporaries by
 combining the conversions on the associated argument and/or the construction
@@ -507,7 +503,7 @@ occurs within the context of the calling function.
 [ Note: a function can change the values of its non-const parameters, 
 but these changes cannot affect the
 values of the arguments except where a parameter is of a reference 
-type (8.3.2)\ldots
+type (8.3.2)\ldots -end note]
 \end{quote}
 */
 
@@ -522,9 +518,13 @@ type (8.3.2)\ldots
 
   rule <k> lambda(Xl:Decls @ Sts:Stmts)(El:Exp)
            =>
-           evaluate append(El,.Exps) to .Exps following Xl; ~>
+           evaluate append(El,.Exps) to .Exps following Xl; ~> seqpoint ~>
            lambda(Xl:Decls @ Sts:Stmts)(HOLE)
        ...</k> 
+
+  rule (evaluate .Exps to Vl following Xl;  ~> seqpoint)
+       =>
+       (seqpoint ~> evaluate .Exps to Vl following Xl;)
 
   rule <k> (evaluate .Exps to Vl following _; 
          ~> lambda(Xl:Decls @ Sts:Stmts)(HOLE) 
@@ -562,7 +562,7 @@ type (8.3.2)\ldots
     on position $\khole{}$ be evaluated as an lvalue.
     \par
     The following two rules, together with the strict evaluation strategy for
-    lists of expressions complete the semantics of $\terminalNoSpace{evaluate}$
+    the comma operator complete the semantics of $\terminalNoSpace{evaluate}$
     by recursing into the lists:
   */
 
@@ -591,7 +591,7 @@ type (8.3.2)\ldots
        ...</k>
        <env> Env:Map => Env[L/X] </env>
        <store>... . => L |-> V ...</store>
-  when fresh(L:Loc)
+  requires fresh(L:Loc)
        [structural]
 
 
@@ -604,28 +604,27 @@ type (8.3.2)\ldots
   rule bind .Exps to .Decls; => . [ structural ]
 
   /*@
-    \subsection{Function Return.}
-    Similar to \Cpp, the argument of a return statement is a list of
-    expressions (note that Cink does not have yet a distinguished
-    definition for the comma operator). 
+    \subsection{Function Return.} 
   */
 
+       
   /*@
-    Similar to the comma operator, the evaluation of the return argument
-    is given from left to right. Since the expression lists are strict,
-    we get this feature for free provided the declaration for return is
-    strict. Remains oly to write rules keeping the last value from the list.
+    The environment and the code are restored before returning back
+    to the calling code.
+    The side effects are sequenced before; this ensured by the fact the
+    cell \textsf{sideEffects} is empty.
   */
 
   rule <k> (return V:Val; ~> _) => (V ~> K) </k>
        <env> _ => Env </env>
        <fstack> ([Env:Map], K:K) => . ...</fstack>
+       <sideEffects> . </sideEffects>
        <return> _ => V </return>
        [return]
 
   /*@
     \subsection{Auxiliary Functions and Rules.}
-    Here we winclude the semantics for the auxiliary constructs, used to give
+    Here we include the semantics for the auxiliary constructs, used to give
     semnatics for \Cink.\\
   */
 
@@ -646,7 +645,7 @@ type (8.3.2)\ldots
   rule append((E:Exp, El:Exp), E') => E, append(El, E')
   rule append(.Exps, .Exps) => .Exps
   rule append(.Exps, E:Exp) => E,.Exps
-    when E =/=K .Exps
+    requires E =/=K .Exps
   rule append(E:Exp,E') => E, E' [owise]
 
 endmodule

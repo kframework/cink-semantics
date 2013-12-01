@@ -4,7 +4,7 @@ This example exhibits a non-deterministic behavior of a defined program.
 
  -- The compiling command
 
-     	kompile cink -transition kripke -superheat plus
+     	kompile cink -superheat plus
 
  -- The execution command 
 
@@ -20,5 +20,4 @@ int f(int x) {
 int main() {
   r = 5;
   return f(1) + f(2), r;
-//  cout << f(1) + f(2) << r << "\n";
 }

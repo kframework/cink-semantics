@@ -6,9 +6,6 @@ a=5, b=2, c=3, i=5
 a=5, b=2, c=3, i=5
 a=5, b=2, c=3, i=3
 <T>
-    <sideEffects>
-        .K
-    </sideEffects>
     <in>
         ListItem(#buffer ( "" ))
         ListItem(#istream ( 0 ))
@@ -27,6 +24,9 @@ a=5, b=2, c=3, i=3
         <fstack>
             .List
         </fstack>
+        <sideEffects>
+            .Bag
+        </sideEffects>
         <env>
             main |-> #symLoc(1)
         </env>

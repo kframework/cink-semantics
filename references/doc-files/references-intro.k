@@ -10,7 +10,7 @@ and the type of the identifier in the declaration T D1 is
 “derived-declarator-type-list T,” then the type of
 the identifier of D is “derived-declarator-type-list reference to T.” 
 The optional attribute-specifier-seq appertains
-to the reference type.\ldots\\
+to the reference type.\ldots\\ {}
 [ Note: A reference can be thought of as a name of an object. —end note ] \\
 A declarator that specifies the type “reference to cv void” is ill-formed.\\
 A reference type that is declared using \& is called an lvalue reference, 
@@ -27,7 +27,7 @@ extern specifier (7.1.1), is a class member (9.2) declaration within a
 class definition, or is the declaration of a parameter or a return 
 type (8.3.5); see 3.1. 
 A reference shall be initialized to refer to a valid object
-or function. \\{}
+or function. \\ {}
 [ Note: in particular, a null reference cannot exist in a 
 well-defined program, because the only way to create such a reference 
 would be to bind it to the “object” obtained by dereferencing a null pointer,

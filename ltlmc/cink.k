@@ -1,6 +1,8 @@
+require "../doc-files/preamble.k"
+require "../doc-files/intro.k"
+require "doc-files/ltlmc-intro.k"
+require "doc-files/imports-intro.k"
 require "builtins/model-checker.k"
-require "intro.k"
-require "imports-intro.k"
 require "../threads/cink-threads.k"
 
 require "cink-ltlmc.k"
@@ -28,6 +30,9 @@ module CINK
                       <k color="green"> ($PGM:Pgm ~> execute) </k>
                       <env color="LightSkyBlue"> .Map </env>
                       <fstack color="orange"> .List </fstack>
+                      <sideEffects>
+                        <sideEffect multiplicity="*"> .K </sideEffect>
+                      </sideEffects>
                       <return> .K </return>
                     </thread>
                   </threads>
@@ -36,7 +41,6 @@ module CINK
                   <br/>
                   <in color="magenta" stream="stdin"> .List </in>
                   <out color="Orchid" stream="stdout"> .List </out>
-                  <sideEffects> .K </sideEffects>
                 </T>
 
 endmodule

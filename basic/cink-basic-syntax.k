@@ -23,9 +23,10 @@ module CINK-BASIC-SYNTAX
   /*@
     We included in \Cink a small subset of operators from \Cpp language,
     the missing ones could being easily added in a similar way.
-    Recall that the most important (from
-    the semantic point of view) thing we have to mention for operators is the
-    attribute \texttt{strict}, that specifies the evaluation order of the 
+    A major feature of the \Cpp expression is that given by the relation
+    "sequenced before", which defines a partial order over the evaluation of the
+    subexpressions. This can be easily described in \K using the 
+    attribute \texttt{strict}, which specifies the evaluation order of the 
     operands. 
       \par
 
@@ -37,25 +38,26 @@ module CINK-BASIC-SYNTAX
     booleans, locations \ldots. Therefore the value of the strict
     attribute is a list of two sub-attributes: a \texttt{context} sub-attribute 
     having as value the label \texttt{rvalue} and a  a \texttt{result} 
-    sub-attribute having as value the result type of the arguments.
+    sub-attribute having as value the result type of the argument(s).
     This will be explained later in the module defining semantics, when we 
     define the values of the language.\\ 
     In contrast
     to the other examples, the function call expression is strict only in the
     first argument (the function name) because the evaluation of the arguments
     it is depending on the bindding mechanism of the corresponding argument: 
-    this can be call-by-value or call-by-reference. These two mechansims will
-    be explained later.
+    this can be call-by-value or call-by-reference. In this iteration we consider
+    only the former one, the latter will be implemented in a next iteration,
+    together with the references.
     \par
 
-    The constants of the builtin types are primitive constructs for expressions 
-    and therefore they are values.  
-    The sort \texttt{Val} for values will be extended in the module describing
-    the semantics.
-    The subsort \texttt{ScalVal} is for values of the scalar types.
+    The primitive constructs for expressions are the variable names, which are
+    identifiers, and the values modeled by the sort \texttt{Val}. 
+    A subset of values, modeled by the sort \texttt{ScalVal}, is given by 
+    the constants of the scalar types.
     \par
-    We prefer to declare \texttt{cin} and \texttt{cout} as values rather 
-    than identifiers; the reason for this decision will be explained later.
+    We prefer to declare the standard input/output streams \texttt{cin} and 
+    \texttt{cout} as being values; the reason for this decision will be 
+    explained later.
    */
 
 
@@ -68,34 +70,39 @@ module CINK-BASIC-SYNTAX
                | "(" Exp ")"  [bracket]
                | Exp "(" Exps ")" [strict(1(context(rvalue))), funcall]
                | "++" Exp [strict(all(result(Val))), prefinc]
-               | "--" Exp [strict(all(result(Val))), prefdec]
+               | "--" Exp [strict(all(result(Val))), latex(\texttt{--}\,{#1}), prefdec]
                | Exp "++" [strict(all(result(Val))), postinc]
-               | Exp "--" [strict(all(result(Val))), postdec]
+               | Exp "--" [strict(all(result(Val))), latex({#1}\,\texttt{--}), postdec]
 //               | "&" Exp [strict, ampersand]
                > left:
                  Exp "*" Exp [left, strict(all(context(rvalue))), multiply]
                | Exp "/" Exp [left, strict(all(context(rvalue))), divide]
-               | Exp "%" Exp [left, strict(all(context(rvalue))), latex({#1}\%{#2}), modulo] 
+               | Exp "%" Exp [left, strict(all(context(rvalue))),
+                                    latex({#1}\%{#2}), modulo] 
                >  left:
                  Exp "+" Exp [left, strict(all(context(rvalue))), plus]
                | Exp "-" Exp [left, strict(all(context(rvalue))), minus]
                > left:
-                 Exp "<" Exp  [left, strict(all(context(rvalue), result(ScalVal))), lessthan]
-               | Exp ">" Exp  [left, strict(all(context(rvalue), result(ScalVal))), greatthan]
+                 Exp "<" Exp  [left, strict(all(context(rvalue), result(ScalVal))),
+                                     lessthan]
+               | Exp ">" Exp  [left, strict(all(context(rvalue), result(ScalVal))),
+                                     greatthan]
                | Exp "<=" Exp [left, strict(all(context(rvalue), result(ScalVal))), 
                                      latex({#1}\leq{#2}), lessequal]
-               | Exp "==" Exp [left, equality, strict(all(context(rvalue), result(Val)))]
+               | Exp "==" Exp [left, strict(all(context(rvalue), result(Val))),
+                                     equality]
                >
                  "!" Exp [strict(all(context(rvalue), result(Bool))), negation] 
                > 
                  Exp "&&" Exp [left, strict(1(context(rvalue), result(Bool))), 
                                latex({#1}\mathrel{\&\&}{#2}), conjunction]
                > 
-                 Exp "||" Exp [left, strict(1(context(rvalue), result(Bool))), disjunction]
+                 Exp "||" Exp [left, strict(1(context(rvalue), result(Bool))),
+                                     disjunction]
                > left:
                  Exp "<<" Exp [left, strict(1, 2(context(rvalue))),
-                                     latex({#1}\mathrel{\tt <<}{#2}), write]
-               | Exp ">>" Exp [left, strict, latex({#1}\mathrel{\tt >>}{#2}), read]
+                                     latex({#1}\mathrel{\texttt{<<}}{#2}), write]
+               | Exp ">>" Exp [left, strict, latex({#1}\mathrel{\texttt{>>}}{#2}), read]
                > 
                  Exp "=" Exp [right, strict(1, 2(context(rvalue))), assign]
                >
@@ -147,7 +154,7 @@ module CINK-BASIC-SYNTAX
 \begin{quote}
 In contexts where comma is given a special meaning, 
 [ Example: in lists of arguments to functions (5.2.2)
-and lists of initializers (8.5) —end example ] the comma operator as described 
+and lists of initializers (8.5) -end example ] the comma operator as described 
 in Clause 5 can appear only in parentheses.
 \end{quote}  
   The main difference between the expression lists and comma expressions is given

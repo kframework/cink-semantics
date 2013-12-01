@@ -1,9 +1,6 @@
 x, y: 172
 43
 <T>
-    <sideEffects>
-        .K
-    </sideEffects>
     <in>
         ListItem(#buffer ( "" ))
         ListItem(#istream ( 0 ))
@@ -22,6 +19,9 @@ x, y: 172
         <fstack>
             .List
         </fstack>
+        <sideEffects>
+            .Bag
+        </sideEffects>
         <env>
             f |-> #symLoc(1)
             g |-> #symLoc(2)

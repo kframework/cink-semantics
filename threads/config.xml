@@ -4,8 +4,8 @@
 <tests>
   <test
       definition="cink.k"
-      programs="programs"
-      results="programs"
+      programs="programs/tests"
+      results="programs/tests"
       extension="cink"
       >
   </test>

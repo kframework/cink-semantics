@@ -3,9 +3,6 @@ x = 3
 y = 2
 z = 3
 <T>
-    <sideEffects>
-        .K
-    </sideEffects>
     <in>
         ListItem(#buffer ( "" ))
         ListItem(#istream ( 0 ))
@@ -24,6 +21,9 @@ z = 3
         <fstack>
             .List
         </fstack>
+        <sideEffects>
+            .Bag
+        </sideEffects>
         <env>
             main |-> #symLoc(1)
         </env>
