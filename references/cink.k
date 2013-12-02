@@ -1,7 +1,7 @@
 require "../doc-files/preamble.k"
 require "../doc-files/intro.k"
 require "doc-files/references-intro.k"
-//require "doc-files/imports-intro.k"
+require "doc-files/imports-intro.k"
 require "cink-references.k"
 
 

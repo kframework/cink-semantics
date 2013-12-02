@@ -1,5 +1,9 @@
 /*@
-\subsection{References}
+
+
+\section{References Iteration}
+
+This iteration extend the basic r iteration with references, declaration of aliases, and the call by reference mechanism.
 
 From \Cpp manual (8.3.2):
 \begin{quote}

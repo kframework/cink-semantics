@@ -156,7 +156,7 @@ module CINK-BASIC-SEMANTICS
     initialized.
   */
 
-   rule T:FundType E1:Exp = E2:Exp ; => T E1; E1 = E2;
+   rule T:FundType E1:Exp = E2:Exp ; => T E1; getName(E1) = E2;
         [macro]
 
 

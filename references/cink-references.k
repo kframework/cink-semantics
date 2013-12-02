@@ -19,6 +19,10 @@ module CINK-REFERENCES-SEMANTICS
   imports CINK-REFERENCES-SYNTAX
   imports CINK-BASIC-SEMANTICS
 
+  //@ Extension of the getName function:
+
+  rule getName(& E:Exp) => getName(E) 
+
   /*@ Reference type: */
 
   syntax RefType ::= "reference" "to" Type 
@@ -36,9 +40,9 @@ module CINK-REFERENCES-SEMANTICS
 
   /*@ Declaration of an alias */
 
-  context _:Exp of reference to _:Type; ~> &_ = HOLE;
+  context _ of reference to _:Type; ~> _ = HOLE;
 
-  rule <k> X:Id of reference to _:Type; ~> & X = lval(L:Loc); => . ...</k>
+  rule <k> X:Id of reference to _:Type; ~> X = lval(L:Loc); => . ...</k>
        <env> Env:Map => Env[L/X] </env>
 
   /*@ The type of "\& L" is "pointer to the type of L" (\Cpp manual, 5.3.1),

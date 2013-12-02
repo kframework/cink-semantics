@@ -19,6 +19,10 @@ module CINK-POINTERS-SEMANTICS
   imports CINK-POINTERS-SYNTAX
   imports CINK-REFERENCES-SEMANTICS
 
+  //@ Extension of the getName function:
+
+  rule getName(* E:Exp) => getName(E) 
+
   /*@ Pointer type: */
 
   syntax PtrType ::= "pointer" "to" Type 
@@ -45,8 +49,27 @@ module CINK-POINTERS-SEMANTICS
 
   /*@ The indirect operator */
 
-  rule <k>  * lval(L:Loc) => lval(L') ...</k> 
-       <store>... L |-> L':Loc ...</store>
+  //@ lvalue case
+
+  rule <k>  * lval(L:Loc) => lval(V) ...</k> 
+       <store>... L |-> V ...</store>
+
+  //@ rvalue case
+  rule <k>  * L:Loc => V ...</k> 
+       <store>... L |-> V ...</store>
+
+  /*@ 
+  Pointers as parameters:
+  */
+
+  context evaluate (HOLE, _:Exp) to _
+          following (T *_:Exp, _:Decls);
+
+  rule <k>
+          bind((lval(L:Loc), Vs) => Vs) to((T * E:Exp, Xl:Decls) => Xl); 
+       ...</k>
+       <env> Env:Map => Env[L/getName(E)] </env>
+       [structural]
 
 
 endmodule

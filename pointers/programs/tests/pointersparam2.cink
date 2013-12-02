@@ -1,0 +1,16 @@
+void swap(int **p, int **q) {
+  int a;
+  a = **p;
+  **p = **q;
+  **q = a;
+}
+
+int main() {
+  int a = 3, b= 4;
+  int *x = &a, *y = &b;
+  int *u = &x, *v = &y;
+  swap(u, v);
+  cout << a << " " << b << endl;
+  return 0;
+}
+
