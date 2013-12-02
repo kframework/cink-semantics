@@ -62,9 +62,9 @@ module CINK-ARRAYS-SEMANTICS
   syntax Stmt ::= Exp "of" ArrType ";"
 
   /*@
-  The arrays are locations storing locations:
+  The arrays are expressions
   */
-  syntax Loc ::= Array
+  syntax Exp ::= Array
 
 
   /*@
@@ -148,11 +148,9 @@ module CINK-ARRAYS-SEMANTICS
   /*@
   The evaluation of an array component as an lvalue:
   */
-  rule A:Array [I:Int] => A + I
+  rule A:Array [I:Int] => A + I  // for conformance
 
   rule A:Array + I:Int => select(A, I) 
-
-//  context _:Exp[(HOLE => rvalue(HOLE)] = _ [result(ScalVal)]
 
 
   /*@ 
@@ -166,7 +164,7 @@ module CINK-ARRAYS-SEMANTICS
           following (T _:Exp[], _:Decls);
 
   rule <k>
-          bind((L:Loc, Vs) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
+          bind((lval(L:Loc), Vs) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[L/X] </env>
        [structural]

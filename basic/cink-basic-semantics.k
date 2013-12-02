@@ -554,7 +554,7 @@ type (8.3.2)\ldots -end note]
     specified by the following contextual declaration:
   */
 
-  context evaluate ((HOLE => rvalue(HOLE)), _:Exp) to _ following (T X:Id, _:Decls);
+  context evaluate ((HOLE => rvalue(HOLE)), _:Exp) to _ following (T X:Id, _:Decls); [result(ScalVal)]
 
   /*@
     \noindent This second context uses again the special type of context used
