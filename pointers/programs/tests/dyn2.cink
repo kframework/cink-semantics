@@ -1,0 +1,12 @@
+int* f() {
+  int *p = new int;
+  *p = 10;
+  return p;
+}
+
+int main() {
+  int *a = f();
+  cout << *a << endl;
+  delete a;
+  return 0;
+} 

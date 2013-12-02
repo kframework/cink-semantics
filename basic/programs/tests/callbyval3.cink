@@ -1,0 +1,10 @@
+int f(int x, int y) {
+  if (x < y) return x * 2;
+  return x * 3;
+}
+
+int main() {
+  cout << f(5, 4);
+  return 0;
+}
+

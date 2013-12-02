@@ -8,6 +8,7 @@ require "cink-arrays.k"
 module CINK-SYNTAX 
 
   imports CINK-BASIC-SYNTAX
+  imports CINK-POINTERS-SYNTAX
   imports CINK-ARRAYS-SYNTAX
 
 endmodule

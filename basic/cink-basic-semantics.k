@@ -244,6 +244,8 @@ module CINK-BASIC-SEMANTICS
 
   rule I1:Int <= I2:Int => (I1 <=Int I2)
 
+  rule I1:Int != I2:Int => (I1 =/=Int I2)
+
   rule I1:Int == I2:Int => (I1 ==Int I2)
  
   rule true && B:Exp => B
@@ -320,13 +322,13 @@ module CINK-BASIC-SEMANTICS
 
   rule [postinc]:
        <k> lval(L:Loc) ++ => V ...</k>
-       <store>... L |-> V:Int ...</store>
+       <store>... L |-> V:Val ...</store>
        <sideEffects> . => <sideEffect> $inc(L) </sideEffect>...</sideEffects>
 
 
   rule [postdec]:
        <k> lval(L:Loc) -- => V ...</k>
-       <store>... L |-> V:Int ...</store>
+       <store>... L |-> V:Val ...</store>
        <sideEffects>... . =>  <sideEffect> $dec(L)  </sideEffect> ...</sideEffects>
 
   //@ The semantics of the side-effects (self-explained);
@@ -546,7 +548,7 @@ type (8.3.2)\ldots -end note]
     the list of formal parameters.
   */
 
-  syntax K ::= "evaluate" K "to" K "following" Decls ";"
+  syntax K ::= "evaluate" K "to" K "following" Decls ";" [evaluate]
 
   /*@
     For a formal parameter declared with the call-by-value mechanism,

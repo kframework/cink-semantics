@@ -1,0 +1,42 @@
+10
+<T>
+    <in>
+        ListItem(#buffer ( "" ))
+        ListItem(#istream ( 0 ))
+    </in>
+    <out>
+        ListItem(#ostream ( 1 ))
+        ListItem(#buffer ( "" ))
+    </out>
+    <control>
+        <k>
+            .K
+        </k>
+        <return>
+            0
+        </return>
+        <fstack>
+            .List
+        </fstack>
+        <sideEffects>
+            .Bag
+        </sideEffects>
+        <env>
+            f |-> #symLoc(1)
+            main |-> #symLoc(2)
+        </env>
+    </control>
+    <genv>
+        f |-> #symLoc(1)
+        main |-> #symLoc(2)
+    </genv>
+    <store>
+        #symLoc(1) |-> lambda ( .Decls @ ((((p of (pointer to int) ;) ((p 
+          = (new int)) ;)) (((* p) = 10) ;)) (return p ;)) )
+        #symLoc(2) |-> lambda ( .Decls @ (((((a of (pointer to int) ;) ((a = (
+          f ( '.Exps(.KList) ))) ;)) (((cout << (* a)) << endl) ;)) ((delete a
+          ) ;)) (return 0 ;)) )
+        #symLoc(4) |-> #symLoc(5)
+        #symLoc(5) |-> 10
+    </store>
+</T>

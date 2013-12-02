@@ -1,0 +1,11 @@
+int main() {
+  int *p = new int;
+  bool *q;
+  q = new bool;
+  *q = true;
+  if (*q) *p = 7;
+  cout << *p << endl;
+  delete p;
+  delete q;
+}
+

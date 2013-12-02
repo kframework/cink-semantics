@@ -12,6 +12,18 @@ module CINK-POINTERS-SYNTAX
 
   syntax priorities  indirect  > assign read write greatthan lessequal
 
+  //@Extend syntax wit type specifiers needed for the new operator
+
+  syntax TypeSpec ::= FundType
+                    | TypeSpec "*"
+
+  //@ The new operator
+
+  syntax Exp ::= "new" TypeSpec [new]
+               | "delete" Exp [strict, delete]
+
+  syntax priorities  new  > assign read write greatthan lessequal
+
 endmodule
 
 module CINK-POINTERS-SEMANTICS
@@ -71,5 +83,18 @@ module CINK-POINTERS-SEMANTICS
        <env> Env:Map => Env[L/getName(E)] </env>
        [structural]
 
+  //@ We consider a simplified form of the new operator:
+
+  rule <k> new T:FundType => L ...</k>
+       <store>... . => (L:Loc |->  0) ...</store>
+       when fresh(L) 
+
+  rule <k> new T:FundType *  => L ...</k>
+       <store>... . => (L:Loc |->  0) ...</store>
+       when fresh(L) 
+
+  //@ The same for delete:
+  rule <k> delete lval(L) => noVal ...</k>
+       <store>... (L |->  _) => . ...</store>
 
 endmodule

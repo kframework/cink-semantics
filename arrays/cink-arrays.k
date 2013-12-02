@@ -14,6 +14,10 @@ of arrays:
   syntax priorities  array > multiply read write greatthan lessequal
   syntax priority  array > assign
 
+  //@ Extend TypeSpec with arrays
+
+  syntax TypeSpec ::= TypeSpec "[" Exp "]" 
+
 endmodule
 
 module CINK-ARRAYS-SEMANTICS
@@ -86,6 +90,45 @@ that of arrays and the definition of the whole configuration:
   Since the definition of the multidimensional array is recursive, the 
   allocation is described by a recursive function:
   */
+
+  /*@
+  Extension of the locations with "array locations".
+  The arrays can be converted to pointers:
+  From the \Cpp manual:
+  \begin{quote}
+  An lvalue or rvalue of type “array of N T” or “array of unknown bound of T”
+  can be converted to a prvalue of type “pointer to T”. 
+  The result is a pointer to the first element of the array.
+  \end{quote}
+  Therefore the pointer arithmetic is extended over array locations.
+  */
+
+  syntax Loc ::= Loc "[" Int "]"
+
+  rule lval(L:Loc)[I:Int] => lval(L[I])
+
+  rule L:Loc[I:Int] + J:Int => L[I +Int J]
+
+  rule L:Loc[I:Int] <= L:Loc[J:Int] => I <=Int J
+
+  rule L:Loc[I:Int] < L:Loc[J:Int] => I <Int J
+
+  rule L:Loc[I:Int] > L:Loc[J:Int] => I >Int J
+
+  rule <k> ++ lval(L:Loc) => lval(L) ...</k>
+       <store>... L |-> (L:Loc[I => I +Int 1]) ...</store>
+
+  rule [side-effect] :
+       <k> $inc(L:Loc) => . ...</k>
+       <store>... L |-> (L':Loc[I:Int] => L'[I +Int 1]) ...</store>
+       [side-effect(inc)]
+
+
+  rule [side-effect] :
+       <k> $dec(L:Loc) => . ...</k>
+       <store>... L |-> (L':Loc[I:Int] => L'[I -Int 1]) ...</store>
+       [side-effect(dec)]
+
   syntax K ::= "alloc" "(" Stmt "," Int ")" 
 
   /*@
@@ -102,22 +145,6 @@ that of arrays and the definition of the whole configuration:
   /*@
   The recursive case, when $X$ denotes a $N$-dimensional array with $N\ge 2$:
   */
-  syntax Loc ::= Loc "[" Int "]"
-
-  rule lval(L:Loc)[I:Int] => lval(L[I])
-
-  rule L:Loc[I:Int] + J:Int => L[I +Int J]
-
-  rule [side-effect] :
-       <k> $inc(L:Loc) => . ...</k>
-       <store>... L |-> (L':Loc[I:Int] => L'[I +Int 1]) ...</store>
-       [side-effect(inc)]
-
-
-  rule [side-effect] :
-       <k> $dec(L:Loc) => . ...</k>
-       <store>... L |-> (L':Loc[I:Int] => L'[I -Int 1]) ...</store>
-       [side-effect(dec)]
 
   rule <k> alloc(X:Exp of array of N:Int array of N':Int T:Type;, I:Int)
            =>
@@ -179,13 +206,13 @@ that of arrays and the definition of the whole configuration:
   */
 
   context evaluate (HOLE, _:Exp) to _
-          following (T _:Exp[], _:Decls);
+          following (T _:Exp[], _:Decls); [result(Val)]
 
   context evaluate (HOLE, _:Exp) to _
           following (T _:Exp[_:Exp], _:Decls);
 
   rule <k>
-          bind((lval(L:Loc), Vs) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
+       bind((lval(L:Loc), Vs) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[L/X] </env>
        [structural]

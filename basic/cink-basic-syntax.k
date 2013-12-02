@@ -89,6 +89,8 @@ module CINK-BASIC-SYNTAX
                                      greatthan]
                | Exp "<=" Exp [left, strict(all(context(rvalue), result(ScalVal))), 
                                      latex({#1}\leq{#2}), lessequal]
+               | Exp "!=" Exp [left, strict(all(context(rvalue), result(ScalVal))), 
+                                     latex({#1}\leq{#2}), notequal]
                | Exp "==" Exp [left, strict(all(context(rvalue), result(Val))),
                                      equality]
                >
