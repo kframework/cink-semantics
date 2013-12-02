@@ -1,0 +1,39 @@
+x = false
+<T>
+    <in>
+        ListItem(#buffer ( "" ))
+        ListItem(#istream ( 0 ))
+    </in>
+    <out>
+        ListItem(#ostream ( 1 ))
+        ListItem(#buffer ( "" ))
+    </out>
+    <control>
+        <k>
+            .K
+        </k>
+        <return>
+            0
+        </return>
+        <fstack>
+            .List
+        </fstack>
+        <sideEffects>
+            .Bag
+        </sideEffects>
+        <env>
+            main |-> #symLoc(1)
+        </env>
+    </control>
+    <genv>
+        main |-> #symLoc(1)
+    </genv>
+    <store>
+        #symLoc(1) |-> lambda ( .Decls @ (((((((((bool b) ;) ((int x) ;)) 
+          ((cout << "x = ") ;)) ((cin >> x) ;)) ((b = (x > 5)) ;)) (if ( b ) (
+          (cout << "true") ;) else ((cout << "false") ;))) ((cout << endl) ;))
+           (return 0 ;)) )
+        #symLoc(2) |-> false
+        #symLoc(3) |-> 3
+    </store>
+</T>

@@ -1,0 +1,10 @@
+int main() {
+  bool b;
+  int x;
+  cout << "x = "; 
+  cin >> x;
+  b = x > 5;
+  if (b) cout << "true"; else cout << "false";
+  cout << endl;
+  return 0;
+}

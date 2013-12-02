@@ -1,0 +1,42 @@
+7
+<T>
+    <in>
+        ListItem(#buffer ( "" ))
+        ListItem(#istream ( 0 ))
+    </in>
+    <out>
+        ListItem(#ostream ( 1 ))
+        ListItem(#buffer ( "" ))
+    </out>
+    <control>
+        <k>
+            .K
+        </k>
+        <return>
+            noVal
+        </return>
+        <fstack>
+            .List
+        </fstack>
+        <sideEffects>
+            .Bag
+        </sideEffects>
+        <env>
+            f |-> #symLoc(1)
+            main |-> #symLoc(2)
+        </env>
+    </control>
+    <genv>
+        f |-> #symLoc(1)
+        main |-> #symLoc(2)
+    </genv>
+    <store>
+        #symLoc(1) |-> lambda ( (int x) @ ((((int y) ;) ((y = 2) ;)) (
+          return ((x * y) + 1) ;)) )
+        #symLoc(2) |-> lambda ( .Decls @ ((((int a) ;) ((a = (f ( 3 ))) ;)) ((
+          (cout << a) << endl) ;)) )
+        #symLoc(3) |-> 7
+        #symLoc(4) |-> 3
+        #symLoc(5) |-> 2
+    </store>
+</T>

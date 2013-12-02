@@ -1,0 +1,40 @@
+15<T>
+    <in>
+        ListItem(#buffer ( "" ))
+        ListItem(#istream ( 0 ))
+    </in>
+    <out>
+        ListItem(#ostream ( 1 ))
+        ListItem(#buffer ( "" ))
+    </out>
+    <control>
+        <k>
+            .K
+        </k>
+        <return>
+            0
+        </return>
+        <fstack>
+            .List
+        </fstack>
+        <sideEffects>
+            .Bag
+        </sideEffects>
+        <env>
+            f |-> #symLoc(1)
+            main |-> #symLoc(2)
+        </env>
+    </control>
+    <genv>
+        f |-> #symLoc(1)
+        main |-> #symLoc(2)
+    </genv>
+    <store>
+        #symLoc(1) |-> lambda ( ((int x), (bool b)) @ ((if ( b ) (return (
+          x * 2) ;) else { }) (return (x * 3) ;)) )
+        #symLoc(2) |-> lambda ( .Decls @ (((cout << (f ( (5 , false) ))) ;) (
+          return 0 ;)) )
+        #symLoc(3) |-> 5
+        #symLoc(4) |-> false
+    </store>
+</T>

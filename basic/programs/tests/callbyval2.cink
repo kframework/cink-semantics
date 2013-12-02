@@ -1,0 +1,10 @@
+int f(int x, bool b) {
+  if (b) return x * 2;
+  return x * 3;
+}
+
+int main() {
+  cout << f(5, false);
+  return 0;
+}
+

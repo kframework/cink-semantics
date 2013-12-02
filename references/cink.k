@@ -18,6 +18,7 @@ module CINK
                       <k color="green"> ($PGM:Pgm ~> execute) </k>
                       <env color="LightSkyBlue"> .Map </env>
                       <fstack color="orange"> .List </fstack>
+                      <br/>
                       <return> .K </return>
                       <sideEffects>
                         <sideEffect multiplicity="*"> .K </sideEffect>

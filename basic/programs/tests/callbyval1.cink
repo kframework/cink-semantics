@@ -1,0 +1,14 @@
+int f(int x) {
+  int y = 2;
+  return x*y + 1;
+}
+
+int main() {
+  int a = f(3);
+  cout << a  << endl;
+}
+
+
+
+
+ 
