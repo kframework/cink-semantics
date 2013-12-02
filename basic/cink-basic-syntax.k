@@ -10,7 +10,7 @@ module CINK-BASIC-SYNTAX
   syntax Type ::= FundType
 
   /*@ \subsection{Declarations}
-    The declarations are used to introduce names for variables and function names
+    Declarations are used to introduce names for variables and function names
     together with their return types.
   */
 
@@ -23,10 +23,11 @@ module CINK-BASIC-SYNTAX
   /*@
     We included in \Cink a small subset of operators from \Cpp language,
     the missing ones could being easily added in a similar way.
-    A major feature of the \Cpp expression is that given by the relation
-    "sequenced before", which defines a partial order over the evaluation of the
-    subexpressions. This can be easily described in \K using the 
-    attribute \texttt{strict}, which specifies the evaluation order of the 
+
+    A major feature of the \Cpp expressions is that given by the relation
+    "sequenced before", which defines a partial order over the evaluation of 
+    subexpressions. This can be easily expressed in \K using the 
+    \texttt{strict} attribute to specify the evaluation order for the 
     operands. 
       \par
 
