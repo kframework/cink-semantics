@@ -3,8 +3,8 @@
 /*@ \section{Introduction}
 
 \Cink is a kernel of the \Cpp language we used to experiment with \K.
-The language is used an example for teaching classes and is refered in several 
-research papers.
+The language is used as an working example for teaching classes and 
+is refered in several research papers.
 
 We assume the reader is already familiar with the \K Framework and the 
 \KTool; we here share our experiece in defining a languages with some
@@ -20,7 +20,8 @@ contribution.
 \section{C++ Concepts}
 
 In this section we briefly present some \Cpp concepts that are essential in
-defining the semantics of \Cink.
+defining the semantics of \Cink. Some of them are quite challenging for the 
+formal semantics.
 
 \subsection{Memory Model}
 
@@ -45,7 +46,10 @@ Two or more threads of execution (1.10) can update and access separate memory
 locations without interfering with each other.
 \end{quote}
 
-
+Our formal semantics uses a more abstract memory model consisting of symbolic 
+cells, each location being either a scalar, or a function definition, or an 
+object, \ldots. The memory locations are defined in the basic iteration and 
+then extended in the iteration defining arrays.
 
 \subsection{Object Model}
 
@@ -81,6 +85,9 @@ determined as follows:
 (unique) object that contains x.
 \end{itemize}
 \end{quote}
+
+The objects will be defined in the iteration specifying the semantics of 
+the classes.
 
 \subsection{Sequenced before}
 
@@ -124,6 +131,10 @@ determined as follows:
   same scalar object or a value computation using the value of the same scalar
   object, the behavior is undefined.
 \end{quote}
+
+Sources for the side effects in C++ are are the assignment operators, postfix 
+increment and decrement operators. Sequenced before is eesential in defining
+the behavior of programs.
 
 
 \subsection{Types}
@@ -206,11 +217,14 @@ given type within objects of a given class, 8.3.3.
 \end{itemize}
 \end{quote}
 
+In \Cink we consider only a part of the above types, but we try to keep
+the taxonomy and terminology.
+
+
 
 \subsection{Lvalues and Rvalues}
 
-      In \Cpp the expressions are splitted in several categories:
-
+In \Cpp the expressions are splitted in several categories:
 
 \begin{tikzpicture}[node distance=-1.5cm, auto]
 
@@ -261,9 +275,10 @@ right-hand side of an assignment expression) is an xvalue, a temporary object
 reference is a prvalue. The value of a literal such as 12, 7.3e5, or true is
 also a prvalue. --end example ]
 \end{quote}
-      In order to keep the definition as simple as possible, we consider only two
-      of these categories: \emph{lvalues} and \emph{rvalues}. This classification
-      of expressions is essential in defining their semantics since the evaluation
-      of an lvalue expression is different from a rvalue one.
+
+In order to keep the definition as simple as possible, we consider only two
+of these categories: \emph{lvalues} and \emph{rvalues}. This classification
+of expressions is essential in defining their semantics since the evaluation
+of an lvalue expression is different from a rvalue one.
 
 */

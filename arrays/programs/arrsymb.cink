@@ -15,7 +15,7 @@ The tool finds no solution ("error" is never printed).
 */
 
 
-void init(int a[], int n, int x, int j) {
+void init(int n, int x, int j, int a[]) {
      int i = 0;
      a[j] = x;
      while (a[i] != x && i < n) {
@@ -37,7 +37,7 @@ void main() {
        cin >> a[i];
        i = i + 1;
      }
-     init(a, n, x, j);     
+     init(n, x, j, a);     
 }
 
 

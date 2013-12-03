@@ -28,28 +28,36 @@ module CINK-BASIC-SYNTAX
     "sequenced before", which defines a partial order over the evaluation of 
     subexpressions. This can be easily expressed in \K using the 
     \texttt{strict} attribute to specify the evaluation order for the 
-    operands. 
-      \par
-
-    The binary 
-    operators are strict in both arguments, hence the behavior of some 
+    operands. Id the operands of an operator are unsequenced, then the 
+    operator will have the attribute \texttt{strict}, meaning that they are
+    evaluated in strict nondeterministic order. If an operand $A$ is sequenced
+    before $B$ then the eavluation order is expressed as argument of the 
+    \texttt{strict} attribute.
+    For instance, since the operands of the binary operators are unsequenced, 
+    these operators are strict in both arguments. Hence the behavior of some 
     programs could be undefined or non-determinsitic because the evaluation
-    of the arguments could have side-effects. The arguments of a binary
-    operator are evaluated as rvalues and their result values could be integers,
-    booleans, locations \ldots. Therefore the value of the strict
-    attribute is a list of two sub-attributes: a \texttt{context} sub-attribute 
+    of the arguments could have side-effects. 
+
+    The second major feature is given by the classification of the expression
+    in rvalues and lvalues. For instance, the arguments of a binary
+    operator are evaluated as rvalues and their result is a rvalues, too,
+    whilst the argument of the prefix increment/decrement and their result are 
+    lvalues. Therefore the value of the strict attribute for such operators
+    is a list of two sub-attributes: a \texttt{context} sub-attribute 
     having as value the label \texttt{rvalue} and a  a \texttt{result} 
     sub-attribute having as value the result type of the argument(s).
+    The expression are considered lvalues by default.
     This will be explained later in the module defining semantics, when we 
-    define the values of the language.\\ 
+    define the values of the language.
+
     In contrast
     to the other examples, the function call expression is strict only in the
     first argument (the function name) because the evaluation of the arguments
     it is depending on the bindding mechanism of the corresponding argument: 
-    this can be call-by-value or call-by-reference. In this iteration we consider
+    this can be call-by-value or call-by-reference.
+    In this iteration we consider
     only the former one, the latter will be implemented in a next iteration,
     together with the references.
-    \par
 
     The primitive constructs for expressions are the variable names, which are
     identifiers, and the values modeled by the sort \texttt{Val}. 
@@ -113,9 +121,11 @@ module CINK-BASIC-SYNTAX
                > Exp "," Exp [right, strict(1), comma]
 
   /*@ \subsection{Statements}
-    For now, we include in CinK only (a subset) of the imperative statements:
+    For now, we include in CinK only a subset of the imperative statements:
     expresion statement, bloc, sequential composition, while, and conditionals.
-   */
+    Other imperative statements, like \texttt{for} or \texttt{do-until} are easy
+    to define and we let them as exercises.
+  */
 
 
   syntax Stmt ::= 
