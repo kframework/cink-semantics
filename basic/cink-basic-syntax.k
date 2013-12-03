@@ -100,7 +100,7 @@ module CINK-BASIC-SYNTAX
                                      latex({#1}\leq{#2}), lessequal]
                | Exp "!=" Exp [left, strict(all(context(rvalue), result(ScalVal))), 
                                      latex({#1}\leq{#2}), notequal]
-               | Exp "==" Exp [left, strict(all(context(rvalue), result(Val))),
+               | Exp "==" Exp [left, strict(all(context(rvalue), result(ScalVal))),
                                      equality]
                >
                  "!" Exp [strict(all(context(rvalue), result(Bool))), negation] 

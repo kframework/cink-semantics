@@ -2,6 +2,10 @@ require "../doc-files/preamble.k"
 require "../doc-files/intro.k"
 require "doc-files/references-intro.k"
 require "doc-files/imports-intro.k"
+require "../basic/cink-basic-syntax.k"
+require "../basic/cink-basic-semantics.k"
+require "doc-files/new-intro.k"
+
 require "cink-references.k"
 
 

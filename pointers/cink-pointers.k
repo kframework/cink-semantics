@@ -1,28 +1,29 @@
-//require "../basic/cink-basic-syntax.k"
-//require "../basic/cink-basic-semantics.k"
 require "../references/cink-references.k"
-
-/*@ \section{The New Modules} */
 
 module CINK-POINTERS-SYNTAX
 
   imports CINK-REFERENCES-SYNTAX
 
+  /*@
+  The only operand of the indirect operator is an rvalue.
+  */
+
   syntax Exp ::= "*" Exp [strict(all(context(rvalue), result(Val))), indirect]
 
-  syntax priorities  indirect  > assign read write greatthan lessequal
+  syntax priorities  indirect  > assign read write greatthan lessequal equality plus multiply
 
-  //@Extend syntax wit type specifiers needed for the new operator
+  //@Extend syntax wit type specifiers needed for the new operator:
 
   syntax TypeSpec ::= FundType
                     | TypeSpec "*"
 
-  //@ The new operator
+  //@ The new and delete operators:
 
   syntax Exp ::= "new" TypeSpec [new]
                | "delete" Exp [strict, delete]
 
   syntax priorities  new  > assign read write greatthan lessequal
+  syntax priorities  delete  > assign read write greatthan lessequal
 
 endmodule
 
@@ -41,17 +42,17 @@ module CINK-POINTERS-SEMANTICS
 
   syntax Type ::= PtrType
 
-  /*@ Extend the declarations with "pointer to type" type */
+  /*@ Extend the declarations with "pointer to type" type: */
 
   syntax Stmt ::= Exp "of" PtrType ";"
 
 
-  /*@ Desugaring the type of a declaration */
+  /*@ Desugaring the type of a declaration: */
   rule T:Type * X:Exp; => X of pointer to T; [macro]
 
   rule *X:Exp of PT:PtrType; => X of pointer to PT; [macro]
 
-  /*@ Declaration of a pointer variable */
+  /*@ Declaration of a pointer variable: */
   rule <k> X:Id of T:PtrType; => .  ...</k>      
        <env> Env:Map => Env[L/X] </env>
        <store>... . => (L |-> 0) ...</store>
@@ -61,12 +62,12 @@ module CINK-POINTERS-SEMANTICS
 
   /*@ The indirect operator */
 
-  //@ lvalue case
+  //@ -- lvalue case:
 
   rule <k>  * lval(L:Loc) => lval(V) ...</k> 
        <store>... L |-> V ...</store>
 
-  //@ rvalue case
+  //@ -- rvalue case:
   rule <k>  * L:Loc => V ...</k> 
        <store>... L |-> V ...</store>
 

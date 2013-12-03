@@ -2,6 +2,8 @@ require "../doc-files/preamble.k"
 require "../doc-files/intro.k"
 require "doc-files/pointers-intro.k"
 require "doc-files/imports-intro.k"
+require "../references/cink-references.k"
+require "doc-files/new-intro.k"
 require "cink-pointers.k"
 
 
@@ -18,6 +20,7 @@ module CINK
                       <k color="green"> ($PGM:Pgm ~> execute) </k>
                       <env color="LightSkyBlue"> .Map </env>
                       <fstack color="orange"> .List </fstack>
+                      <br/>
                       <return> .K </return>
                       <sideEffects>
                         <sideEffect multiplicity="*"> .K </sideEffect>

@@ -1,0 +1,23 @@
+/*
+  For symbolic execution of the program:
+    -- kompile cink --backend symbolic
+    -- krun programs/swap.cink -cIN="ListItem(#symInt(x)) ListItem(#symInt(y))" -cPC="true"
+    or
+    -- krun programs/swap.cink -cIN="ListItem(#symInt(x)) ListItem(#symInt(y))" -cPC="true" --search 
+*/
+
+void swap(int &a, int &b) {
+  int t;
+  t = a;
+  a = b;
+  b = t;
+}
+
+int main () {
+  int x, y;
+  cin >> x >> y;
+  if (x < y) swap(x,y);
+  if (x < y) cout << "false" << endl;
+  else cout << "true" <<endl;
+  return 0;
+}
