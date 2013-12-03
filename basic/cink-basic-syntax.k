@@ -110,7 +110,7 @@ module CINK-BASIC-SYNTAX
                  Exp "=" Exp [right, strict(1, 2(context(rvalue))), assign]
                >
                  "endl"
-               > Exp "," Exp [left, strict(1), comma]
+               > Exp "," Exp [right, strict(1), comma]
 
   /*@ \subsection{Statements}
     For now, we include in CinK only (a subset) of the imperative statements:
