@@ -2,19 +2,24 @@
 kompile:
   kompile cink.k --backend symbolic
 
-scenario1:
+scenario 1:
   krun programs/sumn.cink -cIN="ListItem(10)" -cPC="true"
 
   The location for the sum in the final configuration should store 55.
-scenario2:
+scenario 2:
   krun programs/sumn.cink -cIN="ListItem(#symInt(n))" -cPC="true"
 
   The program chose (arbitrarly) the execution path for  n < 0. 
 
-scenario3:
+scenario 3:
   krun programs/sumn.cink -cIN="ListItem(#symInt(n))" -cPC="true" --search --bound 3
 
   The three solutions will correspond to n < 0, n= 0, and n = 1.
+
+scenario 4:
+  krun programs/sumn.cink -cIN="ListItem(#symInt(n))" -cPC="#symInt(n) <Int 3" --search
+
+  The four solutions will correspond to n < 0, n= 0, n = 1, and n = 2.
 */
 int main() {
   int n, i, sum;
@@ -27,3 +32,4 @@ int main() {
   }
   return sum;
 }
+

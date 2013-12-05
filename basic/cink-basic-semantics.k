@@ -268,7 +268,19 @@ module CINK-BASIC-SEMANTICS
 \end{quote}
   */
 
-  //@ The semantics of the the prefix increment
+  /*@ The semantics of the the prefix increment. Fron the \Cpp manual:
+\begin{quote}
+The operand of prefix ++ is modified by adding 1, or set to true if it is 
+bool (this use is deprecated). The operand shall be a modifiable lvalue. 
+The type of the operand shall be an arithmetic type or a pointer to
+a completely-defined object type. The result is the updated operand; 
+it is an lvalue, and it is a bit-field if
+the operand is a bit-field. If x is not of type bool, the expression ++x is 
+equivalent to x+=1 
+[ Note: See the discussions of addition (5.7) and assignment operators (5.17) 
+for information on conversions.]
+\end{quote}
+  */
 
   rule <k> ++ lval(L:Loc) => lval(L) ...</k>
        <store>... L |-> (V:Int => V +Int 1) ...</store>

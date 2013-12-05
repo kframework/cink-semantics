@@ -33,8 +33,62 @@ that of arrays and the definition of the whole configuration:
   imports ARRAY
 
   /*@
-  First we define array types following the the notation convention from
-  the manual. 
+
+   The memory model defined for unidimensional arrays can be extended to 
+   multidimensional arrays.
+   An $2\times 3$ array $\{\{2, 4, 6\}, \{3, 5, 7\}\}$ is represented as:
+   \begin{verbatim}
+      L |-> store(store(const-array(2,0), L[0]), L[1])
+      L[0] |-> store(store(store(const-array(3,0), L[0][0]), L[0][1]), L[0][2])
+      L[1] |-> store(store(store(const-array(3,0), L[1][0]), L[1][1]), L[1][2])
+      L[0][0] |-> 2
+      L[0][1] |-> 4
+      L[0][2] |-> 6
+      L[0][0] |-> 3
+      L[0][1] |-> 5
+      L[0][2] |-> 7
+   \end{verbatim}
+  The arrays can be converted to pointers.
+  From the \Cpp manual:
+  \begin{quote}
+  An lvalue or rvalue of type “array of N T” or “array of unknown bound of T”
+  can be converted to a prvalue of type “pointer to T”. 
+  The result is a pointer to the first element of the array.
+  \end{quote}
+  Therefore the pointer arithmetic is extended over array locations:
+   $L[I] + V = L[I+V]$, $L[I]++ = L[I+1]$, $L[I]-- = L[I-1]$.
+
+  */
+
+  syntax Loc ::= Loc "[" Int "]"
+
+  rule lval(L:Loc)[I:Int] => lval(L[I])
+
+  rule L:Loc[I:Int] + J:Int => L[I +Int J]
+
+  rule L:Loc[I:Int] <= L:Loc[J:Int] => I <=Int J
+
+  rule L:Loc[I:Int] < L:Loc[J:Int] => I <Int J
+
+  rule L:Loc[I:Int] > L:Loc[J:Int] => I >Int J
+
+  rule <k> ++ lval(L:Loc) => lval(L) ...</k>
+       <store>... L |-> (L:Loc[I => I +Int 1]) ...</store>
+
+  rule [side-effect] :
+       <k> $inc(L:Loc, V:Int) => . ...</k>
+       <store>... L |-> (L':Loc[I:Int] => L'[I +Int V]) ...</store>
+       [side-effect(inc)]
+
+
+  rule [side-effect] :
+       <k> $dec(L:Loc, V:Int) => . ...</k>
+       <store>... L |-> (L':Loc[I:Int] => L'[I -Int V]) ...</store>
+       [side-effect(dec)]
+
+
+  /*@
+  We define array types following the the notation convention from the manual. 
   We call these type \emph{explicit array types}. Note that these have a 
   recursive definition.  
   We also extends statements with declaration of variable (expression)
@@ -91,43 +145,6 @@ that of arrays and the definition of the whole configuration:
   allocation is described by a recursive function:
   */
 
-  /*@
-  Extension of the locations with "array locations".
-  The arrays can be converted to pointers:
-  From the \Cpp manual:
-  \begin{quote}
-  An lvalue or rvalue of type “array of N T” or “array of unknown bound of T”
-  can be converted to a prvalue of type “pointer to T”. 
-  The result is a pointer to the first element of the array.
-  \end{quote}
-  Therefore the pointer arithmetic is extended over array locations.
-  */
-
-  syntax Loc ::= Loc "[" Int "]"
-
-  rule lval(L:Loc)[I:Int] => lval(L[I])
-
-  rule L:Loc[I:Int] + J:Int => L[I +Int J]
-
-  rule L:Loc[I:Int] <= L:Loc[J:Int] => I <=Int J
-
-  rule L:Loc[I:Int] < L:Loc[J:Int] => I <Int J
-
-  rule L:Loc[I:Int] > L:Loc[J:Int] => I >Int J
-
-  rule <k> ++ lval(L:Loc) => lval(L) ...</k>
-       <store>... L |-> (L:Loc[I => I +Int 1]) ...</store>
-
-  rule [side-effect] :
-       <k> $inc(L:Loc) => . ...</k>
-       <store>... L |-> (L':Loc[I:Int] => L'[I +Int 1]) ...</store>
-       [side-effect(inc)]
-
-
-  rule [side-effect] :
-       <k> $dec(L:Loc) => . ...</k>
-       <store>... L |-> (L':Loc[I:Int] => L'[I -Int 1]) ...</store>
-       [side-effect(dec)]
 
   syntax K ::= "alloc" "(" Stmt "," Int ")" 
 

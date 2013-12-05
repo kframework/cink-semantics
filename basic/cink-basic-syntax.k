@@ -188,5 +188,10 @@ in Clause 5 can appear only in parentheses.
 \end{verbatim}
   */
 
+  //@ Customized symbolic variables:
+
+  syntax Variable ::= Token{[A-Z][a-zA-Z0-9]*[\:][a-zA-Z]+} [variable, onlyLabel]
+  syntax Int ::= Variable
+
 endmodule
 

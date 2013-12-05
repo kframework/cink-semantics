@@ -5,7 +5,7 @@ require "doc-files/imports-intro.k"
 require "../../basic/cink-basic-syntax.k"
 require "cink-arrays-unidimensional.k"
 
-/*@ \section{Main Modules}
+/*@ \section{Main Module}
 
 */
 
@@ -26,6 +26,7 @@ module CINK
                       <k color="green"> ($PGM:Pgm ~> execute) </k>
                       <env color="LightSkyBlue"> .Map </env>
                       <fstack color="orange"> .List </fstack>
+                      <br/>
                       <sideEffects>
                         <sideEffect multiplicity="*"> .K </sideEffect>
                       </sideEffects>
