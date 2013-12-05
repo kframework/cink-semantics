@@ -89,6 +89,32 @@ determined as follows:
 The objects will be defined in the iteration specifying the semantics of 
 the classes.
 
+
+\subsection{Side Effects}
+
+Side effects are very important in giving semantics to \Cpp constructs,
+e.g., expressions, and therefore it is necessary to know exactly what a
+side effect means. Here is the definition from the \Cpp manual:
+ 
+\begin{quote}
+Accessing an object designated by a volatile glvalue (3.10), modifying an 
+object, calling a library I/O
+function, or calling a function that does any of those operations are all 
+\emph{side effects}, which are changes in the
+state of the execution environment. Evaluation of an expression 
+(or a sub-expression) in general includes
+both value computations (including determining the identity of an object for 
+glvalue evaluation and fetching
+a value previously assigned to an object for prvalue evaluation) and 
+initiation of side effects. When a call
+to a library I/O function returns or an access to a volatile object is 
+evaluated the side effect is considered
+complete, even though some external actions implied by the call 
+(such as the I/O itself) or by the volatile
+access may not have completed yet.
+\end{quote}
+
+
 \subsection{Sequenced before}
 
     "Sequenced before" is specific to languages where the evaluation of the
