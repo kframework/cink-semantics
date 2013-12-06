@@ -1,0 +1,9 @@
+void f(int a[], int i , int x) {
+  a[i] = x;
+}
+
+void main() {
+  int b[7]; 
+  f(b, 3, 5);
+  cout << b[3];
+}

@@ -1,0 +1,10 @@
+void f(int a[], int i , int x) {
+  int *p = &a[i];
+  *p = x;
+}
+
+void main() {
+  int b[7]; 
+  f(b, 3, 5);
+  cout << b[3];
+}

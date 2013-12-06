@@ -26,24 +26,24 @@
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ (((((((((((((((((int x) ;) (y of 
-          (pointer to int) ;)) (z of (pointer to (pointer to int)) ;)) ((int u
-          ) ;)) (v of (pointer to int) ;)) ((y = (& x)) ;)) (((* y) = 10) ;)) 
-          (((cout << x) << "\n") ;)) (((cout << (* y)) << "\n") ;)) ((z = (& y
-          )) ;)) (((* (* z)) = 20) ;)) ((u = (* (* z))) ;)) (((cout << u) << 
-          "\n") ;)) (((cout << (* (* z))) << "\n") ;)) ((v = (* z)) ;)) (((
-          cout << (* v)) << "\n") ;)) )
-        #symLoc(2) |-> 20
-        #symLoc(3) |-> #symLoc(2)
-        #symLoc(4) |-> #symLoc(3)
-        #symLoc(5) |-> 20
-        #symLoc(6) |-> #symLoc(2)
+        #symScalLoc(1) |-> lambda ( .Decls @ ((((((((((((((int x) ;) ((y 
+          of (pointer to int) ;) ((z of (pointer to (pointer to int)) ;) (((
+          int u) ;) (v of (pointer to int) ;))))) ((y = (& x)) ;)) (((* y) = 
+          10) ;)) (((cout << x) << "\n") ;)) (((cout << (* y)) << "\n") ;)) ((
+          z = (& y)) ;)) (((* (* z)) = 20) ;)) ((u = (* (* z))) ;)) (((cout <<
+           u) << "\n") ;)) (((cout << (* (* z))) << "\n") ;)) ((v = (* z)) ;))
+           (((cout << (* v)) << "\n") ;)) )
+        #symScalLoc(2) |-> 20
+        #symScalLoc(3) |-> #symScalLoc(2)
+        #symScalLoc(4) |-> #symScalLoc(3)
+        #symScalLoc(5) |-> 20
+        #symScalLoc(6) |-> #symScalLoc(2)
     </store>
 </T>

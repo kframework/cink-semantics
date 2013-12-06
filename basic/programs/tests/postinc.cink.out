@@ -25,20 +25,20 @@ z = 3
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ ((((((((((((int x) ;) ((x = 1) ;)
-          ) ((int y) ;)) ((int z) ;)) ((y = (x ++)) ;)) ((((cout << "y = ") <<
-           y) << endl) ;)) ((z = ((x ++) + (y ++))) ;)) ((((cout << "x = ") <<
-           x) << endl) ;)) ((((cout << "y = ") << y) << endl) ;)) ((((cout << 
-          "z = ") << z) << endl) ;)) (return 0 ;)) )
-        #symLoc(2) |-> 3
-        #symLoc(3) |-> 2
-        #symLoc(4) |-> 3
+        #symScalLoc(1) |-> lambda ( .Decls @ (((((((((((int x) ;) ((x = 1)
+           ;)) (((int y) ;) ((int z) ;))) ((y = (x ++)) ;)) ((((cout << "y = "
+          ) << y) << endl) ;)) ((z = ((x ++) + (y ++))) ;)) ((((cout << "x = "
+          ) << x) << endl) ;)) ((((cout << "y = ") << y) << endl) ;)) ((((cout
+           << "z = ") << z) << endl) ;)) (return 0 ;)) )
+        #symScalLoc(2) |-> 3
+        #symScalLoc(3) |-> 2
+        #symScalLoc(4) |-> 3
     </store>
 </T>

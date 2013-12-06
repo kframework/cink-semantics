@@ -8,7 +8,7 @@ module CINK-ARRAYS-SYNTAX
                | Exp "[]" [array] 
 
   syntax priorities  array > multiply read write greatthan lessequal
-  syntax priority  array > assign
+  syntax priority  array > ampersand assign
 
 endmodule
 
@@ -19,70 +19,73 @@ module CINK-ARRAYS-SEMANTICS
   imports CINK-ARRAYS-SYNTAX
   imports ARRAY
 
-  /* From C++ 2011 Manual:
-  \begin{quote}
-  In a declaration T D where D has the form\\
-   \indent   D1 [ constant-expressionopt] attribute-specifier-seqopt\\
-   and the type of the identifier in the declaration T D1 is 
-   "derived-declarator-type-list T", then the type of the identifier of D
-   is an array type...\\
-   Example:
-   \begin{verbatim}
-      typedef int A[5], AA[2][3];
-      typedef const A CA; // type is "array of 5 const int"
-      typedef const AA CAA; // type is "array of 2 array of 3 const int"
-  \end{verbatim}
-  \ldots\\
-   An array can be constructed from one of the fundamental types (except void),
-   from a pointer, from a pointer to member, from a class, from an enumeration
-   type, or from another array.\\
-   When several "array of" specifications are adjacent, a multidimensional array
-   is created; only the first of the constant expressions that specify the 
-   bounds of the arrays may be omitted. In addition to declarations in
-   which an incomplete object type is allowed, an array bound may be omitted in
-   some cases in the declaration of a function parameter (8.3.5). An array 
-   bound may also be omitted when the declarator is followed by an
-   initializer (8.5). In this case the bound is calculated from the number of 
-   initial elements (say, N) supplied (8.5.1), and the type of the identifier
-   of D is "array of N T.
-   \end{quote}
-  */
 
   /*@
    We extend the memory model with contiguous sequences of locations. Such
    sequnces are represented by using the theory of arrays.
-   We assume the reader familiar with this theory (it is also defined in 
-   \texttt{include/builtins/array.k}.
-   We exemplain the main idea by means of an example showing how a sequence of three
-   locations storing the sequence of integers(5,3, 8) is represented by four maps:
+   We assume the reader familiar with this theory. Here is its definition included in 
+   \texttt{include/builtins/array.k}:
    \begin{verbatim}
-      L |-> store(store(store(const-array(3,0), L[0]), L[1]), L[2])
-      L[0] |-> 5
-      L[1] |-> 3
-      L[2] |-> 8
+     syntax Array ::= "store"       "(" Array "," Int "," K ")" 
+                    | "const-array" "(" Int "," K ")" 
+		 
+     syntax K ::= "select" "(" Array "," Int ")" 
+     syntax Int ::= "size-of-array" "(" Array ")"
+
+    rule select(store(_:Array, I:Int, V:K), J:Int) => V 
+         requires I ==Int J
+
+    rule select(store(A:Array, I:Int, _:K), J:Int) => select(A, J)
+         requires I =/=Int J 
+
+    rule select(const-array(Size:Int, V:K), I:Int) => V
+         requires (0 <=Int I) andBool (I <Int Size) 
    \end{verbatim}
-   A nice property of this representation is that \texttt{L[$I$] = select($V$, $I$)},
-   where $V$ the value stored at \texttt{L} (i.e., \texttt{L |-> $V$}).
-   Moreover, we have a piece of pointer arithmetic over these locations:
-   $L[I] + V = L[I+V]$, $L[I]++ = L[I+1]$, $L[I]-- = L[I-1]$.
+
+   We explain the main idea by means of an example showing how a sequence of three
+   locations storing the sequence of integers (5,3, 8) is represented by the map:
+   \begin{verbatim}
+      seq-array(3, L)
+      |-> 
+      store(store(store(const-array(3, 0), 0, 5), 1, 3), 2, 8)
+    \end{verbatim}
+   where \texttt{seq-array(3, L)} is a sugar syntax for\\
+   \texttt{store(store(store(const-array(5, 0), 0, L[0]), 1, L[1]), 2, L[2])}.
+
+   Moreover, we have a piece of pointer arithmetic over these locations:\\
+   $L[I] + V = \texttt{select}(\texttt{seq-array}(N, L),I+V)$,\\
+   $++ L[I] = \texttt{select}(\texttt{seq-array}(N, L),I+1)$,\\
+   $-- L[I] = \texttt{select}(\texttt{seq-array}(N, L),I-1)$.
+
+   The lvalue of $L[I]$ is $\texttt{select}(\texttt{seq-array}(N, L),I)$, and the rvalue
+   of $L[I]$ is $\texttt{select}(A,I)$, where
+   $\texttt{seq-array}(N, L),I)\texttt{ |-> } A$\texttt{:Array}.
+
   */
-  syntax Loc ::= Loc "[" Int "]"
+  syntax SeqLoc ::= "seq-array" "(" Int "," Loc ")"
+  syntax Loc ::= SeqLoc
 
-  rule lval(L:Loc)[I:Int] => lval(L[I])
 
-  rule L:Loc[I:Int] + J:Int => L[I +Int J]
+  // a "seq-array" is in fact a "const-array" special (this should be done in K2SMTLIB)
+//  rule isSeqLoc(const-array(_:Int, _:Loc)) => true 
+//  rule seq-array(N:Int, L:Loc) => const-array(N, L) [anywhere]
 
-  rule [side-effect] :
-       <k> $inc(L:Loc, V:Int) => . ...</k>
-       <store>... L |-> (L':Loc[I:Int] => L'[I +Int V]) ...</store>
+
+  //@ Extend select over sequences of locations:
+
+  syntax Loc ::= "select" "(" Loc "," Int ")" [smtlib(select)]
+
+  rule lval(L:SeqLoc)[I:Int] => lval(select(L, I))
+
+  rule select(L:Loc, I:Int) + J:Int => select(L, I +Int J)
+
+  rule <k> $inc(L:Loc, V:Int) => . ...</k>
+       <store>... L |-> select(_:Loc, (I:Int => I +Int V))...</store>
        [side-effect(inc)]
 
-
-  rule [side-effect] :
-       <k> $dec(L:Loc, V:Int) => . ...</k>
-       <store>... L |-> (L':Loc[I:Int] => L'[I -Int V]) ...</store>
-       [side-effect(dec)]
-
+  rule <k> $dec(L:Loc, V:Int) => . ...</k>
+       <store>... L |-> select(_:Loc, (I:Int => I -Int V))...</store>
+       [side-effect(inc)]
 
   /*@
   We define array types following the the notation convention from the manual. 
@@ -97,80 +100,56 @@ module CINK-ARRAYS-SEMANTICS
   syntax Stmt ::= Exp "of" ArrType ";"
 
   /*@
-  The arrays are expressions
+  The arrays are values:
   */
-  syntax Exp ::= Array
+  syntax Val ::= Array
 
+  //@ An updated array is a value:
+
+  rule isVal(store(_,_,_)) => true
 
   /*@
   The array declaration are translated into declaration with explicit array
-  types.
+  types:
   */
 
   rule T:Type X:Exp[N:Int]; => X of array of N T;
 
   /*@
-  An array \texttt{a[3]} will be represented as follows:
-  \begin{verbatim}
-  <env>
-    a |-> #symLoc(2)
-  </env>
-  <store>
-    #symLoc(2) |-> store(store(store(const-array(3, 0),
-                               0, #symLoc(2)[0]),
-                               1, #symLoc(2)[1])
-                               2, #symLoc(2)[2])
-        #symLoc(2)[0] |-> 0
-        #symLoc(2)[1] |-> 0
-        #symLoc(2)[2] |-> 0
-    </store>
-  \end{verbatim}
-  where \texttt{#symLoc($I$)} is a fresh location generated by the \K tool.
-  We use an auxiliary function for allocating locations for members:
-  */
-
-  syntax K ::= "alloc" "(" Stmt "," Int ")" 
-
-  /*@
-  The initial call:
+   Semantics of a declaration of an array:
   */
   rule <k> X:Id of array of N:Int T:Type;
            =>
-           alloc(X of array of N T;, 0)
+           .
        ...</k>
-       <env>... . => X |-> L </env>
+       <env>... . => X |-> seq-array(N, L) </env>
        <br/>
-       <store>... . => L |-> const-array(N, 0) </store>
+       <store>... . => seq-array(N, L) |-> const-array(N, 0) ...</store>
        when fresh(L:Loc)
 
+
   /*@
-  The recursive case:
+   Updating an array component:
+  */
+ 
+  rule <k> $update(select(L:Loc, I:Int), V:Val) => . ...</k>
+       <store>... L |-> (A:Array => store(A, I, V)) ...</store>
+       [kripke(update)]
+
+  /*@
+    Reading an array component:
+   */
+
+  rule <k> $lookup(select(L:Loc, I:Int)) => select(A, I) ...</k>
+       <store>... L |-> A:Array ...</store>
+       [kripke(mem-lookup)]
+
+  /*@
+    Indirection to an array component:
   */
 
-  rule <k> alloc(X:Exp of array of N:Int T:Type;, I:Int)
-           =>
-           alloc(X of array of N T;, I +Int 1)
-       ...</k>
-       <env>... X |-> L:Loc (. => X[I] |-> L[I]) </env>
-       <store>...
-              (L |-> (A:Array => store(A, I, L[I])))
-              (. =>  L[I] |-> 0)
-       ...</store>
-       when (I <Int N)
-
-  /*@
-   The base case when all components given by the current index
-  are allocated:
-  */ 
-  rule alloc(X:Exp of array of N:Int AT:Type;, I:Int) => .
-       when (I >=Int N)
-
-  /*@
-  The evaluation of an array component as an lvalue:
-  */
-  rule A:Array [I:Int] => A + I  // for conformance
-
-  rule A:Array + I:Int => select(A, I) 
+  rule <k> * select(L:Loc, I) => select(A, I) ...</k>
+       <store>... L |-> A:Array ...</store>
 
 
   /*@ 
@@ -189,6 +168,11 @@ module CINK-ARRAYS-SEMANTICS
        <env> Env:Map => Env[L/X] </env>
        [structural]
 
+   //@ Interface with SMTLIB:
+
+  rule K2SMTLib(seq-array(N:Int, L:Loc ))
+       =>
+       "const-array (" +String K2SMTLib(N) +String "," +String K2SMTLib(N)  +String ")"
 
 endmodule
 

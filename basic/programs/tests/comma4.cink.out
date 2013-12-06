@@ -23,18 +23,18 @@ x=6, y=12
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ (((((((int x) ;) ((x = 5) ;)) (((
-          int y) ;) ((y = 7) ;))) ((((((cout << "x=") << x) << ", y=") << y) 
-          << endl) ;)) ((((x = (x + 1)) , y) = 12) ;)) ((((((cout << "x=") << 
-          x) << ", y=") << y) << endl) ;)) )
-        #symLoc(2) |-> 6
-        #symLoc(3) |-> 12
+        #symScalLoc(1) |-> lambda ( .Decls @ (((((((int x) ;) ((x = 5) ;))
+           (((int y) ;) ((y = 7) ;))) ((((((cout << "x=") << x) << ", y=") << 
+          y) << endl) ;)) ((((x = (x + 1)) , y) = 12) ;)) ((((((cout << "x=") 
+          << x) << ", y=") << y) << endl) ;)) )
+        #symScalLoc(2) |-> 6
+        #symScalLoc(3) |-> 12
     </store>
 </T>

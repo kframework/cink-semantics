@@ -22,17 +22,17 @@ x, y = 45
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ (((((((int x) ;) ((int y) ;)) (((
-          (cout << "x") << ", y") << " = ") ;)) (((cin >> x) >> y) ;)) ((((
-          cout << x) << y) << endl) ;)) (return 0 ;)) )
-        #symLoc(2) |-> 4
-        #symLoc(3) |-> 5
+        #symScalLoc(1) |-> lambda ( .Decls @ (((((((int x) ;) ((int y) ;))
+           ((((cout << "x") << ", y") << " = ") ;)) (((cin >> x) >> y) ;)) (((
+          (cout << x) << y) << endl) ;)) (return 0 ;)) )
+        #symScalLoc(2) |-> 4
+        #symScalLoc(3) |-> 5
     </store>
 </T>

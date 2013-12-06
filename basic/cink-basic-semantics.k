@@ -5,17 +5,50 @@ module CINK-BASIC-SEMANTICS
 
 
   /*@ \subsection{Memory Model}
-   We use an abstract mmemory model consiting of (automatically generated) \
-   symbolic values for locations. A location is identified with its address.
-   These are of sort \texttt{Loc}. We use a special constant \texttt{noLoc}
+   We use an abstract mmemory model consisting of (automatically generated) \
+   symbolic values for locations. 
+   The locations are splitted in two categories: scala locations, which can 
+   store scala values, and compound locations, which can store values of
+   compound types.
+   A location is identified with its address.
+   These sort for locations is \texttt{Loc} and that for scalar locations is
+   \texttt{Scalval}. We use a special constant \texttt{noLoc}
    for non-defined locations. The locations are used as values for pointer
    types and therefore they are subsodrted to \texttt{ScalVal}.
    */
 
 
-  syntax Loc ::= "noLoc"
+  syntax ScalLoc ::= "noLoc"
+  syntax Loc ::= ScalLoc
   syntax ScalVal ::= Loc
 
+  /*@ \subsubsection{Memmory operations and side-effects} */
+
+  syntax Exp ::= "$inc" "(" K "," ScalVal ")"
+               | "$dec" "(" K "," ScalVal ")"
+               | "$update" "(" K "," Val ")" [strict(1(result(Loc)))]
+               | "$lookup" "(" K ")"
+
+
+
+  rule <k> $inc(L:ScalLoc, V:Int) => . ...</k>
+       <store>... L |-> (V':Int => V' +Int V) ...</store>
+       [kripke(inc)]
+
+
+  rule <k> $dec(L:ScalLoc, V:Int) => . ...</k>
+       <store>... L |-> (V':Int => V' -Int V) ...</store>
+       [kripke(dec)]
+
+
+  rule <k> $update(L:ScalLoc, V:ScalVal) => . ...</k>
+       <store>... L |-> (_ => V) ...</store>
+       [kripke(update)]
+
+
+  rule <k> $lookup(L:ScalLoc) => V ...</k>
+       <store>... L |-> V:ScalVal ...</store>
+       [kripke(mem-lookup)]
 
   /*@ \subsection{Values.} 
     The values are a very important syntactic category in the definition
@@ -80,15 +113,16 @@ module CINK-BASIC-SEMANTICS
 
   //@ The definition of the strict context \texttt{rvalue}:
   
-  syntax Exp ::= "rvalue" "(" Exp ")" [context(result(ScalVal)), strict, klabel(rvalue)]
+  syntax Exp ::= "rvalue" "(" Exp ")" [context(result(Val)), 
+                                       strict, klabel(rvalue)]
 
   /*@
     When an lvalue is in an rvalue context, evaluate it (this can be seen 
     as a conversio from lvalues to rvalues):
    */
-  rule <k> rvalue(lval(L:Loc) => V) ...</k>
-       <store>... L |-> V:ScalVal ...</store>
-       [kripke(mem-lookup)]
+
+  rule rvalue(lval(L:Loc) => $lookup(L))
+
 
   /*@ Seqpoints\\
     The semantics of a sequence point consists of executing all the side effects
@@ -170,7 +204,7 @@ module CINK-BASIC-SEMANTICS
   rule <k>  (Decl:Decl (Xl:Decls) {Sts:Stmts})::Stmt  => .  ...</k> 
        <env>... . =>  (getName(Decl) |-> L) ...</env>
        <store>... . => (L |-> lambda(Xl @ Sts)) ...</store>
-       requires fresh(L:Loc)
+       requires fresh(L:ScalLoc)
        [fun-decl, structural]
 
   /*@
@@ -193,10 +227,10 @@ module CINK-BASIC-SEMANTICS
    */
 
   rule [var-decl] :
-       <k> T:FundType X:Id; => .  ...</k>      
+       <k> T:ScalType X:Id; => .  ...</k>      
        <env> Env:Map => Env[L/X] </env>
        <store>... . => (L |-> 0) ...</store>
-  requires fresh(L:Loc)
+  requires fresh(L:ScalLoc)
        [structural]
 
 
@@ -282,14 +316,9 @@ for information on conversions.]
 \end{quote}
   */
 
-  rule <k> ++ lval(L:Loc) => lval(L) ...</k>
-       <store>... L |-> (V:Int => V +Int 1) ...</store>
+  rule ++ lval(L:Loc) => $inc(L, 1) ~> lval(L)
 
-
-  //@ The semantics of the the prefix decrement
-
-  rule <k> -- lval(L:Loc) => lval(L) ...</k>
-       <store>... L |-> (V:Int => V -Int 1) ...</store>
+  rule -- lval(L:Loc) => $dec(L, 1) ~> lval(L)
 
 
   /*@
@@ -315,12 +344,6 @@ for information on conversions.]
   */
 
 
-  /*@
-  We define a syntax for the side-effects;
-  */
-
-  syntax K ::= "$inc" "(" K "," ScalVal ")" | "$dec" "(" K "," ScalVal ")"
-
   
   /*@
     We add a new cell that collects the side-effects during the evaluation
@@ -331,36 +354,20 @@ for information on conversions.]
   */
 
   rule [postinc]:
-       <k> lval(L:Loc) ++ => V ...</k>
-       <store>... L |-> V:Val ...</store>
-       <sideEffects> . => <sideEffect> $inc(L,1) </sideEffect>...</sideEffects>
+       <k> lval(L:ScalLoc) ++ => V ...</k>
+       <store>... L |-> V:ScalVal ...</store>
+       <sideEffects>...
+          . => <sideEffect> $inc(L,1) </sideEffect> 
+       ...</sideEffects>
 
 
   rule [postdec]:
-       <k> lval(L:Loc) -- => V ...</k>
-       <store>... L |-> V:Val ...</store>
-       <sideEffects>... . =>  <sideEffect> $dec(L,1)  </sideEffect> ...</sideEffects>
+       <k> lval(L:ScalLoc) -- => V ...</k>
+       <store>... L |-> V:ScalVal ...</store>
+       <sideEffects>...
+          . => <sideEffect> $dec(L,1) </sideEffect>
+       ...</sideEffects>
 
-  //@ The semantics of the side-effects (self-explained);
-
-  rule [side-effect] :
-       <k> $inc(L:Loc, V:Int) => . ...</k>
-       <store>... L |-> (V':Int => V' +Int V) ...</store>
-       [side-effect(inc)]
-
-
-  rule [side-effect] :
-       <k> $dec(L:Loc, V:Int) => . ...</k>
-       <store>... L |-> (V':Int => V' -Int V) ...</store>
-       [side-effect(dec)]
-
-
-  rule [side-effect] :
-       <k> $update(L:Loc, V:Val) => . ...</k>
-       <store>... L |-> (_ => V) ...</store>
-       [side-effect(dec)]
-
-  /*@ \subsection{Memmory operations.} */
 
 
   /*@
@@ -387,12 +394,10 @@ left operands, and before the value computation of the assignment expression.
   The semantics of compound assignment operators is let as exercises.
   */
 
-  syntax K ::=   "$update" "(" K "," K ")"
-
   rule [update] : <k> lval(L:Loc) = V:Val => lval(L) ...</k>
-       <store>... L |-> (_ => V) ...</store>
-       <sideEffects>... . =>  <sideEffect> $update(L, V) </sideEffect> ...</sideEffects>
-       [update, kripke]
+       <sideEffects>...
+           . =>  <sideEffect> $update(L, V) </sideEffect>
+       ...</sideEffects>
 
 /*@  The comma operator. 
     From \Cpp manual:
@@ -481,9 +486,8 @@ the next full-expression to be evaluated
    from the right-hand side must be evaluated to an l-value:
   */
 
-  rule <k> cin >> lval(L:Loc) => cin  ...</k>
-       <store>... L |-> (_ => V)  ...</store>
-       <in> (ListItem(V:Int) => .)  ...</in>
+  rule <k> cin >> lval(L:Loc) => $update(L, V) ~> cin  ...</k>
+       <in> (ListItem(V:ScalVal) => .)  ...</in>
        [read-stream]
 
 
@@ -573,7 +577,8 @@ type (8.3.2)\ldots -end note]
     specified by the following contextual declaration:
   */
 
-  context evaluate ((HOLE => rvalue(HOLE)), _:Exp) to _ following (T X:Id, _:Decls); 
+  context evaluate ((HOLE => rvalue(HOLE)), _:Exp) to _ 
+          following (T X:Id, _:Decls); 
           [result(ScalVal)]
 
   /*@
@@ -606,12 +611,12 @@ type (8.3.2)\ldots -end note]
   which is bound to the formal parameter:
   */
  
-  rule <k> bind((V:Val, Vs) => Vs)
+  rule <k> bind((V:ScalVal, Vs) => Vs)
            to((T X:Id, Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[L/X] </env>
        <store>... . => L |-> V ...</store>
-  requires fresh(L:Loc)
+       requires fresh(L:ScalLoc)
        [structural]
 
 

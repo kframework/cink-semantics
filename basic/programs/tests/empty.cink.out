@@ -21,19 +21,19 @@ Hello World!<T>
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ (((((((((((((((((((((((((((((((((
+        #symScalLoc(1) |-> lambda ( .Decls @ (((((((((((((((((((((((((((((
           ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
-          ((((((((((((((((((((((((((('.Exps(.KList) ;) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
+          ((((((((((((((((((((((((((((((('.Exps(.KList) ;) ('.Exps(.KList) ;))
+           ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps
+          (.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList)
+           ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
           '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
           .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
           ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (

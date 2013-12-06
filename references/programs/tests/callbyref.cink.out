@@ -23,28 +23,28 @@ x, y: 172
             .Bag
         </sideEffects>
         <env>
-            f |-> #symLoc(1)
-            g |-> #symLoc(2)
-            main |-> #symLoc(3)
+            f |-> #symScalLoc(1)
+            g |-> #symScalLoc(2)
+            main |-> #symScalLoc(3)
         </env>
     </control>
     <genv>
-        f |-> #symLoc(1)
-        g |-> #symLoc(2)
-        main |-> #symLoc(3)
+        f |-> #symScalLoc(1)
+        g |-> #symScalLoc(2)
+        main |-> #symScalLoc(3)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( ((int x), (y of (reference to int))) @ (((
-          (x = 1) ;) ((y = 2) ;)) (return x ;)) )
-        #symLoc(2) |-> lambda ( ((x of (reference to int)), (y of (reference 
-          to int))) @ (((x = 3) ;) ((y = 4) ;)) )
-        #symLoc(3) |-> lambda ( .Decls @ (((((((((((int x) ;) ((int y) ;)) ((
-          int z) ;)) ((cout << "x, y: ") ;)) ((cin >> x) ;)) ((cin >> y) ;)) (
-          (z = (f ( (x , y) ))) ;)) (((((cout << z) << x) << y) << "\n") ;)) (
-          (g ( (y , x) )) ;)) ((((cout << x) << y) << "\n") ;)) )
-        #symLoc(4) |-> 4
-        #symLoc(5) |-> 3
-        #symLoc(6) |-> 1
-        #symLoc(14) |-> 1
+        #symScalLoc(1) |-> lambda ( ((int x), (y of (reference to int))) @
+           ((((x = 1) ;) ((y = 2) ;)) (return x ;)) )
+        #symScalLoc(2) |-> lambda ( ((x of (reference to int)), (y of (
+          reference to int))) @ (((x = 3) ;) ((y = 4) ;)) )
+        #symScalLoc(3) |-> lambda ( .Decls @ ((((((((((int x) ;) (((int y) ;) 
+          ((int z) ;))) ((cout << "x, y: ") ;)) ((cin >> x) ;)) ((cin >> y) ;)
+          ) ((z = (f ( (x , y) ))) ;)) (((((cout << z) << x) << y) << "\n") ;)
+          ) ((g ( (y , x) )) ;)) ((((cout << x) << y) << "\n") ;)) )
+        #symScalLoc(4) |-> 4
+        #symScalLoc(5) |-> 3
+        #symScalLoc(6) |-> 1
+        #symScalLoc(14) |-> 1
     </store>
 </T>

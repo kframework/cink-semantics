@@ -7,7 +7,11 @@ module CINK-BASIC-SYNTAX
 
   syntax FundType ::= "int" | "bool" | "void" 
 
-  syntax Type ::= FundType
+  //@ Any fundamental type is a scalar type
+  syntax ScalType ::= FundType
+
+  //@ Any scalar type is a type
+  syntax Type ::= ScalType
 
   /*@ \subsection{Declarations}
     Declarations are used to introduce names for variables and function names
@@ -99,7 +103,7 @@ module CINK-BASIC-SYNTAX
                | Exp "<=" Exp [left, strict(all(context(rvalue), result(ScalVal))), 
                                      latex({#1}\leq{#2}), lessequal]
                | Exp "!=" Exp [left, strict(all(context(rvalue), result(ScalVal))), 
-                                     latex({#1}\leq{#2}), notequal]
+                                     latex({#1}\neq{#2}), notequal]
                | Exp "==" Exp [left, strict(all(context(rvalue), result(ScalVal))),
                                      equality]
                >

@@ -1,0 +1,13 @@
+int main() {
+  int a[5], * p, i;
+  cout << "i = ";
+  cin >> i;
+  p = &(a[i]);
+  cout << "a[i] = ";
+  cin >> *p;
+  if (*p < 3)
+    *(++ p) = 2;
+  else
+    *(++ p) = 4;
+  return *(p);
+}

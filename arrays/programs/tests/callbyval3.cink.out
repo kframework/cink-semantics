@@ -1,5 +1,4 @@
-10
-<T>
+10<T>
     <in>
         ListItem(#buffer ( "" ))
         ListItem(#istream ( 0 ))
@@ -31,12 +30,14 @@
         main |-> #symScalLoc(2)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ ((((p of (pointer to int) ;) 
-          ((p = (new int)) ;)) (((* p) = 10) ;)) (return p ;)) )
-        #symScalLoc(2) |-> lambda ( .Decls @ (((((a of (pointer to int) ;) ((a
-           = (f ( '.Exps(.KList) ))) ;)) (((cout << (* a)) << endl) ;)) ((
-          delete a) ;)) (return 0 ;)) )
-        #symScalLoc(4) |-> #symScalLoc(5)
-        #symScalLoc(5) |-> 10
+        seq-array ( 4 , #symLoc(3) ) |-> store ( (store ( (const-array ( 4
+           , 0 )) , 1 , 3 )) , 2 , 3 )
+        #symScalLoc(1) |-> lambda ( ((int a), (int x)) @ ((if ( (a < 5) ) (
+          return (x * 2) ;) else { }) (return (x * 3) ;)) )
+        #symScalLoc(2) |-> lambda ( .Decls @ ((((((int (b [ 4 ])) ;) (((b [ 1 
+          ]) = 3) ;)) (((b [ 2 ]) = (b [ 1 ])) ;)) ((cout << (f ( ((b [ 2 ]) ,
+           5) ))) ;)) (return 0 ;)) )
+        #symScalLoc(4) |-> 3
+        #symScalLoc(5) |-> 5
     </store>
 </T>

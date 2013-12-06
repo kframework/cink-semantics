@@ -21,20 +21,20 @@
             .Bag
         </sideEffects>
         <env>
-            f |-> #symLoc(1)
-            main |-> #symLoc(2)
+            f |-> #symScalLoc(1)
+            main |-> #symScalLoc(2)
         </env>
     </control>
     <genv>
-        f |-> #symLoc(1)
-        main |-> #symLoc(2)
+        f |-> #symScalLoc(1)
+        main |-> #symScalLoc(2)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( ((int x), (bool b)) @ ((if ( b ) (return (
-          x * 2) ;) else { }) (return (x * 3) ;)) )
-        #symLoc(2) |-> lambda ( .Decls @ (((cout << (f ( (5 , false) ))) ;) (
-          return 0 ;)) )
-        #symLoc(3) |-> 5
-        #symLoc(4) |-> false
+        #symScalLoc(1) |-> lambda ( ((int x), (bool b)) @ ((if ( b ) (
+          return (x * 2) ;) else { }) (return (x * 3) ;)) )
+        #symScalLoc(2) |-> lambda ( .Decls @ (((cout << (f ( (5 , false) ))) ;
+          ) (return 0 ;)) )
+        #symScalLoc(3) |-> 5
+        #symScalLoc(4) |-> false
     </store>
 </T>

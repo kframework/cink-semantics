@@ -22,18 +22,18 @@
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ (((((((((p of (pointer to int) ;)
-           ((p = (new int)) ;)) (q of (pointer to bool) ;)) ((q = (new bool)) 
-          ;)) (((* q) = true) ;)) (if ( (* q) ) (((* p) = 7) ;) else { })) (((
-          cout << (* p)) << endl) ;)) ((delete p) ;)) ((delete q) ;)) )
-        #symLoc(3) |-> 7
-        #symLoc(5) |-> true
+        #symScalLoc(1) |-> lambda ( .Decls @ (((((((((p of (pointer to int
+          ) ;) ((p = (new int)) ;)) (q of (pointer to bool) ;)) ((q = (new 
+          bool)) ;)) (((* q) = true) ;)) (if ( (* q) ) (((* p) = 7) ;) else { 
+          })) (((cout << (* p)) << endl) ;)) ((delete p) ;)) ((delete q) ;)) )
+        #symScalLoc(3) |-> 7
+        #symScalLoc(5) |-> true
     </store>
 </T>

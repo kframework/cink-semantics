@@ -1,4 +1,3 @@
-4 3
 <T>
     <in>
         ListItem(#buffer ( "" ))
@@ -10,37 +9,44 @@
     </out>
     <control>
         <k>
-            .K
+            bind ((lval ( #symScalLoc(5) )) , ((lval ( #symScalLoc(6) )) ,
+               .Exps)) to ((int (* p)), (int (* q))) ; ~> ((((int a) ;) ((a = 
+              (* p)) ;)) (((* p) = (* q)) ;)) (((* q) = a) ;) ~> return noVal 
+              ;
         </k>
         <return>
-            0
+            .K
         </return>
         <fstack>
-            .List
+            ( ([ a |-> #symScalLoc(3) b |-> #symScalLoc(4) main |-> 
+              #symScalLoc(2) swap |-> #symScalLoc(1) x |-> #symScalLoc(5) y
+               |-> #symScalLoc(6) ]) , HOLE ; ~> ((((cout << a) << " ") << b) 
+              << endl) ; ~> return 0 ; ~> return noVal ; )
+            ( ([ main |-> #symScalLoc(2) swap |-> #symScalLoc(1) ]) , HOLE ; )
+              
         </fstack>
         <sideEffects>
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(2)
-            swap |-> #symLoc(1)
+            main |-> #symScalLoc(2)
+            swap |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(2)
-        swap |-> #symLoc(1)
+        main |-> #symScalLoc(2)
+        swap |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( ((int (* p)), (int (* q))) @ (((((int a) ;
-          ) ((a = (* p)) ;)) (((* p) = (* q)) ;)) (((* q) = a) ;)) )
-        #symLoc(2) |-> lambda ( .Decls @ ((((((((int a) ;) ((a = 3) ;)) (((int
-           b) ;) ((b = 4) ;))) (((x of (pointer to int) ;) ((x = (& a)) ;)) ((
-          y of (pointer to int) ;) ((y = (& b)) ;)))) ((swap ( (x , y) )) ;)) 
-          (((((cout << a) << " ") << b) << endl) ;)) (return 0 ;)) )
-        #symLoc(3) |-> 4
-        #symLoc(4) |-> 3
-        #symLoc(5) |-> #symLoc(3)
-        #symLoc(6) |-> #symLoc(4)
-        #symLoc(7) |-> 3
+        #symScalLoc(1) |-> lambda ( ((int (* p)), (int (* q))) @ (((((int 
+          a) ;) ((a = (* p)) ;)) (((* p) = (* q)) ;)) (((* q) = a) ;)) )
+        #symScalLoc(2) |-> lambda ( .Decls @ ((((((((int a) ;) ((a = 3) ;)) ((
+          (int b) ;) ((b = 4) ;))) (((x of (pointer to int) ;) ((x = (& a)) ;)
+          ) ((y of (pointer to int) ;) ((y = (& b)) ;)))) ((swap ( (x , y) )) 
+          ;)) (((((cout << a) << " ") << b) << endl) ;)) (return 0 ;)) )
+        #symScalLoc(3) |-> 3
+        #symScalLoc(4) |-> 4
+        #symScalLoc(5) |-> #symScalLoc(3)
+        #symScalLoc(6) |-> #symScalLoc(4)
     </store>
 </T>

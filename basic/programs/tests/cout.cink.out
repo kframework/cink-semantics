@@ -22,15 +22,15 @@
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ ((((int a) ;) ((a = 8) ;)) (((
-          cout << a) << endl) ;)) )
-        #symLoc(2) |-> 8
+        #symScalLoc(1) |-> lambda ( .Decls @ ((((int a) ;) ((a = 8) ;)) ((
+          (cout << a) << endl) ;)) )
+        #symScalLoc(2) |-> 8
     </store>
 </T>

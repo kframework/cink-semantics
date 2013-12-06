@@ -22,18 +22,18 @@ x = 10 5
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ ((((((((int z) ;) (((int x) ;) ((
-          x = 0) ;))) ((cout << "x = ") ;)) ((cin >> (++ x)) ;)) ((z = ((++ (
-          ++ (++ x))) * 2)) ;)) (((((cout << z) << " ") << x) << endl) ;)) (
-          return 0 ;)) )
-        #symLoc(2) |-> 10
-        #symLoc(3) |-> 5
+        #symScalLoc(1) |-> lambda ( .Decls @ ((((((((int z) ;) (((int x) ;
+          ) ((x = 0) ;))) ((cout << "x = ") ;)) ((cin >> (++ x)) ;)) ((z = ((
+          ++ (++ (++ x))) * 2)) ;)) (((((cout << z) << " ") << x) << endl) ;))
+           (return 0 ;)) )
+        #symScalLoc(2) |-> 10
+        #symScalLoc(3) |-> 5
     </store>
 </T>

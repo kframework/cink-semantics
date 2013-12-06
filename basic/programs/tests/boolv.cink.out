@@ -22,18 +22,18 @@ x = false
             .Bag
         </sideEffects>
         <env>
-            main |-> #symLoc(1)
+            main |-> #symScalLoc(1)
         </env>
     </control>
     <genv>
-        main |-> #symLoc(1)
+        main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symLoc(1) |-> lambda ( .Decls @ (((((((((bool b) ;) ((int x) ;)) 
-          ((cout << "x = ") ;)) ((cin >> x) ;)) ((b = (x > 5)) ;)) (if ( b ) (
-          (cout << "true") ;) else ((cout << "false") ;))) ((cout << endl) ;))
-           (return 0 ;)) )
-        #symLoc(2) |-> false
-        #symLoc(3) |-> 3
+        #symScalLoc(1) |-> lambda ( .Decls @ (((((((((bool b) ;) ((int x) 
+          ;)) ((cout << "x = ") ;)) ((cin >> x) ;)) ((b = (x > 5)) ;)) (if ( b
+           ) ((cout << "true") ;) else ((cout << "false") ;))) ((cout << endl)
+           ;)) (return 0 ;)) )
+        #symScalLoc(2) |-> false
+        #symScalLoc(3) |-> 3
     </store>
 </T>

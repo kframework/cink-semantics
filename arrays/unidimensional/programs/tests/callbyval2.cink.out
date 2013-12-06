@@ -1,5 +1,4 @@
-10
-<T>
+5<T>
     <in>
         ListItem(#buffer ( "" ))
         ListItem(#istream ( 0 ))
@@ -13,7 +12,7 @@
             .K
         </k>
         <return>
-            0
+            noVal
         </return>
         <fstack>
             .List
@@ -31,12 +30,14 @@
         main |-> #symScalLoc(2)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ ((((p of (pointer to int) ;) 
-          ((p = (new int)) ;)) (((* p) = 10) ;)) (return p ;)) )
-        #symScalLoc(2) |-> lambda ( .Decls @ (((((a of (pointer to int) ;) ((a
-           = (f ( '.Exps(.KList) ))) ;)) (((cout << (* a)) << endl) ;)) ((
-          delete a) ;)) (return 0 ;)) )
-        #symScalLoc(4) |-> #symScalLoc(5)
-        #symScalLoc(5) |-> 10
+        seq-array ( 7 , #symLoc(3) ) |-> store ( (const-array ( 7 , 0 )) ,
+           3 , 5 )
+        #symScalLoc(1) |-> lambda ( ((int (a [])), ((int i), (int x))) @ (((p 
+          of (pointer to int) ;) ((p = (& (a [ i ]))) ;)) (((* p) = x) ;)) )
+        #symScalLoc(2) |-> lambda ( .Decls @ ((((int (b [ 7 ])) ;) ((f ( (b , 
+          (3 , 5)) )) ;)) ((cout << (b [ 3 ])) ;)) )
+        #symScalLoc(4) |-> 3
+        #symScalLoc(5) |-> 5
+        #symScalLoc(6) |-> select ( (seq-array ( 7 , #symLoc(3) )) , 3 )
     </store>
 </T>

@@ -2,7 +2,7 @@ require "../../doc-files/preamble.k"
 require "../../doc-files/intro.k"
 require "doc-files/arrays-unidimensional-intro.k"
 require "doc-files/imports-intro.k"
-require "../../basic/cink-basic-syntax.k"
+require "../../pointers/cink-pointers.k"
 require "cink-arrays-unidimensional.k"
 
 /*@ \section{Main Module}
@@ -11,14 +11,14 @@ require "cink-arrays-unidimensional.k"
 
 module CINK-SYNTAX 
 
-  imports CINK-BASIC-SYNTAX
+  imports CINK-POINTERS-SYNTAX
   imports CINK-ARRAYS-SYNTAX
 
 endmodule
 
 module CINK
   imports CINK-SYNTAX
-  imports CINK-BASIC-SEMANTICS
+  imports CINK-POINTERS-SEMANTICS
   imports CINK-ARRAYS-SEMANTICS
 
   configuration <T color="yellow">
