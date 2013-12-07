@@ -4,4 +4,6 @@
   <include file="ltlmc/config.xml" directory="ltlmc/" />
   <include file="references/config.xml" directory="references/" />
   <include file="pointers/config.xml" directory="pointers/" />
+  <include file="arrays/config.xml" directory="arrays/" />
+  <include file="arrays/unidimensional/config.xml" directory="arrays/unidimensional/" />
 </tests>

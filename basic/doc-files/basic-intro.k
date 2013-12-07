@@ -1,6 +1,6 @@
 /*@
 
-\section{Basic Iteration}
+\chapter{Basic Iteration}
 
 This definition includes the starting iteration, 
 where the basic constructs of \Cink are defined.

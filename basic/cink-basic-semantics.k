@@ -350,8 +350,10 @@ for information on conversions.]
     of a full-expression. 
     Therefore the result value is the 
     value  stored at the computed location and its side-effect is added to 
-    the cell with the side-effects:
+    the cell with the side-effects. Mote that we have a kind of lvalue to
+    rvalue conversion here.
   */
+
 
   rule [postinc]:
        <k> lval(L:ScalLoc) ++ => V ...</k>

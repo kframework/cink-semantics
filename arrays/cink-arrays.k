@@ -33,43 +33,8 @@ that of arrays and the definition of the whole configuration:
   imports ARRAY
 
   /*@
-
-   The memory model defined for unidimensional arrays can be extended to 
-   multidimensional arrays.
-   A $2\times 3$ array $\{\{2, 4, 6\}, \{3, 5, 7\}\}$ is represented as:
-   \begin{verbatim}
-      seq-array(2, L) |-> array of 2 array of 3 int
-     
-      select(seq-array(2, L), 0)
-      |-> 
-      store(store(store(const-array(3, 0), 0, 2), 1, 4), 2, 6)
-
-      select(seq-array(2, L), 1)
-      |-> 
-      store(store(store(const-array(3, 0), 0, 3), 1, 5), 2, 7)
-   \end{verbatim}
-  where \texttt{array of 3 int)} is replaced first by \texttt{const-array(3, 0)}
-  and then component-wise updated.
-
-  The arrays can be converted to pointers.
-  From the \Cpp manual:
-  \begin{quote}
-  An lvalue or rvalue of type “array of N T” or “array of unknown bound of T”
-  can be converted to a prvalue of type “pointer to T”. 
-  The result is a pointer to the first element of the array.
-  \end{quote}
-  Therefore the pointer arithmetic is extended over array locations:
-
-   $L[I] + V = \texttt{select}(\texttt{seq-array}(N, L),I+V)$,\\
-   $++ L[I] = \texttt{select}(\texttt{seq-array}(N, L),I+1)$,\\
-   $-- L[I] = \texttt{select}(\texttt{seq-array}(N, L),I-1)$\\
-   $L[0][0] + N*I + J 
-     = \texttt{select}(\texttt{select}(\texttt{seq-array}(N, L),I), J)$
-
-   We do not consider yet conversions of the form L -> L[0][0]; we discuss
-  later, when we introduce type system and casting.
+   The definition of the memory model for arrays:
   */
-
 
   syntax SeqLoc ::= "seq-array" "(" Int "," Loc ")"
   syntax Loc ::= SeqLoc
@@ -81,6 +46,13 @@ that of arrays and the definition of the whole configuration:
 
   rule lval(L:SeqLoc)[I:Int] => lval(select(L, I))
 
+  /*@ 
+    Since $L[I]$, where $L$ is the location of the array $A$, can be seen as 
+    a pointer to the $I$-th component, we have to define a pointer arithmetic over the
+    addresses of the components. For instance, we have $L[I]+J=L[I+J]$ in this 
+    arithmetic. Recall that $L[i]$ is represented here by the select operator.
+   */
+
   rule select(L:Loc, I:Int) + J:Int => select(L, I +Int J)
 
   rule <k> $inc(L:Loc, V:Int) => . ...</k>
@@ -91,6 +63,10 @@ that of arrays and the definition of the whole configuration:
        <store>... L |-> select(_:Loc, (I:Int => I -Int V))...</store>
        [side-effect(inc)]
 
+  /*@
+   Since an array is stored into contiguous sequence of locations, we have a
+   partial order over the locations of the components: 
+  */
   rule select(L:Loc, I:Int) <= select(L, J:Int) => I <=Int J
   rule select(L:Loc, I:Int) < select(L, J:Int) => I <Int J
   rule select(L:Loc, I:Int) > select(L, J:Int) => I >Int J
@@ -184,8 +160,8 @@ that of arrays and the definition of the whole configuration:
     Indirection to an array component:
   */
 
-//  rule <k> * select(L:Loc, I) => select(A, I) ...</k>
-//       <store>... L |-> A:Array ...</store>
+  rule <k> * select(L:Loc, I) => select(A, I) ...</k>
+       <store>... L |-> A:Array ...</store>
 
   /*@ 
   Arrays as parameters:

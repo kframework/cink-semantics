@@ -1,9 +1,8 @@
 
 /*@ \section{Imported Modules}
-  The list of imported modules includes the basic ones, \texttt{CINK-BASIC-SYNTAX}
-  and \texttt{CINK-BASIC-SEMANTICS}, including the syntax and the semantics,
-  respectively, of the basic constructions,
-  together with two new modules, \texttt{CINK-ARRAYS-SYNTAX} and \texttt{CINK-ARRAYS-SEMANTICS},
-  which defines the syntax and semantics of the arrays.
+  This iteration is built over that of pointers. Therefore the list of imported\  modules includes the list from pointers's iteration and the two modules 
+  defined by it: 
+  \texttt{CINK-POINTERS-SYNTAX}
+  and \texttt{CINK-POINTERS-SEMANTICS}.
 */
 

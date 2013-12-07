@@ -1,3 +1,4 @@
+4 3
 <T>
     <in>
         ListItem(#buffer ( "" ))
@@ -9,21 +10,13 @@
     </out>
     <control>
         <k>
-            bind ((lval ( #symScalLoc(5) )) , ((lval ( #symScalLoc(6) )) ,
-               .Exps)) to ((int (* p)), (int (* q))) ; ~> ((((int a) ;) ((a = 
-              (* p)) ;)) (((* p) = (* q)) ;)) (((* q) = a) ;) ~> return noVal 
-              ;
+            .K
         </k>
         <return>
-            .K
+            0
         </return>
         <fstack>
-            ( ([ a |-> #symScalLoc(3) b |-> #symScalLoc(4) main |-> 
-              #symScalLoc(2) swap |-> #symScalLoc(1) x |-> #symScalLoc(5) y
-               |-> #symScalLoc(6) ]) , HOLE ; ~> ((((cout << a) << " ") << b) 
-              << endl) ; ~> return 0 ; ~> return noVal ; )
-            ( ([ main |-> #symScalLoc(2) swap |-> #symScalLoc(1) ]) , HOLE ; )
-              
+            .List
         </fstack>
         <sideEffects>
             .Bag
@@ -44,9 +37,12 @@
           (int b) ;) ((b = 4) ;))) (((x of (pointer to int) ;) ((x = (& a)) ;)
           ) ((y of (pointer to int) ;) ((y = (& b)) ;)))) ((swap ( (x , y) )) 
           ;)) (((((cout << a) << " ") << b) << endl) ;)) (return 0 ;)) )
-        #symScalLoc(3) |-> 3
-        #symScalLoc(4) |-> 4
+        #symScalLoc(3) |-> 4
+        #symScalLoc(4) |-> 3
         #symScalLoc(5) |-> #symScalLoc(3)
         #symScalLoc(6) |-> #symScalLoc(4)
+        #symScalLoc(7) |-> #symScalLoc(3)
+        #symScalLoc(8) |-> #symScalLoc(4)
+        #symScalLoc(9) |-> 3
     </store>
 </T>

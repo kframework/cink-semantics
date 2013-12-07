@@ -61,7 +61,14 @@ module CINK-POINTERS-SEMANTICS
   when fresh(L:ScalLoc)
        [ptr-decl, structural]
 
-  /*@ The indirect operator */
+  /*@ The indirect operator.\\
+      We have to distinguish between two cases: the operand is evaluated as an lvalue
+      (its value is wrapped by the label lval) or the operand is evaluated as an rvalue.
+      For instance, for the expression \texttt{*(p++)} the operand of * is an rvalue,
+      while for \texttt{*p} the operand is lvalue.
+      In both cases the value of the operand must be a location. Here we consider only 
+      the case of the scala locations (that store values of scalar types).
+   */
 
   //@ -- lvalue case:
 
@@ -69,18 +76,18 @@ module CINK-POINTERS-SEMANTICS
        <store>... L |-> V ...</store>
 
   //@ -- rvalue case:
-//  rule <k>  * L:ScalLoc => V ...</k> 
-//       <store>... L |-> V ...</store>
+  rule <k>  * L:ScalLoc => V ...</k> 
+       <store>... L |-> V ...</store>
 
   /*@ 
   Pointers as parameters:
   */
 
-  context evaluate (HOLE, _:Exp) to _
+  context evaluate ((HOLE => rvalue(HOLE)), _:Exp) to _
           following (T *_:Exp, _:Decls);
 
-  rule <k> bind((V:ScalVal, Vs) => Vs)
-           to((T * E:Id, Xl:Decls) => Xl); 
+  rule <k> bind((V:Val, Vs) => Vs)
+           to((T * E:Exp, Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[L/getName(E)] </env>
        <store>... . => L |-> V ...</store>

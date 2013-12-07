@@ -29,7 +29,70 @@ This file extends the starting iteration with unidimensional arrays.
    initial elements (say, N) supplied (8.5.1), and the type of the identifier
    of D is "array of N T.
    \end{quote}
+
+   We extend the memory model with contiguous sequences of locations. Such
+   sequences are represented by using the theory of arrays.
+   We assume the reader familiar with this theory. 
+   Here is its definition included in 
+   \texttt{include/builtins/array.k}:
+   \begin{asciik}
+     syntax Array ::= "store"       "(" Array "," Int "," K ")" 
+                    | "const-array" "(" Int "," K ")" 
+		 
+     syntax K ::= "select" "(" Array "," Int ")" 
+     syntax Int ::= "size-of-array" "(" Array ")"
+
+    rule select(store(_:Array, I:Int, V:K), J:Int) => V 
+         requires I ==Int J
+
+    rule select(store(A:Array, I:Int, _:K), J:Int) => select(A, J)
+         requires I =/=Int J 
+
+    rule select(const-array(Size:Int, V:K), I:Int) => V
+         requires (0 <=Int I) andBool (I <Int Size) 
+   \end{asciik}
+
+   We explain the main idea by means of an example showing how a sequence of 
+   three locations storing the sequence of integers (5,3, 8) is represented 
+   by the map:
+   \begin{verbatim}
+      seq-array(3, L)
+      |-> 
+      store(store(store(const-array(3, 0), 0, 5), 1, 3), 2, 8)
+    \end{verbatim}
+   where \texttt{seq-array(3, L)} is a sugar syntax for\\
+   \texttt{store(store(store(const-array(5, 0), 0, L[0]), 1, L[1]), 2, L[2])}.
+
+  The arrays can be converted to pointers.
+  From the \Cpp manual:
+  \begin{quote}
+  An lvalue or rvalue of type "array of N T" or "array of unknown bound of T"
+  can be converted to a prvalue of type "pointer to T". 
+  The result is a pointer to the first element of the array.
+  \end{quote}
+  Therefore the pointer arithmetic is extended over array locations:\\
+\indent   $L[I] + V = \texttt{select}(\texttt{seq-array}(N, L),I+V)$,\\
+\indent   $++ L[I] = \texttt{select}(\texttt{seq-array}(N, L),I+1)$,\\
+\indent   $-- L[I] = \texttt{select}(\texttt{seq-array}(N, L),I-1)$.
+
+
+   Moreover, we have a piece of pointer arithmetic over these locations:\\
+   $L[I] + V = \texttt{select}(\texttt{seq-array}(N, L),I+V)$,\\
+   $++ L[I] = \texttt{select}(\texttt{seq-array}(N, L),I+1)$,\\
+   $-- L[I] = \texttt{select}(\texttt{seq-array}(N, L),I-1)$.
+
+   The lvalue of $L[I]$ is $\texttt{select}(\texttt{seq-array}(N, L),I)$, 
+   and the rvalue of $L[I]$ is $\texttt{select}(A,I)$, where
+   $\texttt{seq-array}(N, L),I)\texttt{ |-> } A$\texttt{:Array}.
+
+  Since we did not considered yet the casting, we cannot write $A+I$ 
+  but we can write $\&A[0] + I$. 
+
+   The casting will be defined in a future iteration.
+
   */
+
+
 
 
 

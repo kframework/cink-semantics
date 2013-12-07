@@ -58,11 +58,21 @@ module CINK-REFERENCES-SEMANTICS
        <env> Env:Map => Env[L/X] </env>
 
   /*@ The evaluation of the ampersand operator returns the lvalue computed
-    by the heating/cooling rules.
+    by the heating/cooling rules. A the case of potsfix increment/decrement
+    operators, the evaluation can also be seen as a conversion from lvalue
+    to rvalue since the computed value can be used only as a rvalue.
    */
 
-  rule & lval(L:Loc) => lval(L) 
-  
+  rule & lval(L:Loc) => L
+
+/*
+  The folowing rule is debatable:
+
+  rule <k> & lval(L:Loc) => lval(L') ...</k>
+       <store> ... . => (L' |-> L) ...</store>
+       requires fresh(L':ScalLoc)
+*/
+
 /*@
 
   \subsection{Call by Reference}
