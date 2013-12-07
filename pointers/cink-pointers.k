@@ -8,7 +8,7 @@ module CINK-POINTERS-SYNTAX
   The only operand of the indirect operator is an rvalue.
   */
 
-  syntax Exp ::= "*" Exp [strict(all(result(Val))), indirect]
+  syntax Exp ::= "*" Exp [strict(all(context(rvalue), result(Val))), indirect]
 
   syntax priorities  indirect  > assign read write greatthan 
                                  lessequal equality plus multiply
@@ -72,12 +72,14 @@ module CINK-POINTERS-SEMANTICS
 
   //@ -- lvalue case:
 
-  rule <k>  * lval(L:ScalLoc) => lval(V) ...</k> 
-       <store>... L |-> V ...</store>
+//  rule <k>  * lval(L:ScalLoc) => lval(V) ...</k> 
+//       <store>... L |-> V ...</store>
 
   //@ -- rvalue case:
-  rule <k>  * L:ScalLoc => V ...</k> 
-       <store>... L |-> V ...</store>
+//  rule <k>  * L:ScalLoc => V ...</k> 
+//       <store>... L |-> V ...</store>
+
+  rule * L:Loc => lval(L)
 
   /*@ 
   Pointers as parameters:

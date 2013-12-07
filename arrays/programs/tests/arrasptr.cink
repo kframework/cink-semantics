@@ -1,0 +1,24 @@
+/*
+
+  This example exhibits the relationship between
+  arrays and pointers.
+
+*/
+
+int main() {
+  int a[5], i;
+  int s = 0, *p;
+  i = 0;
+  while (i < 5) {
+    a[i] = 2*i;
+    ++i;
+  }
+  p = & (a[0]);
+  while (p <= &(a[4])) {
+    s = s + *(p++);
+  }
+  cout << s << endl;
+  return 0;
+}
+
+  
