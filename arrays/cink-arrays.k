@@ -48,9 +48,10 @@ that of arrays and the definition of the whole configuration:
 
   /*@ 
     Since $L[I]$, where $L$ is the location of the array $A$, can be seen as 
-    a pointer to the $I$-th component, we have to define a pointer arithmetic over the
-    addresses of the components. For instance, we have $L[I]+J=L[I+J]$ in this 
-    arithmetic. Recall that $L[i]$ is represented here by the select operator.
+    a pointer to the $I$-th component, we have to define a pointer arithmetic 
+    over the addresses of the components. For instance, we have $L[I]+J=L[I+J]$ 
+    in this arithmetic.
+    Recall that $L[i]$ is represented here by the select operator.
    */
 
   rule select(L:Loc, I:Int) + J:Int => select(L, I +Int J)
@@ -121,12 +122,16 @@ that of arrays and the definition of the whole configuration:
 
   //@ Arrays of scalar type are zero-initialized, so they are well defined:
 
-  rule  <store>... _ |-> (array of N:Int T:ScalType => const-array(N, 0)) ...</store>
+  rule <store>...
+          _ |-> (array of N:Int T:ScalType => const-array(N, 0))
+       ...</store> 
 
 
   //@ The case of a component of a  multimensional array, the first access:
 
-  rule <k> lval(select(L:Loc, I:Int))[J:Int] => lval(select(select(L, I), J)) ...</k>
+  rule <k>
+          lval(select(L:Loc, I:Int))[J:Int] => lval(select(select(L, I), J))
+       ...</k>
        <store>
           ST:Map  L |-> array of N:Int T:Type
           (. => select(L, I) |-> T)
@@ -136,7 +141,9 @@ that of arrays and the definition of the whole configuration:
 
   //@ \ldots and the case when the component is already allocated:
 
-  rule <k> lval(select(L:Loc, I:Int))[J:Int] => lval(select(select(L, I), J)) ...</k>
+  rule <k>
+          lval(select(L:Loc, I:Int))[J:Int] => lval(select(select(L, I), J)) 
+       ...</k>
        <store>... select(L, I) |-> _ ...</store>
 
 
@@ -156,12 +163,6 @@ that of arrays and the definition of the whole configuration:
        <store>... L |-> A:Array ...</store>
        [kripke(mem-lookup)]
 
-  /*@
-    Indirection to an array component:
-  */
-
-//  rule <k> * select(L:Loc, I) => select(A, I) ...</k>
-//       <store>... L |-> A:Array ...</store>
 
   /*@ 
   Arrays as parameters:
@@ -193,7 +194,8 @@ that of arrays and the definition of the whole configuration:
 
   rule K2SMTLib(seq-array(N:Int, L:Loc ))
        =>
-       "const-array (" +String K2SMTLib(N) +String "," +String K2SMTLib(N)  +String ")"
+       "const-array (" +String K2SMTLib(N) +String ","
+                       +String K2SMTLib(N)  +String ")"
 
 
 endmodule

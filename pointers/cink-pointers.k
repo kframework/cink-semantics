@@ -62,22 +62,8 @@ module CINK-POINTERS-SEMANTICS
        [ptr-decl, structural]
 
   /*@ The indirect operator.\\
-      We have to distinguish between two cases: the operand is evaluated as an lvalue
-      (its value is wrapped by the label lval) or the operand is evaluated as an rvalue.
-      For instance, for the expression \texttt{*(p++)} the operand of * is an rvalue,
-      while for \texttt{*p} the operand is lvalue.
-      In both cases the value of the operand must be a location. Here we consider only 
-      the case of the scala locations (that store values of scalar types).
+      Its semantics is just the inverse of the \& operator!!!
    */
-
-  //@ -- lvalue case:
-
-//  rule <k>  * lval(L:ScalLoc) => lval(V) ...</k> 
-//       <store>... L |-> V ...</store>
-
-  //@ -- rvalue case:
-//  rule <k>  * L:ScalLoc => V ...</k> 
-//       <store>... L |-> V ...</store>
 
   rule * L:Loc => lval(L)
 
