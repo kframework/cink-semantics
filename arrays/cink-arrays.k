@@ -112,6 +112,8 @@ that of arrays and the definition of the whole configuration:
   types.
   */
 
+  context _:Type _:Exp[(HOLE => rvalue(HOLE))]; [result(Int)]
+
   rule T:Type X:Exp[N:Int]; => X of array of N T;
 
   rule X:Exp[N:Int] of AT:ArrType; => X of array of N AT;
@@ -119,7 +121,9 @@ that of arrays and the definition of the whole configuration:
   /*@
   The arrays are values:
   */
-  syntax Val ::= Array
+//  syntax Val ::= Array
+
+  syntax Exp ::= Array
 
   //@ An updated array is a value:
 
@@ -152,7 +156,7 @@ that of arrays and the definition of the whole configuration:
           (. => select(L, I) |-> T)
        ...</store>
        requires notBool select(L, I) in keys(ST)
-      [transition]  // it must be here for now
+ //     [transition]  // it must be here for now
 
   //@ \ldots and the case when the component is already allocated:
 
@@ -180,8 +184,8 @@ that of arrays and the definition of the whole configuration:
     Indirection to an array component:
   */
 
-  rule <k> * select(L:Loc, I) => select(A, I) ...</k>
-       <store>... L |-> A:Array ...</store>
+//  rule <k> * select(L:Loc, I) => select(A, I) ...</k>
+//       <store>... L |-> A:Array ...</store>
 
   /*@ 
   Arrays as parameters:

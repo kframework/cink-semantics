@@ -61,7 +61,7 @@ module CINK-REFERENCES-SEMANTICS
     by the heating/cooling rules.
    */
 
-  rule & lval(L:Loc) => L 
+  rule & lval(L:Loc) => lval(L) 
   
 /*@
 

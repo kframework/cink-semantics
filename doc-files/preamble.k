@@ -5,7 +5,7 @@
 
 \title{CinK -- an experiment on how to think in \K}
 
-\author{Dorel Lucanu (\texttt{dlucanu@info.uaic.ro}) and 
+\author{Dorel Lucanu (\texttt{dlucanu@info.uaic.ro})\\ and\\ 
         Traian Florin \c{S}erb\u{a}nu\c{t}\u{a} (\texttt{traian.serbanuta@info.uaic.ro})}
 
 \organization{Alexandru Ioan Cuza University of Ia\c{s}i, Romania}

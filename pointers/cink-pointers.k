@@ -10,9 +10,10 @@ module CINK-POINTERS-SYNTAX
 
   syntax Exp ::= "*" Exp [strict(all(result(Val))), indirect]
 
-  syntax priorities  indirect  > assign read write greatthan lessequal equality plus multiply
+  syntax priorities  indirect  > assign read write greatthan 
+                                 lessequal equality plus multiply
 
-  //@Extend syntax wit type specifiers needed for the new operator:
+  //@ Extend syntax wit type specifiers needed for the new operator:
 
   syntax TypeSpec ::= FundType
                     | TypeSpec "*"
@@ -60,9 +61,6 @@ module CINK-POINTERS-SEMANTICS
   when fresh(L:ScalLoc)
        [ptr-decl, structural]
 
-
-
-
   /*@ The indirect operator */
 
   //@ -- lvalue case:
@@ -71,8 +69,8 @@ module CINK-POINTERS-SEMANTICS
        <store>... L |-> V ...</store>
 
   //@ -- rvalue case:
-  rule <k>  * L:ScalLoc => V ...</k> 
-       <store>... L |-> V ...</store>
+//  rule <k>  * L:ScalLoc => V ...</k> 
+//       <store>... L |-> V ...</store>
 
   /*@ 
   Pointers as parameters:
