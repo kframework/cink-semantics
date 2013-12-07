@@ -11,16 +11,16 @@
         .Bag
     </threads>
     <store>
-        #symLoc(1) |-> 2
-        #symLoc(2) |-> lambda ( (int x) @ (return (r = x) ;) )
-        #symLoc(3) |-> lambda ( .Decls @ (((std::thread t1 ( f , 1 ) ;) (
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> lambda ( (int x) @ (return (r = x) ;) )
+        #symScalLoc(3) |-> lambda ( .Decls @ (((std::thread t1 ( f , 1 ) ;) (
           std::thread t1 ( f , 2 ) ;)) (return r ;)) )
-        #symLoc(4) |-> 1
-        #symLoc(5) |-> 2
+        #symScalLoc(4) |-> 1
+        #symScalLoc(5) |-> 2
     </store>
     <genv>
-        f |-> #symLoc(2)
-        main |-> #symLoc(3)
-        r |-> #symLoc(1)
+        f |-> #symScalLoc(2)
+        main |-> #symScalLoc(3)
+        r |-> #symScalLoc(1)
     </genv>
 </T>
