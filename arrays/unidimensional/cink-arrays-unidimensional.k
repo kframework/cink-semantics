@@ -23,9 +23,10 @@ module CINK-ARRAYS-SEMANTICS
   /*@
    We extend the memory model with contiguous sequences of locations. Such
    sequnces are represented by using the theory of arrays.
-   We assume the reader familiar with this theory. Here is its definition included in 
+   We assume the reader familiar with this theory. 
+   Here is its definition included in 
    \texttt{include/builtins/array.k}:
-   \begin{verbatim}
+   \begin{asciik}
      syntax Array ::= "store"       "(" Array "," Int "," K ")" 
                     | "const-array" "(" Int "," K ")" 
 		 
@@ -40,10 +41,11 @@ module CINK-ARRAYS-SEMANTICS
 
     rule select(const-array(Size:Int, V:K), I:Int) => V
          requires (0 <=Int I) andBool (I <Int Size) 
-   \end{verbatim}
+   \end{asciik}
 
-   We explain the main idea by means of an example showing how a sequence of three
-   locations storing the sequence of integers (5,3, 8) is represented by the map:
+   We explain the main idea by means of an example showing how a sequence of 
+   three locations storing the sequence of integers (5,3, 8) is represented 
+   by the map:
    \begin{verbatim}
       seq-array(3, L)
       |-> 
@@ -57,8 +59,8 @@ module CINK-ARRAYS-SEMANTICS
    $++ L[I] = \texttt{select}(\texttt{seq-array}(N, L),I+1)$,\\
    $-- L[I] = \texttt{select}(\texttt{seq-array}(N, L),I-1)$.
 
-   The lvalue of $L[I]$ is $\texttt{select}(\texttt{seq-array}(N, L),I)$, and the rvalue
-   of $L[I]$ is $\texttt{select}(A,I)$, where
+   The lvalue of $L[I]$ is $\texttt{select}(\texttt{seq-array}(N, L),I)$, 
+   and the rvalue of $L[I]$ is $\texttt{select}(A,I)$, where
    $\texttt{seq-array}(N, L),I)\texttt{ |-> } A$\texttt{:Array}.
 
   */
@@ -66,12 +68,13 @@ module CINK-ARRAYS-SEMANTICS
   syntax Loc ::= SeqLoc
 
 
-  // a "seq-array" is in fact a "const-array" special (this should be done in K2SMTLIB)
+  // a "seq-array" is in fact a "const-array" special (this should be done in 
+  //  K2SMTLIB)
 //  rule isSeqLoc(const-array(_:Int, _:Loc)) => true 
 //  rule seq-array(N:Int, L:Loc) => const-array(N, L) [anywhere]
 
 
-  //@ Extend select over sequences of locations:
+  //@ Extending select over sequences of locations:
 
   syntax Loc ::= "select" "(" Loc "," Int ")" [smtlib(select)]
 
@@ -88,10 +91,10 @@ module CINK-ARRAYS-SEMANTICS
        [side-effect(inc)]
 
   /*@
-  We define array types following the the notation convention from the manual. 
-  We call these type \emph{explicit array types}. Note that these have a 
+  We define array types following the notation convention from the manual. 
+  We call these types \emph{explicit array types}. Note that these have a 
   recursive definition.  
-  We also extends statements with declaration of variable (expression)
+  We also extend statements with declaration of variables (expressions)
   of the new type.
   */
 
@@ -100,7 +103,7 @@ module CINK-ARRAYS-SEMANTICS
   syntax Stmt ::= Exp "of" ArrType ";"
 
   /*@
-  The arrays are values:
+  Arrays are values:
   */
   syntax Val ::= Array
 
@@ -109,14 +112,14 @@ module CINK-ARRAYS-SEMANTICS
   rule isVal(store(_,_,_)) => true
 
   /*@
-  The array declaration are translated into declaration with explicit array
+  Array declarations are translated into declarations with explicit array
   types:
   */
 
   rule T:Type X:Exp[N:Int]; => X of array of N T;
 
   /*@
-   Semantics of a declaration of an array:
+   Semantics of an array declaration:
   */
   rule <k> X:Id of array of N:Int T:Type;
            =>
