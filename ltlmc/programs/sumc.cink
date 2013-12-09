@@ -1,0 +1,18 @@
+/*
+
+   krun programs/sumc.cink --ltlmc "[]Ltl (L ->Ltl eqToSum(s,i)) "
+
+*/
+
+
+int n, i, s;
+
+int main() {
+  n = 1;
+  s = i = 0;
+  while (i < n) {
+    ++i;
+    s = s + i;
+    L : {}
+  }
+}
