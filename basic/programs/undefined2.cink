@@ -1,0 +1,21 @@
+/*
+
+This example includes a program with undefined behavior.
+This can be exhibited by showing the non-deterministic behavior of the program.
+
+ -- The compiling command
+
+     	kompile cink --superheat="plus, assign" --transition "side-effect"
+
+ -- The execution command 
+
+	krun programs/undefined2.cink --search
+
+
+
+The undefinedness is exhibited by the two solutions reported.
+*/
+int main() {
+  int x;
+  return (x = 1) + (x = 2);
+}
