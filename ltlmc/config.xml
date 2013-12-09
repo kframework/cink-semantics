@@ -24,5 +24,9 @@
       <program name="threads.cink">
         <krun-option name="-ltlmc" value="~Ltl([]Ltl eqTo(r, 1))" />
       </program>
+      <program name="sumc.cink">
+        <krun-option name="-ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
+      </program>
     </test>
+
 </tests>

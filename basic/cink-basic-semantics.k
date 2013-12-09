@@ -140,8 +140,7 @@ module CINK-BASIC-SEMANTICS
 
   syntax K ::= "seqpoint"
 
-  rule [seqpoint] :
-       <k> seqpoint => . ...</k>
+  rule <k> seqpoint => . ...</k>
        <sideEffects> . </sideEffects>
        [seqpoint]
 
@@ -150,8 +149,7 @@ module CINK-BASIC-SEMANTICS
    evaluation steps of the current expression:
   */
 
-  rule [side-effect] :
-       <k> . => SE ...</k>
+  rule <k> . => SE ...</k>
        <sideEffects>...  <sideEffect> SE </sideEffect> => . ... </sideEffects>
        [side-effect]
 
