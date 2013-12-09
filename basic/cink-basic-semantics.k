@@ -388,15 +388,13 @@ return an lvalue referring to the left operand. \ldots . In all cases,
  the assignment is sequenced after the value computation of the right and 
 left operands, and before the value computation of the assignment expression.
 \end{quote}
-  Therefore the semantics of the assign operator is similar to that of postfix
-  operators.\\
+  The first requirement is solved by the strict attribute and the second one 
+  by the next rule.
   The semantics of compound assignment operators is let as exercises.
   */
 
-  rule [update] : <k> lval(L:Loc) = V:Val => lval(L) ...</k>
-       <sideEffects>...
-           . =>  <sideEffect> $update(L, V) </sideEffect>
-       ...</sideEffects>
+  rule <k> lval(L:Loc) = V:Val => $update(L,V) ~> lval(L) ...</k>
+       [assign]
 
 /*@  The comma operator. 
     From \Cpp manual:

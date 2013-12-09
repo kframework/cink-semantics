@@ -60,6 +60,12 @@ module CINK-LTLMC-SEMANTICS
    */
 
   /*@
+    Semantics of the labeled statements:
+  */
+
+    rule L:Id : S:Stmt => S  [kripke]
+
+  /*@
     In order to give semantics to the proposition \texttt{eqTo}, we use an 
     auxiliary function \texttt{val} that returns the value of a given variable
     name in a given configuration: 
@@ -91,9 +97,9 @@ module CINK-LTLMC-SEMANTICS
 
   
 
-  rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true requires val(B, X) ==K I [anywhere]
+  rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true requires val(B, X) ==Int I [anywhere]
 
-  rule B:Bag |=Ltl neqTo(X:Id, I:Int) => true requires val(B, X) =/=K I [anywhere]
+  rule B:Bag |=Ltl neqTo(X:Id, I:Int) => true requires val(B, X) =/=Int I [anywhere]
 
   rule B:Bag |=Ltl lt(X:Id, I:Int) => true requires val(B, X) <Int I [anywhere]
 
@@ -108,7 +114,11 @@ module CINK-LTLMC-SEMANTICS
 
   rule <generatedTop>...
          <T>...
-           <k> L:Id : S:Stmt ...</k>
+           <threads>
+             <thread>...
+               <k> L:Id : S:Stmt ...</k>
+             ...</thread>
+           </threads>
          ...</T>
        ...</generatedTop>
        |=Ltl L
