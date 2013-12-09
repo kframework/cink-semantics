@@ -55,11 +55,6 @@ module CINK-ARRAYS-SEMANTICS
   syntax Type ::= ArrType
   syntax Stmt ::= Exp "of" ArrType ";"
 
-  /*@
-  Arrays are values:
-  */
-  syntax Val ::= Array
-
   //@ An updated array is a value:
 
   rule isVal(store(_,_,_)) => true

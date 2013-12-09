@@ -52,7 +52,7 @@ This file extends the starting iteration with unidimensional arrays.
          requires (0 <=Int I) andBool (I <Int Size) 
    \end{asciik}
 
-   We explain the main idea by means of an example showing how a sequence of 
+   We explain the main idea by means of an example. A sequence of 
    three locations storing the sequence of integers (5,3, 8) is represented 
    by the map:
    \begin{verbatim}
@@ -61,7 +61,8 @@ This file extends the starting iteration with unidimensional arrays.
       store(store(store(const-array(3, 0), 0, 5), 1, 3), 2, 8)
     \end{verbatim}
    where \texttt{seq-array(3, L)} is a sugar syntax for\\
-   \texttt{store(store(store(const-array(5, 0), 0, L[0]), 1, L[1]), 2, L[2])}.
+\indent   \texttt{store(store(store(const-array(5, 0), 0, L[0]), 1, L[1]), 2, L[2])}.
+\medskip
 
   The arrays can be converted to pointers.
   From the \Cpp manual:
@@ -70,16 +71,10 @@ This file extends the starting iteration with unidimensional arrays.
   can be converted to a prvalue of type "pointer to T". 
   The result is a pointer to the first element of the array.
   \end{quote}
-  Therefore the pointer arithmetic is extended over array locations:\\
+Therefore the pointer arithmetic is extended over array locations:\\
 \indent   $L[I] + V = \texttt{select}(\texttt{seq-array}(N, L),I+V)$,\\
 \indent   $++ L[I] = \texttt{select}(\texttt{seq-array}(N, L),I+1)$,\\
 \indent   $-- L[I] = \texttt{select}(\texttt{seq-array}(N, L),I-1)$.
-
-
-   Moreover, we have a piece of pointer arithmetic over these locations:\\
-   $L[I] + V = \texttt{select}(\texttt{seq-array}(N, L),I+V)$,\\
-   $++ L[I] = \texttt{select}(\texttt{seq-array}(N, L),I+1)$,\\
-   $-- L[I] = \texttt{select}(\texttt{seq-array}(N, L),I-1)$.
 
    The lvalue of $L[I]$ is $\texttt{select}(\texttt{seq-array}(N, L),I)$, 
    and the rvalue of $L[I]$ is $\texttt{select}(A,I)$, where
@@ -87,7 +82,6 @@ This file extends the starting iteration with unidimensional arrays.
 
   Since we did not considered yet the casting, we cannot write $A+I$ 
   but we can write $\&A[0] + I$. 
-
    The casting will be defined in a future iteration.
 
   */

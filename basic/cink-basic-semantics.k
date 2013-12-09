@@ -5,14 +5,14 @@ module CINK-BASIC-SEMANTICS
 
 
   /*@ \subsection{Memory Model}
-   We use an abstract mmemory model consisting of (automatically generated) \
+   We use an abstract memory model consisting of (automatically generated) \
    symbolic values for locations. 
-   The locations are splitted in two categories: scala locations, which can 
+   The locations are splitted in two categories: scalar locations, which can 
    store scala values, and compound locations, which can store values of
    compound types.
    A location is identified with its address.
    These sort for locations is \texttt{Loc} and that for scalar locations is
-   \texttt{Scalval}. We use a special constant \texttt{noLoc}
+   \texttt{ScalLoc}. We use a special constant \texttt{noLoc}
    for non-defined locations. The locations are used as values for pointer
    types and therefore they are subsodrted to \texttt{ScalVal}.
    */
@@ -23,6 +23,11 @@ module CINK-BASIC-SEMANTICS
   syntax ScalVal ::= Loc
 
   /*@ \subsubsection{Memmory operations and side-effects} */
+
+  /*@
+   The memory operations and the side effects are described by internal
+   operations whose semantics is self explained.
+  */
 
   syntax Exp ::= "$inc" "(" K "," ScalVal ")"
                | "$dec" "(" K "," ScalVal ")"
@@ -57,7 +62,7 @@ module CINK-BASIC-SEMANTICS
     for the heating and cooling rules. 
 
     In order to keep the definition
-    as simple as possible, we let the expressions to be evaluated always
+    as simple as possible, we let the expressions be evaluated always
     to lvalues and then use the context \texttt{rvalue} to convert them into 
     rvalues whenever this is needed. To be more precise, we consider the
     example of the
@@ -81,19 +86,19 @@ module CINK-BASIC-SEMANTICS
 \end{verbatim}
     After the variable \texttt{y} is evaluated to its lvalue, it must be 
     converted to an
-    rvalue. Therefore we use a label \texttt{lval($l$)} saying that tha value
-    $l$ plays the role of lvalue and the conversion is realized by a rule of
+    rvalue. Therefore we use a label \texttt{lval($l$)} saying that the location
+    $l$ plays the role of lvalue and the conversion is realised by a rule of
     the form \texttt{rvalue(lval(l)) => }\textit{the value stored at the 
     location} \texttt{l}.
 
     We already defined the subset of values that is part of the syntax, 
     namely the values given by the scalar types. Here we extend the set
     o values with intermediate constructs needed to execute programs. 
-    Such a value is\texttt{noVal}, which "paradoxally" denotes in fact 
+    Such a value is\texttt{noVal}, which "paradoxically" denotes in fact 
     "no value". The lambda abstractions are used for storing the
     functions. Similar to other \K examples (IMP, IMP++, SIMPLE), the 
     functions are stored similar to variables and therefore their definitions
-    are seen as values. Since they cannot splitted into subvalues, we define
+    are seen as values. Since they cannot split into sub-values, we define
     them as scalar values.
    */
 
@@ -124,7 +129,7 @@ module CINK-BASIC-SEMANTICS
   rule rvalue(lval(L:Loc) => $lookup(L))
 
 
-  /*@ Seqpoints\\
+  /*@ \subsection{ Seqpoints}
     The semantics of a sequence point consists of executing all the side effects
     collected in the evaluation of the current expression. This is required,
     e.g., by the complete evaluation of a full expression and the comma
@@ -209,21 +214,21 @@ module CINK-BASIC-SEMANTICS
 
   /*@
     The rules for variable declarations for the fundamental types:\\
-    \Cpp manual (6.7):
+    From the \Cpp manual (6.7):
     \begin{quote}
     The zero-initialization (8.5) of all block-scope variables with static 
     storage duration (3.7.1) or thread storage
     duration (3.7.2) is performed before any other initialization takes place.
     \end{quote}
-    \Cpp manual (8.5):
+    From the \Cpp manual (8.5):
     \begin{quote}
     To zero-initialize an object or reference of type T means:\\
      - if T is a scalar type (3.9), the object is set to the value 0 (zero), 
     taken as an integral constant expression,
     converted to T;
     \end{quote}
-    In this iteration the values and expressions are not typed 
-    (this will be discussed latter), so the conversion cannot be realized.
+    In this iteration the values and expressions are not typed, 
+    so the conversion cannot be defined.
    */
 
   rule [var-decl] :
@@ -258,7 +263,9 @@ module CINK-BASIC-SEMANTICS
   /*@ \subsection{Expressions Evaluation.} */
 
   /*@
-   The following expressions are strict. 
+   
+   The following expressions are strict and therefore their semantics
+   is given only for the case the operands are values.  
   */
   rule I1:Int + I2:Int => I1 +Int I2 [plus]
 
@@ -287,22 +294,10 @@ module CINK-BASIC-SEMANTICS
   rule ! false  => true
   rule ! true => false 
 
-  rule endl => "\n" [structural]
+  rule endl => "\n" 
 
   /*@ \subsubsection{The prefix increment/decrement operator}
-    Here is the description of this operator from the manual of 
-    \Cpp 2011 (5.3.2):
-\begin{quote}
-    The operand of prefix ++ is modified by adding 1, or set to true 
-    if it is bool (this use is deprecated). The operand shall be a 
-    modifiable lvalue. The type of the operand shall be an arithmetic 
-    type or a pointer to a completely-defined object type. 
-    The result is the updated operand; it is an lvalue, and it is a 
-    bit-field if the operand is a bit-field.
-\end{quote}
-  */
-
-  /*@ The semantics of the the prefix increment. Fron the \Cpp manual:
+ Here is the description of the the prefix increment from the \Cpp manual:
 \begin{quote}
 The operand of prefix ++ is modified by adding 1, or set to true if it is 
 bool (this use is deprecated). The operand shall be a modifiable lvalue. 
@@ -314,6 +309,8 @@ equivalent to x+=1
 [ Note: See the discussions of addition (5.7) and assignment operators (5.17) 
 for information on conversions.]
 \end{quote}
+  The semantics consists of executing the corresponding side effect and returning 
+  the involved location:
   */
 
   rule ++ lval(L:Loc) => $inc(L, 1) ~> lval(L)
@@ -322,7 +319,7 @@ for information on conversions.]
 
 
   /*@
-  \subsubsection{The postfix increment operator}
+  \subsubsection{The postfix increment/decrement operator}
    Here is the description of this operator from the manual of 
   \Cpp 2011 (5.2.6):
 \begin{quote}
@@ -350,7 +347,7 @@ for information on conversions.]
     of a full-expression. 
     Therefore the result value is the 
     value  stored at the computed location and its side-effect is added to 
-    the cell with the side-effects. Mote that we have a kind of lvalue to
+    the cell with the side-effects. Note that we have a kind of lvalue to
     rvalue conversion here.
   */
 
@@ -391,8 +388,8 @@ return an lvalue referring to the left operand. \ldots . In all cases,
  the assignment is sequenced after the value computation of the right and 
 left operands, and before the value computation of the assignment expression.
 \end{quote}
-  Since the evaluation of the assignment has as side effect the modification 
-  of the store, we define a new a new side effect construct \texttt{\$update}.\\
+  Therefore the semantics of the assign operator is similar to that of postfix
+  operators.\\
   The semantics of compound assignment operators is let as exercises.
   */
 
@@ -417,16 +414,13 @@ as its right operand, \ldots. If the value of the right
 operand is a temporary (12.2), the result is that temporary.
 \end{quote}
 
-  The \texttt{strict(1)} attribute in the definition of the operator and 
-  the next rule accomplishe the task: 
+  The sequenced before requirement is accomplished by adding a seqpoint:
+
 */
 
   rule V:Val,E:Exp => seqpoint ~> E
 
-  /*@
-
-
-  /* \subsection{Control Statements.} */
+  /*@ \subsection{Control Statements.} */
 
   /*@
     As usual, the \texttt{while} statement is desugared using the 
@@ -507,8 +501,8 @@ the next full-expression to be evaluated
     expression is declared strict only in its first argument.
     Note that in this iteration we consider only the call-by-value 
     binding mechanism. The call-by-reference mechanism will be considered
-    in a future iteration.
-  /*
+    together with references in the next iteration.
+  */
 
 /*@
 From the \Cpp manual:

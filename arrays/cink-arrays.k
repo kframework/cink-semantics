@@ -51,7 +51,7 @@ that of arrays and the definition of the whole configuration:
     a pointer to the $I$-th component, we have to define a pointer arithmetic 
     over the addresses of the components. For instance, we have $L[I]+J=L[I+J]$ 
     in this arithmetic.
-    Recall that $L[i]$ is represented here by the select operator.
+    Recall that $L[I]$ is represented here by the select operator.
    */
 
   rule select(L:Loc, I:Int) + J:Int => select(L, I +Int J)
@@ -95,12 +95,6 @@ that of arrays and the definition of the whole configuration:
 
   rule X:Exp[N:Int] of AT:ArrType; => X of array of N AT;
 
-  /*@
-  The arrays are values:
-  */
-//  syntax Val ::= Array
-
-  syntax Exp ::= Array
 
   //@ An updated array is a value:
 

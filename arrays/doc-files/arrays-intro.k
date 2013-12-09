@@ -2,9 +2,8 @@
 /*@ \section{Introduction}
 
 
-This iteration includes the extension of the pointer iteration with 
+This iteration includes the extension of the pointer iteration to 
 multidimensional arrays. 
-
 From C++ 2011 Manual (8.3.4):\\
 \begin{quote}
   In a declaration T D where D has the form\\
@@ -55,7 +54,7 @@ From C++ 2011 Manual (8.3.4):\\
   The whole array is stored in a contiguous sequence
   of cells starting at a distinguished address $L$,
   denoted by $\texttt{seq-array}(N_k,L)$, where $N_k$ is the last dimension of 
-  the array. The value stored at $L$ is of type of the array.
+  the array. The value stored at $L$ is the type of the array.
   Since the value $N_k$ can be "unknown" (e.g., represented by a
   symbolic value), we do not want to explicitly represent the array value 
   stored at $L$. 
@@ -85,7 +84,7 @@ From C++ 2011 Manual (8.3.4):\\
   then its complete value can be built in a bottom-up manner.
 
   The pointer arithmetic can be extended with\\
-   $L[0][0] + N*I + J 
+\indent   $L[0][0] + N*I + J 
      = \texttt{select}(\texttt{select}(\texttt{seq-array}(N, L),I), J)$
    if $L[0] \mapsto \texttt{array of } N\ldots$.
   

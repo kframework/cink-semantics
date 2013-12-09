@@ -7,10 +7,10 @@ module CINK-BASIC-SYNTAX
 
   syntax FundType ::= "int" | "bool" | "void" 
 
-  //@ Any fundamental type is a scalar type
+  //@ Any fundamental type is a scalar type:
   syntax ScalType ::= FundType
 
-  //@ Any scalar type is a type
+  //@ Any scalar type is a type:
   syntax Type ::= ScalType
 
   /*@ \subsection{Declarations}
@@ -32,10 +32,10 @@ module CINK-BASIC-SYNTAX
     "sequenced before", which defines a partial order over the evaluation of 
     subexpressions. This can be easily expressed in \K using the 
     \texttt{strict} attribute to specify the evaluation order for the 
-    operands. Id the operands of an operator are unsequenced, then the 
+    operands. If the operands of an operator are unsequenced, then the 
     operator will have the attribute \texttt{strict}, meaning that they are
     evaluated in strict nondeterministic order. If an operand $A$ is sequenced
-    before $B$ then the eavluation order is expressed as argument of the 
+    before $B$ then the evaluation order is expressed as argument of the 
     \texttt{strict} attribute.
     For instance, since the operands of the binary operators are unsequenced, 
     these operators are strict in both arguments. Hence the behavior of some 
@@ -44,7 +44,7 @@ module CINK-BASIC-SYNTAX
 
     The second major feature is given by the classification of the expression
     in rvalues and lvalues. For instance, the arguments of a binary
-    operator are evaluated as rvalues and their result is a rvalues, too,
+    operator are evaluated as rvalues and their result is a rvalue, too,
     whilst the argument of the prefix increment/decrement and their result are 
     lvalues. Therefore the value of the strict attribute for such operators
     is a list of two sub-attributes: a \texttt{context} sub-attribute 
@@ -57,20 +57,21 @@ module CINK-BASIC-SYNTAX
     In contrast
     to the other examples, the function call expression is strict only in the
     first argument (the function name) because the evaluation of the arguments
-    it is depending on the bindding mechanism of the corresponding argument: 
+    is depending on the binding mechanism of the corresponding argument: 
     this can be call-by-value or call-by-reference.
     In this iteration we consider
-    only the former one, the latter will be implemented in a next iteration,
-    together with the references.
+    only the former one, the latter will be implemented 
+     together with the references in a next iteration.
 
-    The primitive constructs for expressions are the variable names, which are
-    identifiers, and the values modeled by the sort \texttt{Val}. 
-    A subset of values, modeled by the sort \texttt{ScalVal}, is given by 
+    The primitive constructs for expressions can be variable names, which are
+    identifiers, and values modelled by the sort \texttt{Val}. 
+    A subset of values, modelled by the sort \texttt{ScalVal}, is given by 
     the constants of the scalar types.
     \par
     We prefer to declare the standard input/output streams \texttt{cin} and 
     \texttt{cout} as being values; the reason for this decision will be 
-    explained later.
+    explained later when we give semantics to the reading/writting 
+    operators.
    */
 
 
@@ -192,7 +193,7 @@ in Clause 5 can appear only in parentheses.
 \end{verbatim}
   */
 
-  //@ Customized symbolic variables:
+  //@  The customised syntax for symbolic variables:
 
   syntax Variable ::= Token{[A-Z][a-zA-Z0-9]*[\:][a-zA-Z]+} [variable, onlyLabel]
   syntax Int ::= Variable

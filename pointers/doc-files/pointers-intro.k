@@ -1,18 +1,7 @@
 
 /*@ \section{Introduction}
 
-\Cink is a kernel of the \Cpp language we used to experiment with \K.
-The language is used
-an example for teaching classes and is refered in several research papers.
-
-We assume the reader is already familiar with the \K Framework and the 
-\KTool and here we try to share our experiece in defining a languages with some
-specific features, as \Cpp is. 
-
-\Cink is developed in several iterations, each iteration adding an incremental 
-contribution.
-
-This file extends the basic iteration 
+This iteration extends the references iteration 
 with the mechanisms able to handle pointers.
 
 Here is the definition of the indirect operator from the \Cpp 2011 manual:
@@ -24,17 +13,6 @@ referring to the object or function
 to which the expression points. If the type of the expression is 
 \emph{pointer to $T$}, the type of the result is $T$.
 \end{quote}
-Related to the pointers is the ampersand (\&) operator:
-\begin{quote}
-The result of the unary \& operator is a pointer to its operand. 
-The operand shall be an lvalue or a qualifiedid.
-If the operand is a qualified-id naming a non-static member m of some 
-class C with type T, the result has
-type "pointer to member of class C of type T" and is a prvalue designating 
-C::m. Otherwise, if the type of
-the expression is T, the result has type "pointer to T" and is a prvalue that 
-is the address of the designated
-object (1.7) or a pointer to the designated function.
-\end{quote}
+
 */
 

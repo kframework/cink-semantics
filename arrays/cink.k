@@ -3,7 +3,7 @@ require "../doc-files/intro.k"
 require "doc-files/arrays-intro.k"
 require "cink-arrays.k"
 
-
+ //@  \section{Main Module}
 
 module CINK-SYNTAX 
 
