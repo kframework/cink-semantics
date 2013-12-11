@@ -27,6 +27,11 @@
       <program name="sumc.cink">
         <krun-option name="-ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
       </program>
+     <program name="sums.cink">
+        <krun-option name="-ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
+        <krun-option name="-cIN" value="ListItem(#symInt(n))" />
+        <krun-option name="-cPC" value="#symInt(n) &lt;Int 3"  />
+      </program>
     </test>
 
 </tests>
