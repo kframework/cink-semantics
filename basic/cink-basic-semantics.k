@@ -271,9 +271,9 @@ module CINK-BASIC-SEMANTICS
 
   rule I1:Int * I2:Int => I1 *Int I2
 
-  rule I1:Int / I2:Int => I1 /Int I2 requires I2 =/=Int 0
+  rule I1:Int / I2:Int => I1 divInt I2 requires I2 =/=Int 0
  
-  rule I1:Int % I2:Int => I1 %Int I2 requires I2 =/=Int 0
+  rule I1:Int % I2:Int => I1 modInt I2 requires I2 =/=Int 0
 
   rule I1:Int < I2:Int => (I1 <Int I2)
 

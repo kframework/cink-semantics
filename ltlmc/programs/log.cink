@@ -1,7 +1,9 @@
 /*
 
-   krun programs/log.cink -cIN "ListItem(#symInt(a))" -cPC "#symInt(a) >Int 0 andBool #symInt(a) <Int 35" --ltlmc "[]Ltl (L ->Ltl logInv(a,x,k)) "
+   kompile cink --transition kripke --backend symbolic
 
+   krun programs/log.cink -cIN "ListItem(#symInt(a))" -cPC "#symInt(a) >Int 1 andBool #symInt(a) <Int 5" --ltlmc "[]Ltl (L ->Ltl logInv(a,x,k)) "
+  krun programs/log.cink -cIN "ListItem(5)" -cPC "true" --ltlmc "[]Ltl (L ->Ltl logInv(a,x,k)) "
 */
 
 
@@ -11,7 +13,8 @@ int main() {
   cin >> a;
   x = a;
   k = 0;
-  while (X > 0) {
+  L : {}
+  while (x > 0) {
     ++k;
     x = x / 2;
     L : {}
