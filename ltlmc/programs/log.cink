@@ -1,0 +1,21 @@
+/*
+
+   krun programs/log.cink -cIN "ListItem(#symInt(a))" -cPC "#symInt(a) >Int 0 andBool #symInt(a) <Int 35" --ltlmc "[]Ltl (L ->Ltl logInv(a,x,k)) "
+
+*/
+
+
+int a, k, x;
+
+int main() {
+  cin >> a;
+  x = a;
+  k = 0;
+  while (X > 0) {
+    ++k;
+    x = x / 2;
+    L : {}
+  }
+  L : {}
+}       
+

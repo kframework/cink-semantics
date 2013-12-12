@@ -1,0 +1,24 @@
+/*
+
+   krun programs/counter.cink --ltlmc "[]Ltl (L ->Ltl eqTo(counter,5))"
+
+*/
+
+
+int a, counter = 5;
+
+int inc() {
+  return ++counter;
+}
+
+int dec() {
+  return --counter;
+}
+
+int main() {
+  while (true) {
+    a = inc() + dec();
+    L : {}
+  }
+}
+
