@@ -11,6 +11,7 @@
    kompile cink --transition "kripke assign side-effect"  --superheat plus
    krun programs/counter.cink --ltlmc "[]Ltl (L ->Ltl eqTo(a,11))"
 
+  The result should be a counter-example.
 
 */
 
