@@ -7,8 +7,8 @@
       programs="programs"
       results="programs"
       extension="cink"
-      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink" >
-      <kompile-option name="-transition" value="kripke" />
+      exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink counter.cink" >
+      <kompile-option name="-transition" value="memr memw" />
       <program name="dekker.cink">
         <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
@@ -27,10 +27,22 @@
       <program name="sumc.cink">
         <krun-option name="-ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
       </program>
-     <program name="sums.cink">
+     </test>
+
+     <test
+      definition="cink.k"
+      programs="programs/symbolic/"
+      results="programs/symbolic/"
+      extension="cink" 
+      exclude="log.cink" >
+      <kompile-option name="-transition" value="memr memw" />
+      <kompile-option name="-backend" value="symbolic" />
+      <kompile-option name="-directory" value="cink-kompiled-symbolic" />
+      <program name="sums.cink">
         <krun-option name="-ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
         <krun-option name="-cIN" value="ListItem(#symInt(n))" />
         <krun-option name="-cPC" value="#symInt(n) &lt;Int 3"  />
+        <krun-option name="-directory" value="cink-kompiled-symbolic" />
       </program>
     </test>
 

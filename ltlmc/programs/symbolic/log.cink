@@ -1,6 +1,6 @@
 /*
 
-   kompile cink --transition kripke --backend symbolic
+   kompile cink --transition "memr memw" --backend symbolic
 
    krun programs/log.cink -cIN "ListItem(#symInt(a))" -cPC "#symInt(a) >Int 1 andBool #symInt(a) <Int 5" --ltlmc "[]Ltl (L ->Ltl logInv(a,x,k)) "
   krun programs/log.cink -cIN "ListItem(5)" -cPC "true" --ltlmc "[]Ltl (L ->Ltl logInv(a,x,k)) "

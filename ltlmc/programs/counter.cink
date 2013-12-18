@@ -1,14 +1,14 @@
 /*
   Scenario #1: Checking  the property "[] L -> a = 11" with a 
   coarse approximation:
-   kompile cink --transition "kripke"
+   kompile cink --transition "lbldstmt"
    krun programs/counter.cink --ltlmc "[]Ltl (L ->Ltl eqTo(a,11))"
 
   The result should be true.
 
   Scenario #1: Checking  the property "[] L -> a = 11" with a 
   coarse approximation:
-   kompile cink --transition "kripke assign side-effect"  --superheat plus
+    kompile cink --transition "lbldstmt assign side-effect" --superheat plus
    krun programs/counter.cink --ltlmc "[]Ltl (L ->Ltl eqTo(a,11))"
 
   The result should be a counter-example.

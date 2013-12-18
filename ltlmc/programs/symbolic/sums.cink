@@ -1,6 +1,6 @@
 /*
 
-   kompile cink --transition kripke --backend symbolic
+   kompile cink --transition "memr memw" --backend symbolic
 
    krun programs/sums.cink -cIN "ListItem(#symInt(n))" -cPC "#symInt(n) <Int 3" --ltlmc "[]Ltl (L ->Ltl eqToSum(s,i)) "
 

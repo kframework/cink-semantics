@@ -1,5 +1,7 @@
 /*
 
+   kompile cink --transition="memw memr"
+
    krun programs/sumc.cink --ltlmc "[]Ltl (L ->Ltl eqToSum(s,i))"
 
 */

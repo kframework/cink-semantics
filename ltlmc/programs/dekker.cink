@@ -13,7 +13,7 @@
 
    Recall that the definition must be parsed with the command
 
-   kompile cink --transition="kripke"
+   kompile cink --transition="memw memr"
 */
 
 int flag1 = 0;

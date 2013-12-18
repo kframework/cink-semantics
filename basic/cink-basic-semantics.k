@@ -38,22 +38,22 @@ module CINK-BASIC-SEMANTICS
 
   rule <k> $inc(L:ScalLoc, V:Int) => . ...</k>
        <store>... L |-> (V':Int => V' +Int V) ...</store>
-       [kripke(inc)]
+       [inc, memw]
 
 
   rule <k> $dec(L:ScalLoc, V:Int) => . ...</k>
        <store>... L |-> (V':Int => V' -Int V) ...</store>
-       [kripke(dec)]
+       [dec, memw]
 
 
   rule <k> $update(L:ScalLoc, V:ScalVal) => . ...</k>
        <store>... L |-> (_ => V) ...</store>
-       [kripke(update)]
+       [update, memw]
 
 
   rule <k> $lookup(L:ScalLoc) => V ...</k>
        <store>... L |-> V:ScalVal ...</store>
-       [kripke(mem-lookup)]
+       [memr]
 
   /*@ \subsection{Values.} 
     The values are a very important syntactic category in the definition
@@ -356,6 +356,7 @@ for information on conversions.]
        <sideEffects>...
           . => <sideEffect> $inc(L,1) </sideEffect> 
        ...</sideEffects>
+       [memr]
 
 
   rule [postdec]:
@@ -364,6 +365,7 @@ for information on conversions.]
        <sideEffects>...
           . => <sideEffect> $dec(L,1) </sideEffect>
        ...</sideEffects>
+       [memr]
 
 
 
@@ -609,7 +611,7 @@ type (8.3.2)\ldots -end note]
        <env> Env:Map => Env[L/X] </env>
        <store>... . => L |-> V ...</store>
        requires fresh(L:ScalLoc)
-       [structural]
+       [memw]
 
 
 

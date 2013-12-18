@@ -44,7 +44,6 @@ module CINK-LTLMC-SYNTAX
                 |  "neqTo" "(" Id "," Val ")" 
                 |  "eq" "(" Id "," Id ")"
 
-  syntax Exp ::= "step"
 
 endmodule
 
@@ -63,7 +62,7 @@ module CINK-LTLMC-SEMANTICS
     Semantics of the labeled statements:
   */
 
-    rule L:Id : S:Stmt => S  [kripke]
+    rule L:Id : S:Stmt => S  [lbldstmt]
 
   /*@
     In order to give semantics to the proposition \texttt{eqTo}, we use an 
@@ -140,7 +139,5 @@ module CINK-LTLMC-SEMANTICS
              andBool (val(B, A) <Int (val(B, X) +Int 1) *Int pow(2, val(B, K)))
        [anywhere]
 
-
-  rule [step] : step; => . [kripke, step]
 endmodule
 
