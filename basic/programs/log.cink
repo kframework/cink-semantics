@@ -1,0 +1,17 @@
+/* 
+  This program exhibit the use of the symbolic values in 
+  programs.
+  A possible execution:
+
+  krun krun programs/log.cink -cIN "ListItem(#symInt(a))" -cPC true --search --bound 4 
+*/
+
+int main() {
+int k, x;
+  x = A:Int;  //A:Int is a symbolic integer value
+  k = 0;
+  while (x > 0) {
+    ++k;
+    x = x / 2;
+  }
+}  
