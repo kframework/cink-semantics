@@ -1,0 +1,22 @@
+/*
+ 
+   kompile cink --transition --superheat "plus"
+   krun programs/counter.cink --search
+
+*/
+
+
+int a, counter = 1;
+
+int inc() {
+  return ++counter;
+}
+
+int dec() {
+  return --counter;
+}
+
+int main() {
+  return  a = inc() + dec();
+}
+

@@ -3,6 +3,7 @@
   programs.
   A possible execution:
 
+  kompile cink --backend symbolic
   krun krun programs/log.cink -cIN "ListItem(#symInt(a))" -cPC true --search --bound 4 
 */
 
