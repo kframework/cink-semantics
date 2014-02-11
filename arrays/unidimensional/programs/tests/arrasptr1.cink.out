@@ -28,14 +28,13 @@ i = a[i] = <T>
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        seq-array ( 5 , #symLoc(2) ) |-> store ( (store ( (const-array ( 5
-           , 0 )) , 2 , 5 )) , 3 , 4 )
-        #symScalLoc(1) |-> lambda ( .Decls @ ((((((((((int (a [ 5 ])) ;) ((p 
-          of (pointer to int) ;) ((int i) ;))) ((cout << "i = ") ;)) ((cin >> 
-          i) ;)) ((p = (& (a [ i ]))) ;)) ((cout << "a[i] = ") ;)) ((cin >> (*
-           p)) ;)) (if ( ((* p) < 3) ) (((* (++ p)) = 2) ;) else (((* (++ p)) 
-          = 4) ;))) (return (* p) ;)) )
-        #symScalLoc(3) |-> select ( (seq-array ( 5 , #symLoc(2) )) , 3 )
+        seq-array ( 5 , #symLoc(2) ) |-> store ( store ( const-array ( 5 ,
+           0 ) , 2 , 5 ) , 3 , 4 )
+        #symScalLoc(1) |-> lambda (  @ int (a [ 5 ]) ; p of pointer to int ; 
+          int i ; (cout << "i = ") ; (cin >> i) ; (p = (& (a [ i ]))) ; (cout 
+          << "a[i] = ") ; (cin >> (* p)) ; if ( ((* p) < 3) ) ((* (++ p)) = 2)
+           ; else ((* (++ p)) = 4) ; return (* p) ; )
+        #symScalLoc(3) |-> select ( seq-array ( 5 , #symLoc(2) ) , 3 )
         #symScalLoc(4) |-> 2
     </store>
 </T>

@@ -29,12 +29,11 @@
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ (((((((((int a) ;) ((a = 10) 
-          ;)) (((bool b) ;) ((b = true) ;))) ((p of (pointer to (pointer to 
-          int)) ;) ((p = (new (int *))) ;))) ((q of (pointer to (pointer to 
-          bool)) ;) ((q = (new (bool *))) ;))) (((* p) = (& a)) ;)) (((* q) = 
-          (& b)) ;)) (if ( (* (* q)) ) (((cout << (* (* p))) << endl) ;) else 
-          { })) )
+        #symScalLoc(1) |-> lambda (  @ int a ; (a = 10) ; bool b ; (b = 
+          true) ; p of pointer to pointer to int ; (p = (new int *)) ; q of 
+          pointer to pointer to bool ; (q = (new bool *)) ; ((* p) = (& a)) ; 
+          ((* q) = (& b)) ; if ( (* (* q)) ) ((cout << (* (* p))) << (endl)) ;
+           else { } )
         #symScalLoc(2) |-> 10
         #symScalLoc(3) |-> true
         #symScalLoc(4) |-> #symScalLoc(5)

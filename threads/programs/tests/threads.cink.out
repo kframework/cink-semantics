@@ -12,9 +12,9 @@
     </threads>
     <store>
         #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> lambda ( (int x) @ (return (r = x) ;) )
-        #symScalLoc(3) |-> lambda ( .Decls @ (((std::thread t1 ( f , 1 ) ;) (
-          std::thread t1 ( f , 2 ) ;)) (return r ;)) )
+        #symScalLoc(2) |-> lambda ( int x @ return (r = x) ; )
+        #symScalLoc(3) |-> lambda (  @ std::thread t1 ( f , 1 ) ; std::thread 
+          t1 ( f , 2 ) ; return r ; )
         #symScalLoc(4) |-> 1
         #symScalLoc(5) |-> 2
     </store>

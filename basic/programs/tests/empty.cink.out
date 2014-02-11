@@ -28,46 +28,38 @@ Hello World!<T>
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ (((((((((((((((((((((((((((((
-          ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
-          ((((((((((((((((((((((((((((((('.Exps(.KList) ;) ('.Exps(.KList) ;))
-           ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps
-          (.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList)
-           ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ((cout << "Hello World!") ;)) ('.Exps(.KList
-          ) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(
-          .KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) 
-          ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) (
-          '.Exps(.KList) ;)) ('.Exps(.KList) ;)) ('.Exps(.KList) ;)) )
+        #symScalLoc(1) |-> lambda (  @ '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
+          '.Exps(.KList) ; '.Exps(.KList) ; (cout << "Hello World!") ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
+          .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; )
     </store>
 </T>

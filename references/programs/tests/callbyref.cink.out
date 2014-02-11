@@ -34,14 +34,14 @@ x, y: 172
         main |-> #symScalLoc(3)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( ((int x), (y of (reference to int))) @
-           ((((x = 1) ;) ((y = 2) ;)) (return x ;)) )
-        #symScalLoc(2) |-> lambda ( ((x of (reference to int)), (y of (
-          reference to int))) @ (((x = 3) ;) ((y = 4) ;)) )
-        #symScalLoc(3) |-> lambda ( .Decls @ ((((((((((int x) ;) (((int y) ;) 
-          ((int z) ;))) ((cout << "x, y: ") ;)) ((cin >> x) ;)) ((cin >> y) ;)
-          ) ((z = (f ( (x , y) ))) ;)) (((((cout << z) << x) << y) << "\n") ;)
-          ) ((g ( (y , x) )) ;)) ((((cout << x) << y) << "\n") ;)) )
+        #symScalLoc(1) |-> lambda ( int x, y of reference to int @ (x = 1)
+           ; (y = 2) ; return x ; )
+        #symScalLoc(2) |-> lambda ( x of reference to int, y of reference to 
+          int @ (x = 3) ; (y = 4) ; )
+        #symScalLoc(3) |-> lambda (  @ int x ; int y ; int z ; (cout << 
+          "x, y: ") ; (cin >> x) ; (cin >> y) ; (z = (f ( (x , y) ))) ; ((((
+          cout << z) << x) << y) << "\n") ; (g ( (y , x) )) ; (((cout << x) <<
+           y) << "\n") ; )
         #symScalLoc(4) |-> 4
         #symScalLoc(5) |-> 3
         #symScalLoc(6) |-> 1

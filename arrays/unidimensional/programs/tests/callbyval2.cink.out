@@ -30,14 +30,14 @@
         main |-> #symScalLoc(2)
     </genv>
     <store>
-        seq-array ( 7 , #symLoc(3) ) |-> store ( (const-array ( 7 , 0 )) ,
-           3 , 5 )
-        #symScalLoc(1) |-> lambda ( ((int (a [])), ((int i), (int x))) @ (((p 
-          of (pointer to int) ;) ((p = (& (a [ i ]))) ;)) (((* p) = x) ;)) )
-        #symScalLoc(2) |-> lambda ( .Decls @ ((((int (b [ 7 ])) ;) ((f ( (b , 
-          (3 , 5)) )) ;)) ((cout << (b [ 3 ])) ;)) )
+        seq-array ( 7 , #symLoc(3) ) |-> store ( const-array ( 7 , 0 ) , 3
+           , 5 )
+        #symScalLoc(1) |-> lambda ( int (a []), int i, int x @ p of pointer to
+           int ; (p = (& (a [ i ]))) ; ((* p) = x) ; )
+        #symScalLoc(2) |-> lambda (  @ int (b [ 7 ]) ; (f ( (b , (3 , 5)) )) ;
+           (cout << (b [ 3 ])) ; )
         #symScalLoc(4) |-> 3
         #symScalLoc(5) |-> 5
-        #symScalLoc(6) |-> select ( (seq-array ( 7 , #symLoc(3) )) , 3 )
+        #symScalLoc(6) |-> select ( seq-array ( 7 , #symLoc(3) ) , 3 )
     </store>
 </T>
