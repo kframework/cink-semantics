@@ -6,7 +6,7 @@
 */
 
 
-int a, counter = 1;
+int counter = 1;
 
 int inc() {
   return ++counter;
@@ -17,6 +17,6 @@ int dec() {
 }
 
 int main() {
-  return  a = inc() + dec();
+  return  sinc() + dec();
 }
 
