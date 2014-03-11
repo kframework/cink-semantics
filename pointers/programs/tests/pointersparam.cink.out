@@ -31,12 +31,12 @@
         swap |-> #symScalLoc(1)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( ((int (* p)), (int (* q))) @ (((((int 
-          a) ;) ((a = (* p)) ;)) (((* p) = (* q)) ;)) (((* q) = a) ;)) )
-        #symScalLoc(2) |-> lambda ( .Decls @ ((((((((int a) ;) ((a = 3) ;)) ((
-          (int b) ;) ((b = 4) ;))) (((x of (pointer to int) ;) ((x = (& a)) ;)
-          ) ((y of (pointer to int) ;) ((y = (& b)) ;)))) ((swap ( (x , y) )) 
-          ;)) (((((cout << a) << " ") << b) << endl) ;)) (return 0 ;)) )
+        #symScalLoc(1) |-> lambda ( int (* p), int (* q) @ int a ; (a = (*
+           p)) ; ((* p) = (* q)) ; ((* q) = a) ; )
+        #symScalLoc(2) |-> lambda (  @ int a ; (a = 3) ; int b ; (b = 4) ; x 
+          of pointer to int ; (x = (& a)) ; y of pointer to int ; (y = (& b)) 
+          ; (swap ( (x , y) )) ; ((((cout << a) << " ") << b) << (endl)) ; 
+          return 0 ; )
         #symScalLoc(3) |-> 4
         #symScalLoc(4) |-> 3
         #symScalLoc(5) |-> #symScalLoc(3)

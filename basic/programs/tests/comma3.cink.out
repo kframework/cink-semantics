@@ -28,9 +28,8 @@
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ (((((((int i) ;) ((int j) ;))
-           ((j = 10) ;)) ((i = ((j = (j + 1)) , ((j + 100) , (999 + j)))) ;)) 
-          ((cout << i) ;)) (return 0 ;)) )
+        #symScalLoc(1) |-> lambda (  @ int i ; int j ; (j = 10) ; (i = ((j
+           = (j + 1)) , ((j + 100) , (999 + j)))) ; (cout << i) ; return 0 ; )
         #symScalLoc(2) |-> 1010
         #symScalLoc(3) |-> 11
     </store>

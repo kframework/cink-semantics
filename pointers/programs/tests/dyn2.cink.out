@@ -31,11 +31,11 @@
         main |-> #symScalLoc(2)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ ((((p of (pointer to int) ;) 
-          ((p = (new int)) ;)) (((* p) = 10) ;)) (return p ;)) )
-        #symScalLoc(2) |-> lambda ( .Decls @ (((((a of (pointer to int) ;) ((a
-           = (f ( '.Exps(.KList) ))) ;)) (((cout << (* a)) << endl) ;)) ((
-          delete a) ;)) (return 0 ;)) )
+        #symScalLoc(1) |-> lambda (  @ p of pointer to int ; (p = (new int
+          )) ; ((* p) = 10) ; return p ; )
+        #symScalLoc(2) |-> lambda (  @ a of pointer to int ; (a = (f ( '.Exps(
+          .KList) ))) ; ((cout << (* a)) << (endl)) ; (delete a) ; return 0 ; 
+          )
         #symScalLoc(4) |-> #symScalLoc(5)
         #symScalLoc(5) |-> 10
     </store>

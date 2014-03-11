@@ -31,10 +31,10 @@
         main |-> #symScalLoc(2)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( (int x) @ ((((int y) ;) ((y = 2) ;)) (
-          return ((x * y) + 1) ;)) )
-        #symScalLoc(2) |-> lambda ( .Decls @ ((((int a) ;) ((a = (f ( 3 ))) ;)
-          ) (((cout << a) << endl) ;)) )
+        #symScalLoc(1) |-> lambda ( int x @ int y ; (y = 2) ; return ((x *
+           y) + 1) ; )
+        #symScalLoc(2) |-> lambda (  @ int a ; (a = (f ( 3 ))) ; ((cout << a) 
+          << (endl)) ; )
         #symScalLoc(3) |-> 7
         #symScalLoc(4) |-> 3
         #symScalLoc(5) |-> 2

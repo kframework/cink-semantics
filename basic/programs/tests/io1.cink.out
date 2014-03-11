@@ -29,9 +29,9 @@ x, y = 45
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ (((((((int x) ;) ((int y) ;))
-           ((((cout << "x") << ", y") << " = ") ;)) (((cin >> x) >> y) ;)) (((
-          (cout << x) << y) << endl) ;)) (return 0 ;)) )
+        #symScalLoc(1) |-> lambda (  @ int x ; int y ; (((cout << "x") << 
+          ", y") << " = ") ; ((cin >> x) >> y) ; (((cout << x) << y) << (endl)
+          ) ; return 0 ; )
         #symScalLoc(2) |-> 4
         #symScalLoc(3) |-> 5
     </store>

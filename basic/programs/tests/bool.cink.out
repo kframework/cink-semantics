@@ -29,10 +29,9 @@ true
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ (((((((int a) ;) ((a = 1) ;))
-           ((((int b) ;) ((b = 2) ;)) (((int c) ;) ((c = 3) ;)))) (if ( (((a <
-           2) && (b > 1)) || (c > 4)) ) ((cout << "true") ;) else ((cout << 
-          "false") ;))) ((cout << endl) ;)) (return 0 ;)) )
+        #symScalLoc(1) |-> lambda (  @ int a ; (a = 1) ; int b ; (b = 2) ;
+           int c ; (c = 3) ; if ( (((a < 2) && (b > 1)) || (c > 4)) ) (cout <<
+           "true") ; else (cout << "false") ; (cout << (endl)) ; return 0 ; )
         #symScalLoc(2) |-> 1
         #symScalLoc(3) |-> 2
         #symScalLoc(4) |-> 3

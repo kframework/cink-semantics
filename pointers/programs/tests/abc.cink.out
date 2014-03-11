@@ -30,13 +30,12 @@ c = b+1
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        #symScalLoc(1) |-> lambda ( .Decls @ (((((((((a of (pointer to int
-          ) ;) ((a = (new int)) ;)) ((b of (pointer to int) ;) ((b = (new int)
-          ) ;))) ((c of (pointer to int) ;) ((c = (new int)) ;))) ((cin >> (* 
-          a)) ;)) (((* b) = ((* a) ++)) ;)) (if ( ((* a) == ((* b) + 1)) ) (((
-          cout << "a=b") << endl) ;) else { })) (((* c) = ((++ (* b)) + 1)) ;)
-          ) (if ( ((* c) == ((* b) + 1)) ) (((cout << "c = b+1") << endl) ;) 
-          else { })) )
+        #symScalLoc(1) |-> lambda (  @ a of pointer to int ; (a = (new int
+          )) ; b of pointer to int ; (b = (new int)) ; c of pointer to int ; (
+          c = (new int)) ; (cin >> (* a)) ; ((* b) = ((* a) ++)) ; if ( ((* a)
+           == ((* b) + 1)) ) ((cout << "a=b") << (endl)) ; else { } ((* c) = (
+          (++ (* b)) + 1)) ; if ( ((* c) == ((* b) + 1)) ) ((cout << "c = b+1"
+          ) << (endl)) ; else { } )
         #symScalLoc(2) |-> #symScalLoc(3)
         #symScalLoc(3) |-> 8
         #symScalLoc(4) |-> #symScalLoc(5)

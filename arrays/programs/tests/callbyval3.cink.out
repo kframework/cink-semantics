@@ -30,13 +30,13 @@
         main |-> #symScalLoc(2)
     </genv>
     <store>
-        seq-array ( 4 , #symLoc(3) ) |-> store ( (store ( (const-array ( 4
-           , 0 )) , 1 , 3 )) , 2 , 3 )
-        #symScalLoc(1) |-> lambda ( ((int a), (int x)) @ ((if ( (a < 5) ) (
-          return (x * 2) ;) else { }) (return (x * 3) ;)) )
-        #symScalLoc(2) |-> lambda ( .Decls @ ((((((int (b [ 4 ])) ;) (((b [ 1 
-          ]) = 3) ;)) (((b [ 2 ]) = (b [ 1 ])) ;)) ((cout << (f ( ((b [ 2 ]) ,
-           5) ))) ;)) (return 0 ;)) )
+        seq-array ( 4 , #symLoc(3) ) |-> store ( store ( const-array ( 4 ,
+           0 ) , 1 , 3 ) , 2 , 3 )
+        #symScalLoc(1) |-> lambda ( int a, int x @ if ( (a < 5) ) return (x * 
+          2) ; else { } return (x * 3) ; )
+        #symScalLoc(2) |-> lambda (  @ int (b [ 4 ]) ; ((b [ 1 ]) = 3) ; ((b [
+           2 ]) = (b [ 1 ])) ; (cout << (f ( ((b [ 2 ]) , 5) ))) ; return 0 ; 
+          )
         #symScalLoc(4) |-> 3
         #symScalLoc(5) |-> 5
     </store>

@@ -29,17 +29,16 @@
         main |-> #symScalLoc(1)
     </genv>
     <store>
-        seq-array ( 5 , #symLoc(2) ) |-> store ( (store ( (store ( (store 
-          ( (store ( (const-array ( 5 , 0 )) , 0 , 0 )) , 1 , 2 )) , 2 , 4 )) 
-          , 3 , 6 )) , 4 , 8 )
-        #symScalLoc(1) |-> lambda ( .Decls @ ((((((((((int (a [ 5 ])) ;) ((int
-           i) ;)) ((((int s) ;) ((s = 0) ;)) (p of (pointer to int) ;))) ((i =
-           0) ;)) (while ( (i < 5) ) ({ ((((a [ i ]) = (2 * i)) ;) ((++ i) ;))
-           }))) ((p = (& (a [ 0 ]))) ;)) (while ( (p <= (& (a [ 4 ]))) ) ({ ((
-          s = (s + (* (p ++)))) ;) }))) (((cout << s) << endl) ;)) (return 0 ;
-          )) )
+        seq-array ( 5 , #symLoc(2) ) |-> store ( store ( store ( store ( 
+          store ( const-array ( 5 , 0 ) , 0 , 0 ) , 1 , 2 ) , 2 , 4 ) , 3 , 6 
+          ) , 4 , 8 )
+        #symScalLoc(1) |-> lambda (  @ int (a [ 5 ]) ; int i ; int s ; (s = 0)
+           ; p of pointer to int ; (i = 0) ; while ( (i < 5) ) { ((a [ i ]) = 
+          (2 * i)) ; (++ i) ; } (p = (& (a [ 0 ]))) ; while ( (p <= (& (a [ 4 
+          ]))) ) { (s = (s + (* (p ++)))) ; } ((cout << s) << (endl)) ; return
+           0 ; )
         #symScalLoc(3) |-> 5
         #symScalLoc(4) |-> 20
-        #symScalLoc(5) |-> select ( (seq-array ( 5 , #symLoc(2) )) , 5 )
+        #symScalLoc(5) |-> select ( seq-array ( 5 , #symLoc(2) ) , 5 )
     </store>
 </T>
