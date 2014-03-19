@@ -1,6 +1,6 @@
 /*
  
-   kompile cinkq --superheat "plus"
+   kompile cink --superheat "plus"
    krun programs/counter.cink --search
 
 */
