@@ -1,0 +1,50 @@
+/*
+kompile:
+  kompile cink.k --backend symbolic
+  
+scenario1: initialize arrays with symbolic values
+  krun programs/symbarrays.cink -cIN="ListItem(#symInt(n)) ListItem(#symInt(j)) ListItem(#symInt(x)) ListItem(#symInt(a1)) ListItem(#symInt(a2)) ListItem(#symInt(a3))" -cPC="#symInt(n) >Int 0" --search
+
+The tool returns 7 possible execution paths.
+
+
+scenario2: check if the program ever prints "error"
+  krun programs/symbarrays.cink -cIN="ListItem(#symInt(n)) ListItem(#symInt(j)) ListItem(#symInt(x)) ListItem(#symInt(a1)) ListItem(#symInt(a2)) ListItem(#symInt(a3))" -cPC="#symInt(n) >Int 0" --search --pattern="<T> <out> ListItem(\"error\") </out> B:Bag </T>"
+
+The tool finds no solution ("error" is never printed).
+*/
+
+
+void init(int a[], int n, int x, int j) {
+     int i = 0;
+int *p;
+     a[j] = x;
+/*
+     while (a[i] != x && i < n) {
+       a[i] = 2 * i;
+       i = i + 1;
+     }
+*/
+     while (*p != x && i < n) {
+       *(p++) = 2 * i;
+       i = i + 1;
+     }
+     
+     if (i > j) {
+     	cout << "error";
+     }  
+}
+
+void main() {
+     int n, j, x, i;
+     cin >> n >> j >> x;
+     int a[n];     
+     i = 0;
+     while(i < n) {
+       cin >> a[i];
+       i = i + 1;
+     }
+
+     init(a, n, x, j);     
+}
+
