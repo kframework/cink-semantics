@@ -96,19 +96,19 @@ module CINK-LTLMC-SEMANTICS
 
   
 
-  rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true requires val(B, X) ==Int I [anywhere]
+  rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true requires val(B, X) ==Int I [ltl, anywhere]
 
-  rule B:Bag |=Ltl neqTo(X:Id, I:Int) => true requires val(B, X) =/=Int I [anywhere]
+  rule B:Bag |=Ltl neqTo(X:Id, I:Int) => true requires val(B, X) =/=Int I [ltl, anywhere]
 
-  rule B:Bag |=Ltl lt(X:Id, I:Int) => true requires val(B, X) <Int I [anywhere]
+  rule B:Bag |=Ltl lt(X:Id, I:Int) => true requires val(B, X) <Int I [ltl, anywhere]
 
-  rule B:Bag |=Ltl leq(X:Id, I:Int) => true requires val(B, X) <=Int I [anywhere]
+  rule B:Bag |=Ltl leq(X:Id, I:Int) => true requires val(B, X) <=Int I [ltl, anywhere]
 
-  rule B:Bag |=Ltl gt(X:Id, I:Int) => true requires val(B, X) >Int I [anywhere]
+  rule B:Bag |=Ltl gt(X:Id, I:Int) => true requires val(B, X) >Int I [ltl, anywhere]
 
-  rule B:Bag |=Ltl geq(X:Id, I:Int) => true requires val(B, X) >=Int I [anywhere]
+  rule B:Bag |=Ltl geq(X:Id, I:Int) => true requires val(B, X) >=Int I [ltl, anywhere]
 
-  rule B:Bag |=Ltl eq(X:Id, Y:Id) => true requires val(B, X) ==Int val(B, Y) [anywhere]
+  rule B:Bag |=Ltl eq(X:Id, Y:Id) => true requires val(B, X) ==Int val(B, Y) [ltl, anywhere]
 
 
   rule <generatedTop>...
@@ -128,16 +128,16 @@ module CINK-LTLMC-SEMANTICS
 
   rule B:Bag |=Ltl eqToSum(X:Id, Y:Id) => true
        requires val(B, X) ==Int sumFirstN(val(B, Y))
-       [anywhere]
+       [ltl, anywhere]
 
   rule B:Bag |=Ltl eqTo(X:Id, I:Int) => true
        requires val(B, X) ==Int I
-       [anywhere]
+       [ltl, anywhere]
 
   rule B:Bag |=Ltl logInv(A:Id, X:Id, K:Id) => true
        requires (val(B, X) *Int pow(2, val(B, K)) <=Int val(B, A)) 
              andBool (val(B, A) <Int (val(B, X) +Int 1) *Int pow(2, val(B, K)))
-       [anywhere]
+       [ltl, anywhere]
 
 endmodule
 

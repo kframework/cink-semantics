@@ -35,7 +35,7 @@
       results="programs/symbolic/"
       extension="cink" 
       exclude="log.cink" >
-      <kompile-option name="-transition" value="memr memw" />
+      <kompile-option name="-transition" value="lbldstmt" />
       <kompile-option name="-backend" value="symbolic" />
       <kompile-option name="-directory" value="cink-kompiled-symbolic" />
       <program name="sums.cink">
