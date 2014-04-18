@@ -8,24 +8,24 @@
       results="programs"
       extension="cink"
       exclude="form-equiv.cink form-peterson.cink form-dekker.cink form-threads.cink counter.cink" >
-      <kompile-option name="-transition" value="memr memw" />
+      <kompile-option name="--transition" value="memr memw" />
       <program name="dekker.cink">
-        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
+        <krun-option name="--ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="peterson.cink">
-        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
+        <krun-option name="--ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="peterson-wrong1.cink">
-        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
+        <krun-option name="--ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="peterson-wrong2.cink">
-        <krun-option name="-ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
+        <krun-option name="--ltlmc" value="[]Ltl ((eqTo(critical1, 1) ->Ltl eqTo(critical2, 0)) /\Ltl (eqTo(critical2, 1) ->Ltl eqTo(critical1, 0)))" />
       </program>
       <program name="threads.cink">
-        <krun-option name="-ltlmc" value="~Ltl([]Ltl eqTo(r, 1))" />
+        <krun-option name="--ltlmc" value="~Ltl([]Ltl eqTo(r, 1))" />
       </program>
       <program name="sumc.cink">
-        <krun-option name="-ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
+        <krun-option name="--ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
       </program>
      </test>
 
@@ -35,14 +35,14 @@
       results="programs/symbolic/"
       extension="cink" 
       exclude="log.cink" >
-      <kompile-option name="-transition" value="lbldstmt" />
-      <kompile-option name="-backend" value="symbolic" />
-      <kompile-option name="-directory" value="cink-kompiled-symbolic" />
+      <kompile-option name="--transition" value="lbldstmt" />
+      <kompile-option name="--backend" value="symbolic" />
+      <kompile-option name="--directory" value="cink-kompiled-symbolic" />
       <program name="sums.cink">
-        <krun-option name="-ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
-        <krun-option name="-cIN" value="ListItem(#symInt(n))" />
-        <krun-option name="-cPC" value="#symInt(n) &lt;Int 3"  />
-        <krun-option name="-directory" value="cink-kompiled-symbolic" />
+        <krun-option name="--ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
+        <krun-option name="--cIN" value="ListItem(#symInt(n))" />
+        <krun-option name="--cPC" value="#symInt(n) &lt;Int 3"  />
+        <krun-option name="--directory" value="cink-kompiled-symbolic" />
       </program>
     </test>
 
