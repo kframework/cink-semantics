@@ -40,8 +40,8 @@
       <kompile-option name="--directory" value="cink-kompiled-symbolic" />
       <program name="sums.cink">
         <krun-option name="--ltlmc" value="[]Ltl (L ->Ltl eqToSum(s,i)) " />
-        <krun-option name="--cIN" value="ListItem(#symInt(n))" />
-        <krun-option name="--cPC" value="#symInt(n) &lt;Int 3"  />
+        <krun-option name="-cIN" value="ListItem(#symInt(n))" />
+        <krun-option name="-cPC" value="#symInt(n) &lt;Int 3"  />
         <krun-option name="--directory" value="cink-kompiled-symbolic" />
       </program>
     </test>

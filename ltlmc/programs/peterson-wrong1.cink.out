@@ -1,10 +1,8 @@
 Vertices:<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -47,11 +45,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -95,11 +91,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -144,11 +138,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -203,11 +195,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -288,11 +278,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -381,11 +369,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -482,11 +468,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -581,11 +565,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -679,11 +661,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -777,11 +757,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -878,11 +856,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -977,11 +953,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1075,11 +1049,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1173,11 +1145,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1269,11 +1239,9 @@ Vertices:<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1366,11 +1334,9 @@ Vertices:<T>
 Edges:
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1413,11 +1379,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1462,11 +1426,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1510,11 +1472,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1560,11 +1520,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1609,11 +1567,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1669,11 +1625,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1728,11 +1682,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1814,11 +1766,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1899,11 +1849,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -1993,11 +1941,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2086,11 +2032,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2188,11 +2132,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2289,11 +2231,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2389,11 +2329,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2488,11 +2426,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2587,11 +2523,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2685,11 +2619,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2784,11 +2716,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2882,11 +2812,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -2984,11 +2912,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3085,11 +3011,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3185,11 +3109,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3284,11 +3206,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3383,11 +3303,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3481,11 +3399,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3580,11 +3496,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3678,11 +3592,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3775,11 +3687,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3871,11 +3781,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -3967,11 +3875,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4062,11 +3968,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4161,11 +4065,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4259,11 +4161,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4358,11 +4258,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4456,11 +4354,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4558,11 +4454,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4659,11 +4553,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4759,11 +4651,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4858,11 +4748,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -4957,11 +4845,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -5055,11 +4941,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -5154,11 +5038,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -5252,11 +5134,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -5354,11 +5234,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -5455,11 +5333,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -5555,11 +5431,9 @@ Unlabelled rule [<T>
 </T>] 
 Unlabelled rule [<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
@@ -5654,11 +5528,9 @@ Unlabelled rule [<T>
     </genv>
 </T>,<T>
     <in>
-        ListItem(#buffer ( "" ))
-        ListItem(#istream ( 0 ))
+        ListItem(#buffer ( "\n" ))
     </in>
     <out>
-        ListItem(#ostream ( 1 ))
         ListItem(#buffer ( "" ))
     </out>
     <threads>
