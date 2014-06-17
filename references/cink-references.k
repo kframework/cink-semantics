@@ -55,7 +55,7 @@ module CINK-REFERENCES-SEMANTICS
   context _ of reference to _:Type; ~> _ = HOLE;
 
   rule <k> X:Id of reference to _:Type; ~> X = lval(L:Loc); => . ...</k>
-       <env> Env:Map => Env[L/X] </env>
+       <env> Env:Map => update(Env, X |-> L) </env>
 
   /*@ The evaluation of the ampersand operator returns the lvalue computed
     by the heating/cooling rules.
@@ -89,7 +89,7 @@ type (8.3.2)\ldots
 */
 
 
-  context evaluate(HOLE, _:Exp) to _
+  context evaluate((HOLE:Exp, _:Exp)::Exps) to _
           following  (_:Id of reference to _:Type, _:Decls);
 
 
@@ -101,6 +101,6 @@ type (8.3.2)\ldots
   rule <k> bind((lval(L:Loc), Vs) => Vs)
            to((X:Id of reference to T:Type, Xl:Decls) => Xl); 
        ...</k>
-       <env> Env:Map => Env[L/X] </env> 
+       <env> Env:Map => update(Env, X |-> L) </env> 
 
 endmodule

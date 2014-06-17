@@ -39,12 +39,18 @@ that of arrays and the definition of the whole configuration:
   syntax SeqLoc ::= "seq-array" "(" Int "," Loc ")"
   syntax Loc ::= SeqLoc
 
-  //@ Extend select over sequences of locations
 
+  //@ fresh scallar locations
+  syntax SeqLoc ::= "SeqLoc" "(" Int ")"
+  syntax SeqLoc ::= freshSeqLoc(Int)    [freshGenerator, function]
+  rule freshSeqLoc(I) => SeqLoc(I)
+
+  //@ Extend select over sequences of locations
 
   syntax Loc ::= "select" "(" Loc "," Int ")" [smtlib(select)]
 
   rule lval(L:SeqLoc)[I:Int] => lval(select(L, I))
+
 
   /*@ 
     Since $L[I]$, where $L$ is the location of the array $A$, can be seen as 
@@ -105,14 +111,14 @@ that of arrays and the definition of the whole configuration:
   */
   rule <k> X:Id of array of N:Int T:Type;
            =>
-           .
+           .K
        ...</k>
-       <env>... . => X |-> seq-array(N, L) </env>
+       <env>... .Map => X |-> seq-array(N, !L:SeqLoc) </env>
        <br/>
        <store>...
-          . => seq-array(N, L) |-> array of N T 
+          .Map => seq-array(N, !L:SeqLoc) |-> array of N T 
        ...</store>
-       requires fresh(L:Loc)
+ //      requires fresh(L:Loc)
 
   //@ Arrays of scalar type are zero-initialized, so they are well defined:
 
@@ -128,9 +134,10 @@ that of arrays and the definition of the whole configuration:
        ...</k>
        <store>
           ST:Map  L |-> array of N:Int T:Type
-          (. => select(L, I) |-> T)
-       ...</store>
-       requires notBool select(L, I) in keys(ST)
+          (.Map => select(L, I) |-> T)
+       </store>
+       requires notBool (select(L, I) in keys(ST))
+//       requires (select(L, I) in keys(ST)) =/=K true
       [transition]  // it must be here for now
 
   //@ \ldots and the case when the component is already allocated:
@@ -162,16 +169,16 @@ that of arrays and the definition of the whole configuration:
   Arrays as parameters:
   */
 
-  context evaluate (HOLE, _:Exp) to _
+  context evaluate (HOLE:Exp, _:Exp) to _
           following (T _:Exp[], _:Decls); [result(Val)]
 
-  context evaluate (HOLE, _:Exp) to _
+  context evaluate (HOLE:Exp, _:Exp) to _
           following (T _:Exp[_:Exp], _:Decls);
 
   rule <k>
        bind((lval(L:Loc), Vs) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
        ...</k>
-       <env> Env:Map => Env[L/X] </env>
+       <env> Env:Map => update(Env, X |-> L) </env>
        [structural]
 
   rule bind(lval(L:Loc), Vs) to (T X:Exp[_:Exp], Xl:Decls); 

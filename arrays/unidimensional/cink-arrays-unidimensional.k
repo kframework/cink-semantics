@@ -26,6 +26,10 @@ module CINK-ARRAYS-SEMANTICS
   syntax SeqLoc ::= "seq-array" "(" Int "," Loc ")"
   syntax Loc ::= SeqLoc
 
+  //@ fresh scallar locations
+  syntax SeqLoc ::= "SeqLoc" "(" Int ")"
+  syntax SeqLoc ::= freshSeqLoc(Int)    [freshGenerator, function]
+  rule freshSeqLoc(I) => SeqLoc(I)
 
   //@ Extending select over sequences of locations:
 
@@ -73,10 +77,10 @@ module CINK-ARRAYS-SEMANTICS
            =>
            .
        ...</k>
-       <env>... . => X |-> seq-array(N, L) </env>
+       <env>... .Map => X |-> seq-array(N, !L:SeqLoc) </env>
        <br/>
-       <store>... . => seq-array(N, L) |-> const-array(N, 0) ...</store>
-       when fresh(L:Loc)
+       <store>... .Map => seq-array(N, !L) |-> const-array(N, 0) ...</store>
+//       when fresh(L:Loc)
 
 
   /*@
@@ -107,16 +111,16 @@ module CINK-ARRAYS-SEMANTICS
   Arrays as parameters:
   */
 
-  context evaluate (HOLE, _:Exp) to _
+  context evaluate (HOLE:Exp, _:Exp) to _
           following (T _:Exp[_:Exp], _:Decls);
 
-  context evaluate (HOLE, _:Exp) to _
+  context evaluate (HOLE:Exp, _:Exp) to _
           following (T _:Exp[], _:Decls);
 
   rule <k>
           bind((lval(L:Loc), Vs) => Vs) to((T X:Id[], Xl:Decls) => Xl); 
        ...</k>
-       <env> Env:Map => Env[L/X] </env>
+       <env> Env:Map => update(Env, X |-> L) </env>
        [structural]
 
    //@ Interface with SMTLIB:

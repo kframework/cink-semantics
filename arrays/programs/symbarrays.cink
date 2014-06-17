@@ -5,11 +5,11 @@ kompile:
 scenario1: initialize arrays with symbolic values
   krun programs/symbarrays.cink -cIN="ListItem(#symInt(n)) ListItem(#symInt(j)) ListItem(#symInt(x)) ListItem(#symInt(a1)) ListItem(#symInt(a2)) ListItem(#symInt(a3))" -cPC="#symInt(n) >Int 0" --search
 
-The tool returns 7 possible execution paths.
+The tool returns 25 possible execution paths.
 
 
 scenario2: check if the program ever prints "error"
-  krun programs/symbarrays.cink -cIN="ListItem(#symInt(n)) ListItem(#symInt(j)) ListItem(#symInt(x)) ListItem(#symInt(a1)) ListItem(#symInt(a2)) ListItem(#symInt(a3))" -cPC="#symInt(n) >Int 0" --search --pattern="<T> <out> ListItem(\"error\") </out> B:Bag </T>"
+  krun programs/symbarrays.cink -cIN="ListItem(#symInt(n)) ListItem(#symInt(j)) ListItem(#symInt(x)) ListItem(#symInt(a1)) ListItem(#symInt(a2)) ListItem(#symInt(a3))" -cPC="#symInt(n) >Int 0" --search --pattern="<T> <out> ListItem(#buffer ( \"error\" )) </out> B:Bag </T>"
 
 The tool finds no solution ("error" is never printed).
 */

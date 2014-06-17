@@ -17,6 +17,6 @@ int dec() {
 }
 
 int main() {
-  return  sinc() + dec();
+  return  inc() + dec();
 }
 

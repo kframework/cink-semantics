@@ -56,9 +56,9 @@ module CINK-POINTERS-SEMANTICS
   /*@ Declaration of a pointer variable: */
 
   rule <k> X:Id of T:PtrType; => .  ...</k>      
-       <env> Env:Map => Env[L/X] </env>
-       <store>... . => (L |-> 0) ...</store>
-  when fresh(L:ScalLoc)
+       <env> Env:Map => update(Env, X |-> !L:ScalLoc) </env>
+       <store>... .Map => (!L:ScalLoc |-> 0) ...</store>
+//  when fresh(L:ScalLoc)
        [ptr-decl, structural]
 
   /*@ The indirect operator.\\
@@ -77,22 +77,22 @@ module CINK-POINTERS-SEMANTICS
   rule <k> bind((V:Val, Vs) => Vs)
            to((T * E:Exp, Xl:Decls) => Xl); 
        ...</k>
-       <env> Env:Map => Env[L/getName(E)] </env>
-       <store>... . => L |-> V ...</store>
-       requires fresh(L:ScalLoc)
+       <env> Env:Map => update(Env, getName(E) |-> !L) </env>
+       <store>... .Map => !L:ScalLoc |-> V ...</store>
+//       requires fresh(L:ScalLoc)
  
   //@ We consider a simplified form of the new operator:
 
-  rule <k> new T:FundType => L ...</k>
-       <store>... . => (L:ScalLoc |->  0) ...</store>
-       when fresh(L) 
+  rule <k> new T:FundType => !L ...</k>
+       <store>... .Map => (!L:ScalLoc |->  0) ...</store>
+//       when fresh(L) 
 
-  rule <k> new T:FundType *  => L ...</k>
-       <store>... . => (L:ScalLoc |->  0) ...</store>
-       when fresh(L) 
+  rule <k> new T:FundType *  => !L ...</k>
+       <store>... .Map => (!L:ScalLoc |->  0) ...</store>
+//       when fresh(L) 
 
   //@ The same for delete:
   rule <k> delete lval(L:ScalLoc) => noVal ...</k>
-       <store>... (L |->  _) => . ...</store>
+       <store>... (L |->  _) => .Map ...</store>
 
 endmodule

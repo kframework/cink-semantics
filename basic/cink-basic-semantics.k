@@ -22,6 +22,15 @@ module CINK-BASIC-SEMANTICS
   syntax Loc ::= ScalLoc
   syntax ScalVal ::= Loc
 
+  //@ extend the equality predicate over (symbolic) locations
+  rule L1:Loc =K L2:Loc => L1 ==K L2
+
+
+  //@ fresh scallar locations
+  syntax ScalLoc ::= "ScalLoc" "(" Int ")"
+  syntax ScalLoc ::= freshScalLoc(Int)    [freshGenerator, function]
+  rule freshScalLoc(I) => ScalLoc(I)
+
   /*@ \subsubsection{Memmory operations and side-effects} */
 
   /*@
@@ -36,17 +45,17 @@ module CINK-BASIC-SEMANTICS
 
 
 
-  rule <k> $inc(L:ScalLoc, V:Int) => . ...</k>
+  rule <k> $inc(L:ScalLoc, V:Int) => .K ...</k>
        <store>... L |-> (V':Int => V' +Int V) ...</store>
        [inc, memw]
 
 
-  rule <k> $dec(L:ScalLoc, V:Int) => . ...</k>
+  rule <k> $dec(L:ScalLoc, V:Int) => .K ...</k>
        <store>... L |-> (V':Int => V' -Int V) ...</store>
        [dec, memw]
 
 
-  rule <k> $update(L:ScalLoc, V:ScalVal) => . ...</k>
+  rule <k> $update(L:ScalLoc, V:ScalVal) => .K ...</k>
        <store>... L |-> (_ => V) ...</store>
        [update, memw]
 
@@ -140,8 +149,8 @@ module CINK-BASIC-SEMANTICS
 
   syntax K ::= "seqpoint"
 
-  rule <k> seqpoint => . ...</k>
-       <sideEffects> . </sideEffects>
+  rule <k> seqpoint => .K ...</k>
+       <sideEffects> .Bag </sideEffects>
        [seqpoint]
 
   /*@
@@ -149,8 +158,8 @@ module CINK-BASIC-SEMANTICS
    evaluation steps of the current expression:
   */
 
-  rule <k> . => SE ...</k>
-       <sideEffects>...  <sideEffect> SE </sideEffect> => . ... </sideEffects>
+  rule <k> .K => SE ...</k>
+       <sideEffects>...  <sideEffect> SE </sideEffect> => .Bag ... </sideEffects>
        [side-effect]
 
   /*@ \subsection{Auxiliary constructs.} */
@@ -167,7 +176,9 @@ module CINK-BASIC-SEMANTICS
    rest of the computation in the call stack (\texttt{fstack}). 
  */
 
-  syntax ListItem ::= "(" List "," K ")"
+//  syntax ListItem ::= "(" List "," K ")"
+//                    | "[" Map "]"
+  syntax KItem ::= "(" List "," K ")"
                     | "[" Map "]"
 
   /*@
@@ -204,10 +215,10 @@ module CINK-BASIC-SEMANTICS
    */
 
 
-  rule <k>  (Decl:Decl (Xl:Decls) {Sts:Stmts})::Stmt  => .  ...</k> 
-       <env>... . =>  (getName(Decl) |-> L) ...</env>
-       <store>... . => (L |-> lambda(Xl @ Sts)) ...</store>
-       requires fresh(L:ScalLoc)
+  rule <k>  (Decl:Decl (Xl:Decls) {Sts:Stmts})::Stmt  => .K  ...</k> 
+       <env>... .Map =>  (getName(Decl) |-> !L:ScalLoc) ...</env>
+       <store>... .Map => (!L:ScalLoc |-> lambda(Xl @ Sts)) ...</store>
+//       requires fresh(L:ScalLoc)
        [fun-decl, structural]
 
   /*@
@@ -230,10 +241,10 @@ module CINK-BASIC-SEMANTICS
    */
 
   rule [var-decl] :
-       <k> T:ScalType X:Id; => .  ...</k>      
-       <env> Env:Map => Env[L/X] </env>
-       <store>... . => (L |-> 0) ...</store>
-  requires fresh(L:ScalLoc)
+       <k> T:ScalType X:Id; => .K  ...</k>      
+       <env> Env:Map => update(Env, X |-> !L:ScalLoc) </env>
+       <store>... .Map => (!L:ScalLoc |-> 0) ...</store>
+//  requires fresh(L:ScalLoc)
        [structural]
 
 
@@ -241,10 +252,10 @@ module CINK-BASIC-SEMANTICS
       they are used now only  for having a full compatibility with \Cpp,
       e.g., the \Cink programs can be 
       compiled with a \Cpp compiler. */
-  rule #include <iostream> => . 
+  rule #include <iostream> => .K 
        [include, structural]
 
-  rule using namespace std;=> .
+  rule using namespace std;=> .K
        [using, structural]
 
   /*@ 
@@ -255,7 +266,7 @@ module CINK-BASIC-SEMANTICS
 
   rule <k> execute => String2Id("main")(.Exps); </k>
        <env> Env:Map </env>
-       <genv> . => Env:Map </genv>
+       <genv> .Map => Env:Map </genv>
        [main, structural]
   
   /*@ \subsection{Expressions Evaluation.} */
@@ -354,7 +365,7 @@ for information on conversions.]
        <k> lval(L:ScalLoc) ++ => V ...</k>
        <store>... L |-> V:ScalVal ...</store>
        <sideEffects>...
-          . => <sideEffect> $inc(L,1) </sideEffect> 
+          .Bag => <sideEffect> $inc(L,1) </sideEffect> 
        ...</sideEffects>
        [memr]
 
@@ -363,7 +374,7 @@ for information on conversions.]
        <k> lval(L:ScalLoc) -- => V ...</k>
        <store>... L |-> V:ScalVal ...</store>
        <sideEffects>...
-          . => <sideEffect> $dec(L,1) </sideEffect>
+          .Bag => <sideEffect> $dec(L,1) </sideEffect>
        ...</sideEffects>
        [memr]
 
@@ -459,7 +470,7 @@ the next full-expression to be evaluated
        [block, structural]
 
   /*@ -- the case of the empty block: */
-  rule {} => .  [block-empty, structural]
+  rule {} => .K  [block-empty, structural]
 
   //@ The sequential composition is just a sequence of computations:
   rule (Sts:Stmts Sts':Stmts) => (Sts ~> Sts')
@@ -472,7 +483,7 @@ the next full-expression to be evaluated
   /*@ Writting in the the standard stream \texttt{cout}: */
 
   rule <k> cout << V:ScalVal => cout  ...</k>  
-       <out>... . => ListItem(V) </out>
+       <out>... .List => ListItem(V) </out>
        [print-stream, print]
 
   /*@
@@ -481,7 +492,7 @@ the next full-expression to be evaluated
   */
 
   rule <k> cin >> lval(L:Loc) => $update(L, V) ~> cin  ...</k>
-       <in> (ListItem(V:ScalVal) => .)  ...</in>
+       <in> (ListItem(V:ScalVal) => .List)  ...</in>
        [read-stream]
 
 
@@ -552,7 +563,7 @@ type (8.3.2)\ldots -end note]
        <br/>
        <genv> GEnv:Map </genv>
        <env> Env:Map => GEnv </env>
-       <fstack> . => ([Env], K) ...</fstack>
+       <fstack> .List => ListItem(([Env], K)) ...</fstack>
        [fun-call]
 
   /*@
@@ -608,9 +619,9 @@ type (8.3.2)\ldots -end note]
   rule <k> bind((V:ScalVal, Vs) => Vs)
            to((T X:Id, Xl:Decls) => Xl); 
        ...</k>
-       <env> Env:Map => Env[L/X] </env>
-       <store>... . => L |-> V ...</store>
-       requires fresh(L:ScalLoc)
+       <env> Env:Map => update(Env, X |-> !L:ScalLoc) </env>
+       <store>... .Map => !L:ScalLoc |-> V ...</store>
+//       requires fresh(L:ScalLoc)
        [memw]
 
 
@@ -620,7 +631,7 @@ type (8.3.2)\ldots -end note]
     Finally, once all parameters have been bound, the binding construct 
     dissolves:
    */
-  rule bind .Exps to .Decls; => . [ structural ]
+  rule bind .Exps to .Decls; => .K [ structural ]
 
   /*@
     \subsection{Function Return.} 
@@ -636,9 +647,9 @@ type (8.3.2)\ldots -end note]
 
   rule <k> (return V:Val; ~> _) => (V ~> K) </k>
        <env> _ => Env </env>
-       <fstack> ([Env:Map], K:K) => . ...</fstack>
+       <fstack> ListItem(([Env:Map], K:K)) => .List ...</fstack>
        <br/>
-       <sideEffects> . </sideEffects>
+       <sideEffects> .Bag </sideEffects>
        <return> _ => V </return>
        [return]
 
