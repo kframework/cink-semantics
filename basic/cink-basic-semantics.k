@@ -147,7 +147,7 @@ module CINK-BASIC-SEMANTICS
     side effects are executed, i.e. the cell \textsf{sideEffects} is empty.
   */
 
-  syntax K ::= "seqpoint"
+  syntax KItem ::= "seqpoint"
 
   rule <k> seqpoint => .K ...</k>
        <sideEffects> .Bag </sideEffects>
@@ -169,7 +169,7 @@ module CINK-BASIC-SEMANTICS
     \texttt{execute} is used to start the computation of a program; and
     \texttt{noname} for the initial name of a thread.
   */
-  syntax K ::= "execute"
+  syntax KItem ::= "execute"
 
  /*@
    The next two constructors are used for storing the environment and the
@@ -242,7 +242,7 @@ module CINK-BASIC-SEMANTICS
 
   rule [var-decl] :
        <k> T:ScalType X:Id; => .K  ...</k>      
-       <env> Env:Map => update(Env, X |-> !L:ScalLoc) </env>
+       <env> Env:Map => Env[X <- !L:ScalLoc] </env>
        <store>... .Map => (!L:ScalLoc |-> 0) ...</store>
 //  requires fresh(L:ScalLoc)
        [structural]
@@ -574,7 +574,7 @@ type (8.3.2)\ldots -end note]
     the list of formal parameters.
   */
 
-  syntax K ::= "evaluate" K "to" K "following" Decls ";" [evaluate]
+  syntax KItem ::= "evaluate" K "to" K "following" Decls ";" [evaluate]
 
   /*@
     For a formal parameter declared with the call-by-value mechanism,
@@ -609,7 +609,7 @@ type (8.3.2)\ldots -end note]
      construction:
    */
 
-  syntax K ::= "bind" K "to" Decls ";"  
+  syntax KItem ::= "bind" K "to" Decls ";"  
 
   /*@
   For call-by-value, the passed value $V$ is stored into a new memory location
@@ -619,7 +619,7 @@ type (8.3.2)\ldots -end note]
   rule <k> bind((V:ScalVal, Vs) => Vs)
            to((T X:Id, Xl:Decls) => Xl); 
        ...</k>
-       <env> Env:Map => update(Env, X |-> !L:ScalLoc) </env>
+       <env> Env:Map => Env[X <- !L:ScalLoc] </env>
        <store>... .Map => !L:ScalLoc |-> V ...</store>
 //       requires fresh(L:ScalLoc)
        [memw]
