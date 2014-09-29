@@ -243,7 +243,7 @@ module CINK-BASIC-SEMANTICS
   rule [var-decl] :
        <k> T:ScalType X:Id; => .K  ...</k>      
        <env> Env:Map => Env[X <- !L:ScalLoc] </env>
-       <store>... .Map => (!L:ScalLoc |-> 0) ...</store>
+       <store> ST:Map => ST[!L:ScalLoc <- 0] </store>
 //  requires fresh(L:ScalLoc)
        [structural]
 
@@ -620,7 +620,7 @@ type (8.3.2)\ldots -end note]
            to((T X:Id, Xl:Decls) => Xl); 
        ...</k>
        <env> Env:Map => Env[X <- !L:ScalLoc] </env>
-       <store>... .Map => !L:ScalLoc |-> V ...</store>
+       <store> ST:Map => ST[!L:ScalLoc <- 0] </store>
 //       requires fresh(L:ScalLoc)
        [memw]
 
