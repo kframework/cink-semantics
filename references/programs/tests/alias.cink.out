@@ -25,13 +25,13 @@
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ int a ; (a = 5) ; b of reference to
            int ; (b = a) ; (b = 10) ; ((((cout << a) << " ") << b) << (endl)) 
           ; return 0 ; )
         #symScalLoc(2) |-> 10
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

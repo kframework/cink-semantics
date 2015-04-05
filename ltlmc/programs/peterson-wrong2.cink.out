@@ -23,12 +23,12 @@ Vertices:<T>
                    , '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -71,12 +71,12 @@ Vertices:<T>
                   std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) } ~> 
                   execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -120,12 +120,12 @@ Vertices:<T>
                   ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) }
                    ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -170,12 +170,12 @@ Vertices:<T>
                    '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -212,12 +212,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(7) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -274,12 +274,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -301,12 +301,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -363,12 +363,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -396,12 +396,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -462,12 +462,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -497,12 +497,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -569,12 +569,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -608,12 +608,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -682,12 +682,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -721,12 +721,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -795,12 +795,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -833,12 +833,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -907,12 +907,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -946,12 +946,12 @@ Vertices:<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1016,12 +1016,12 @@ Vertices:<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1055,12 +1055,12 @@ Vertices:<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1125,12 +1125,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1164,12 +1164,12 @@ Vertices:<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1233,12 +1233,12 @@ Vertices:<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1272,12 +1272,12 @@ Vertices:<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1344,12 +1344,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1383,12 +1383,12 @@ Vertices:<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1455,12 +1455,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1492,12 +1492,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1564,12 +1564,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1603,12 +1603,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1673,12 +1673,12 @@ Vertices:<T>
                   ) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1710,12 +1710,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1780,12 +1780,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1817,12 +1817,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1886,12 +1886,12 @@ Vertices:<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1923,12 +1923,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -1992,12 +1992,12 @@ Vertices:<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2031,12 +2031,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2100,12 +2100,12 @@ Vertices:<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2135,12 +2135,12 @@ Vertices:<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2205,12 +2205,12 @@ Vertices:<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2242,12 +2242,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2312,12 +2312,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2349,12 +2349,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2418,12 +2418,12 @@ Vertices:<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2455,12 +2455,12 @@ Vertices:<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2524,12 +2524,12 @@ Vertices:<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2563,12 +2563,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2632,12 +2632,12 @@ Vertices:<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2667,12 +2667,12 @@ Vertices:<T>
                   ) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2736,12 +2736,12 @@ Vertices:<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2771,12 +2771,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -2851,12 +2851,12 @@ Unlabelled rule [<T>
                    , '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -2899,12 +2899,12 @@ Unlabelled rule [<T>
                   std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) } ~> 
                   execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -2950,12 +2950,12 @@ Unlabelled rule [<T>
                   std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) } ~> 
                   execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -2999,12 +2999,12 @@ Unlabelled rule [<T>
                   ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) }
                    ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3051,12 +3051,12 @@ Unlabelled rule [<T>
                   ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) }
                    ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3101,12 +3101,12 @@ Unlabelled rule [<T>
                    '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3154,12 +3154,12 @@ Unlabelled rule [<T>
                    '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3196,12 +3196,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(7) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3259,12 +3259,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(7) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3321,12 +3321,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3348,12 +3348,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3411,12 +3411,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3438,12 +3438,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3500,12 +3500,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3533,12 +3533,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -3600,12 +3600,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3633,12 +3633,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -3699,12 +3699,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3734,12 +3734,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -3801,12 +3801,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -3836,12 +3836,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -3908,12 +3908,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -3947,12 +3947,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4020,12 +4020,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4059,12 +4059,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4133,12 +4133,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4172,12 +4172,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4247,12 +4247,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4286,12 +4286,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4360,12 +4360,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4398,12 +4398,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4473,12 +4473,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4511,12 +4511,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4585,12 +4585,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4624,12 +4624,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4699,12 +4699,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4738,12 +4738,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4808,12 +4808,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4847,12 +4847,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4918,12 +4918,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -4957,12 +4957,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5027,12 +5027,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5066,12 +5066,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5137,12 +5137,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5176,12 +5176,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5245,12 +5245,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5284,12 +5284,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5354,12 +5354,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5393,12 +5393,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5465,12 +5465,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5504,12 +5504,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5577,12 +5577,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5616,12 +5616,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5688,12 +5688,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5725,12 +5725,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5798,12 +5798,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5835,12 +5835,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5907,12 +5907,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -5946,12 +5946,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6019,12 +6019,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6058,12 +6058,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6128,12 +6128,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6165,12 +6165,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6236,12 +6236,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6273,12 +6273,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6343,12 +6343,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6380,12 +6380,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6451,12 +6451,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6488,12 +6488,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6557,12 +6557,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6594,12 +6594,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6664,12 +6664,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6701,12 +6701,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6770,12 +6770,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6809,12 +6809,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6879,12 +6879,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6918,12 +6918,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -6987,12 +6987,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7022,12 +7022,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7092,12 +7092,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7127,12 +7127,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7197,12 +7197,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7234,12 +7234,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7305,12 +7305,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7342,12 +7342,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7412,12 +7412,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7449,12 +7449,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7520,12 +7520,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7557,12 +7557,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7626,12 +7626,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7663,12 +7663,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7733,12 +7733,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7770,12 +7770,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7839,12 +7839,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7878,12 +7878,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7948,12 +7948,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -7987,12 +7987,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8056,12 +8056,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8091,12 +8091,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8161,12 +8161,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8196,12 +8196,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8265,12 +8265,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8300,12 +8300,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8370,12 +8370,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8405,12 +8405,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8475,12 +8475,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8512,12 +8512,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8583,12 +8583,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8620,12 +8620,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8689,12 +8689,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8726,12 +8726,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8796,12 +8796,12 @@ Unlabelled rule [<T>
                    { })) ((flag2 = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 
                   0) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8833,12 +8833,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8905,12 +8905,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -8942,12 +8942,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9015,12 +9015,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9052,12 +9052,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9124,12 +9124,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9163,12 +9163,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9236,12 +9236,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical2 = 1) ;)) ((flag2 = 0) ;)) ((
                   critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9275,12 +9275,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9349,12 +9349,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9388,12 +9388,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9463,12 +9463,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9502,12 +9502,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9576,12 +9576,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9614,12 +9614,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9689,12 +9689,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9727,12 +9727,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((flag2 = 0) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9801,12 +9801,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9840,12 +9840,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9915,12 +9915,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -9954,12 +9954,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10024,12 +10024,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10063,12 +10063,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10134,12 +10134,12 @@ Unlabelled rule [<T>
                   ) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0
                   ) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10173,12 +10173,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10243,12 +10243,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10282,12 +10282,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10353,12 +10353,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10392,12 +10392,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10461,12 +10461,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10500,12 +10500,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10570,12 +10570,12 @@ Unlabelled rule [<T>
                    { })) ((flag1 = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 
                   0) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10609,12 +10609,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10681,12 +10681,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10720,12 +10720,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10793,12 +10793,12 @@ Unlabelled rule [<T>
                    = 1) ;)) }))) ((critical1 = 1) ;)) ((flag1 = 0) ;)) ((
                   critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10832,12 +10832,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10906,12 +10906,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((flag1 = 0) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 
@@ -10945,12 +10945,12 @@ Unlabelled rule [<T>
                   )) ((flag2 = 0) ;)) ((critical2 = 0) ;)) }) ~> return noVal 
                   ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(3) critical2 |-> 
                   #symScalLoc(4) flag1 |-> #symScalLoc(1) flag2 |-> 

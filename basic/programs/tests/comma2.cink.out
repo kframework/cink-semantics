@@ -31,9 +31,6 @@ a=5, b=2, c=3, i=3
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ int a ; (a = 1) ; int b ; (b = 2) ;
            int c ; (c = 3) ; int i ; (i = 0) ; (((((((((cout << "a=") << a) <<
@@ -54,4 +51,7 @@ a=5, b=2, c=3, i=3
         #symScalLoc(4) |-> 3
         #symScalLoc(5) |-> 3
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

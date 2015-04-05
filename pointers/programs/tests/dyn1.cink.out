@@ -25,9 +25,6 @@
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ p of pointer to int ; (p = (new int
           )) ; q of pointer to bool ; (q = (new bool)) ; ((* q) = true) ; if (
@@ -36,4 +33,7 @@
         #symScalLoc(3) |-> 7
         #symScalLoc(5) |-> true
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

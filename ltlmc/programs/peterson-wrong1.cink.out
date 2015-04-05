@@ -20,12 +20,12 @@ Vertices:<T>
                   ) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) } ~> 
                   execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -64,12 +64,12 @@ Vertices:<T>
                   '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -109,12 +109,12 @@ Vertices:<T>
                   peterson1 , '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 
                   , '.Exps(.KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -149,12 +149,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -206,12 +206,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(4) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -232,12 +232,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -289,12 +289,12 @@ Vertices:<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -320,12 +320,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -385,12 +385,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -419,12 +419,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -482,12 +482,12 @@ Vertices:<T>
                   ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -516,12 +516,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -578,12 +578,12 @@ Vertices:<T>
                   while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
                    2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -612,12 +612,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -674,12 +674,12 @@ Vertices:<T>
                   ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -708,12 +708,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -773,12 +773,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -807,12 +807,12 @@ Vertices:<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -870,12 +870,12 @@ Vertices:<T>
                   ) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -904,12 +904,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -966,12 +966,12 @@ Vertices:<T>
                   while ( (! (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn =
                    1) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1000,12 +1000,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1062,12 +1062,12 @@ Vertices:<T>
                   ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1096,12 +1096,12 @@ Vertices:<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1158,12 +1158,12 @@ Vertices:<T>
                   ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1190,12 +1190,12 @@ Vertices:<T>
                   ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1252,12 +1252,12 @@ Vertices:<T>
                   ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1283,12 +1283,12 @@ Vertices:<T>
                   while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
                    2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1354,12 +1354,12 @@ Unlabelled rule [<T>
                   ) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;)) } ~> 
                   execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1398,12 +1398,12 @@ Unlabelled rule [<T>
                   '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1445,12 +1445,12 @@ Unlabelled rule [<T>
                   '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(
                   .KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1490,12 +1490,12 @@ Unlabelled rule [<T>
                   peterson1 , '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 
                   , '.Exps(.KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1538,12 +1538,12 @@ Unlabelled rule [<T>
                   peterson1 , '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 
                   , '.Exps(.KList) ) ;)) } ~> execute
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1578,12 +1578,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1636,12 +1636,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(6) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 noName
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1693,12 +1693,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(4) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1719,12 +1719,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1777,12 +1777,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(4) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1803,12 +1803,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1860,12 +1860,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1891,12 +1891,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -1952,12 +1952,12 @@ Unlabelled rule [<T>
                 $lookup ( #symScalLoc(5) ) ~> rvalue ( HOLE ) ~> HOLE ( 
                   '.Exps(.KList) ) ~> HOLE ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 .List
             </fstack>
@@ -1983,12 +1983,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2048,12 +2048,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2082,12 +2082,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2148,12 +2148,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2182,12 +2182,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2245,12 +2245,12 @@ Unlabelled rule [<T>
                   ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2279,12 +2279,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2343,12 +2343,12 @@ Unlabelled rule [<T>
                   ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2377,12 +2377,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2439,12 +2439,12 @@ Unlabelled rule [<T>
                   while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
                    2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2473,12 +2473,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2536,12 +2536,12 @@ Unlabelled rule [<T>
                   while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
                    2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2570,12 +2570,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2632,12 +2632,12 @@ Unlabelled rule [<T>
                   ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2666,12 +2666,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2729,12 +2729,12 @@ Unlabelled rule [<T>
                   ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2763,12 +2763,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2828,12 +2828,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2862,12 +2862,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2928,12 +2928,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -2962,12 +2962,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -3025,12 +3025,12 @@ Unlabelled rule [<T>
                   ) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -3059,1554 +3059,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 1 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> (turn = 1) ; ~> (critical2 = 0) ; ~> while ( 
-                  true ) ({ ((((while ( (! (turn == 2)) ) { }) ((critical2 = 1
-                  ) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) }) ~> return 
-                  noVal ;
-            </k>
             <return>
                 .K
             </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(1) , 1 ) ~> lval ( #symScalLoc(1) )
-                   ~> HOLE ; ~> (critical2 = 0) ; ~> while ( true ) ({ ((((
-                  while ( (! (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn =
-                   1) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(1) , 1 ) ~> lval ( #symScalLoc(1) )
-                   ~> HOLE ; ~> (critical2 = 0) ; ~> while ( true ) ({ ((((
-                  while ( (! (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn =
-                   1) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
-                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
-                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
-                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $update ( #symScalLoc(2) , 1 ) ~> lval ( #symScalLoc(2) )
-                   ~> HOLE ; ~> (turn = 2) ; ~> (critical1 = 0) ; ~> while ( 
-                  true ) ({ ((((while ( (! (turn == 1)) ) { }) ((critical1 = 1
-                  ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
-                  noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
-                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $update ( #symScalLoc(2) , 1 ) ~> lval ( #symScalLoc(2) )
-                   ~> HOLE ; ~> (turn = 2) ; ~> (critical1 = 0) ; ~> while ( 
-                  true ) ({ ((((while ( (! (turn == 1)) ) { }) ((critical1 = 1
-                  ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
-                  noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
-                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
-                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
-                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
-                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 1
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
-                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
-                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
-                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
-                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 1
-        #symScalLoc(3) |-> 1
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
-                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
-                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
-                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
-                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
-                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 1
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
-                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
-                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
-                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
-                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
-                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 1
-        #symScalLoc(2) |-> 1
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(2) , 0 ) ~> lval ( #symScalLoc(2) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 1)) 
-                  ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
-                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
-                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 1
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(2) , 0 ) ~> lval ( #symScalLoc(2) )
-                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 1)) 
-                  ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0)
-                   ;)) }) ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
-                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
-                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 1
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
-                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
-                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>] 
-Unlabelled rule [<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
-                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
-                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-    </threads>
-    <store>
-        #symScalLoc(1) |-> 2
-        #symScalLoc(2) |-> 0
-        #symScalLoc(3) |-> 0
-        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
-          critical1 = 0) ;)) })) )
-        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
-           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
-          critical2 = 0) ;)) })) )
-        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
-          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
-          )) )
-    </store>
-    <genv>
-        critical1 |-> #symScalLoc(2)
-        critical2 |-> #symScalLoc(3)
-        main |-> #symScalLoc(6)
-        peterson1 |-> #symScalLoc(4)
-        peterson2 |-> #symScalLoc(5)
-        turn |-> #symScalLoc(1)
-    </genv>
-</T>,<T>
-    <in>
-        ListItem(#buffer ( "\n" ))
-    </in>
-    <out>
-        ListItem(#buffer ( "" ))
-    </out>
-    <threads>
-        <thread>
-            <k>
-                $update ( #symScalLoc(3) , 1 ) ~> lval ( #symScalLoc(3) )
-                   ~> HOLE ; ~> (turn = 1) ; ~> (critical2 = 0) ; ~> while ( 
-                  true ) ({ ((((while ( (! (turn == 2)) ) { }) ((critical2 = 1
-                  ) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) }) ~> return 
-                  noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t2
-            </name>
-            <fstack>
-                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
-                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
-                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
-                  #symScalLoc(1) ]) , HOLE ; )
-            </fstack>
-            <sideEffects>
-                .Bag
-            </sideEffects>
-            <env>
-                critical1 |-> #symScalLoc(2)
-                critical2 |-> #symScalLoc(3)
-                main |-> #symScalLoc(6)
-                peterson1 |-> #symScalLoc(4)
-                peterson2 |-> #symScalLoc(5)
-                turn |-> #symScalLoc(1)
-            </env>
-        </thread>
-        <thread>
-            <k>
-                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
-                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
-                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
-                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
-                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
-                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
-                   ~> return noVal ;
-            </k>
-            <return>
-                .K
-            </return>
-            <name>
-                t1
-            </name>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4665,12 +3123,12 @@ Unlabelled rule [<T>
                   ) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4699,12 +3157,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4761,12 +3219,12 @@ Unlabelled rule [<T>
                   while ( (! (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn =
                    1) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4795,12 +3253,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4858,12 +3316,12 @@ Unlabelled rule [<T>
                   while ( (! (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn =
                    1) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4892,12 +3350,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4954,12 +3412,12 @@ Unlabelled rule [<T>
                   ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -4988,12 +3446,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5051,12 +3509,12 @@ Unlabelled rule [<T>
                   ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
                    ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5085,12 +3543,1554 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
+                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $update ( #symScalLoc(2) , 1 ) ~> lval ( #symScalLoc(2) )
+                   ~> HOLE ; ~> (turn = 2) ; ~> (critical1 = 0) ; ~> while ( 
+                  true ) ({ ((((while ( (! (turn == 1)) ) { }) ((critical1 = 1
+                  ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
+                  noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
+                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $update ( #symScalLoc(2) , 1 ) ~> lval ( #symScalLoc(2) )
+                   ~> HOLE ; ~> (turn = 2) ; ~> (critical1 = 0) ; ~> while ( 
+                  true ) ({ ((((while ( (! (turn == 1)) ) { }) ((critical1 = 1
+                  ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
+                  noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
+                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
+                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
+                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
+                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 1
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
+                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
+                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
+                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
+                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 1
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
+                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
+                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
+                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
+                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
+                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 1
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(1) , 2 ) ~> lval ( #symScalLoc(1) )
+                   ~> HOLE ; ~> (critical1 = 0) ; ~> while ( true ) ({ ((((
+                  while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
+                   2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
+                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
+                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 1
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(2) , 0 ) ~> lval ( #symScalLoc(2) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 1)) 
+                  ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
+                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
+                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 1
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(2) , 0 ) ~> lval ( #symScalLoc(2) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 1)) 
+                  ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
+                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
+                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 1
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
+                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
+                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 2
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 2)) ) { })) }) else { }
+                   ~> (critical2 = 1) ; ~> (turn = 1) ; ~> (critical2 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 2)) ) { }) ((
+                  critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 1 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> (turn = 1) ; ~> (critical2 = 0) ; ~> while ( 
+                  true ) ({ ((((while ( (! (turn == 2)) ) { }) ((critical2 = 1
+                  ) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) }) ~> return 
+                  noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 1 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> (turn = 1) ; ~> (critical2 = 0) ; ~> while ( 
+                  true ) ({ ((((while ( (! (turn == 2)) ) { }) ((critical2 = 1
+                  ) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) }) ~> return 
+                  noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 0
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(1) , 1 ) ~> lval ( #symScalLoc(1) )
+                   ~> HOLE ; ~> (critical2 = 0) ; ~> while ( true ) ({ ((((
+                  while ( (! (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn =
+                   1) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(1) , 1 ) ~> lval ( #symScalLoc(1) )
+                   ~> HOLE ; ~> (critical2 = 0) ; ~> while ( true ) ({ ((((
+                  while ( (! (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn =
+                   1) ;)) ((critical2 = 0) ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 2
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>,<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
+                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+    </threads>
+    <store>
+        #symScalLoc(1) |-> 1
+        #symScalLoc(2) |-> 0
+        #symScalLoc(3) |-> 1
+        #symScalLoc(4) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn = 2) ;)) ((
+          critical1 = 0) ;)) })) )
+        #symScalLoc(5) |-> lambda ( .Decls @ (while ( true ) ({ ((((while ( (!
+           (turn == 2)) ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((
+          critical2 = 0) ;)) })) )
+        #symScalLoc(6) |-> lambda ( .Decls @ ((std::thread t1 ( peterson1 , 
+          '.Exps(.KList) ) ;) (std::thread t2 ( peterson2 , '.Exps(.KList) ) ;
+          )) )
+    </store>
+    <genv>
+        critical1 |-> #symScalLoc(2)
+        critical2 |-> #symScalLoc(3)
+        main |-> #symScalLoc(6)
+        peterson1 |-> #symScalLoc(4)
+        peterson2 |-> #symScalLoc(5)
+        turn |-> #symScalLoc(1)
+    </genv>
+</T>] 
+Unlabelled rule [<T>
+    <in>
+        ListItem(#buffer ( "\n" ))
+    </in>
+    <out>
+        ListItem(#buffer ( "" ))
+    </out>
+    <threads>
+        <thread>
+            <k>
+                $update ( #symScalLoc(3) , 0 ) ~> lval ( #symScalLoc(3) )
+                   ~> HOLE ; ~> while ( true ) ({ ((((while ( (! (turn == 2)) 
+                  ) { }) ((critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0)
+                   ;)) }) ~> return noVal ;
+            </k>
+            <name>
+                t2
+            </name>
+            <return>
+                .K
+            </return>
+            <fstack>
+                ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
+                  #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
+                  #symScalLoc(4) peterson2 |-> #symScalLoc(5) turn |-> 
+                  #symScalLoc(1) ]) , HOLE ; )
+            </fstack>
+            <sideEffects>
+                .Bag
+            </sideEffects>
+            <env>
+                critical1 |-> #symScalLoc(2)
+                critical2 |-> #symScalLoc(3)
+                main |-> #symScalLoc(6)
+                peterson1 |-> #symScalLoc(4)
+                peterson2 |-> #symScalLoc(5)
+                turn |-> #symScalLoc(1)
+            </env>
+        </thread>
+        <thread>
+            <k>
+                $lookup ( #symScalLoc(1) ) ~> rvalue ( HOLE ) ~> HOLE == 1
+                   ~> rvalue ( HOLE ) ~> ! HOLE ~> rvalue ( HOLE ) ~> if ( 
+                  HOLE ) ({ ({ } (while ( (! (turn == 1)) ) { })) }) else { }
+                   ~> (critical1 = 1) ; ~> (turn = 2) ; ~> (critical1 = 0) ;
+                   ~> while ( true ) ({ ((((while ( (! (turn == 1)) ) { }) ((
+                  critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
+                   ~> return noVal ;
+            </k>
+            <name>
+                t1
+            </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5150,12 +5150,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5184,12 +5184,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5250,12 +5250,12 @@ Unlabelled rule [<T>
                   critical1 = 1) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5284,12 +5284,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5347,12 +5347,12 @@ Unlabelled rule [<T>
                   ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5381,12 +5381,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5445,12 +5445,12 @@ Unlabelled rule [<T>
                   ) ;)) ((turn = 2) ;)) ((critical1 = 0) ;)) }) ~> return 
                   noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5479,12 +5479,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5541,12 +5541,12 @@ Unlabelled rule [<T>
                   while ( (! (turn == 1)) ) { }) ((critical1 = 1) ;)) ((turn =
                    2) ;)) ((critical1 = 0) ;)) }) ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t1
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 
@@ -5575,12 +5575,12 @@ Unlabelled rule [<T>
                   critical2 = 1) ;)) ((turn = 1) ;)) ((critical2 = 0) ;)) })
                    ~> return noVal ;
             </k>
-            <return>
-                .K
-            </return>
             <name>
                 t2
             </name>
+            <return>
+                .K
+            </return>
             <fstack>
                 ( ([ critical1 |-> #symScalLoc(2) critical2 |-> 
                   #symScalLoc(3) main |-> #symScalLoc(6) peterson1 |-> 

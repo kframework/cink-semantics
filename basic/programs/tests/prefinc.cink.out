@@ -25,9 +25,6 @@ x = 2; y = 5
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ int x ; (x = 1) ; int y ; int z ; (
           y = ((++ x) + 3)) ; (((((cout << "x = ") << x) << "; y = ") << y) <<
@@ -36,4 +33,7 @@ x = 2; y = 5
         #symScalLoc(3) |-> 5
         #symScalLoc(4) |-> 0
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

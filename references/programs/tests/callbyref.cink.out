@@ -28,11 +28,6 @@ x, y: 172
             main |-> #symScalLoc(3)
         </env>
     </control>
-    <genv>
-        f |-> #symScalLoc(1)
-        g |-> #symScalLoc(2)
-        main |-> #symScalLoc(3)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda ( int x, y of reference to int @ (x = 1)
            ; (y = 2) ; return x ; )
@@ -47,4 +42,9 @@ x, y: 172
         #symScalLoc(6) |-> 1
         #symScalLoc(14) |-> 1
     </store>
+    <genv>
+        f |-> #symScalLoc(1)
+        g |-> #symScalLoc(2)
+        main |-> #symScalLoc(3)
+    </genv>
 </T>

@@ -29,9 +29,6 @@
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ int x ; y of pointer to int ; z of 
           pointer to pointer to int ; int u ; v of pointer to int ; (y = (& x)
@@ -45,4 +42,7 @@
         #symScalLoc(5) |-> 20
         #symScalLoc(6) |-> #symScalLoc(2)
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

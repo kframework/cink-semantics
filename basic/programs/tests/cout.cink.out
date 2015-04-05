@@ -25,12 +25,12 @@
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ int a ; (a = 8) ; ((cout << a) << (
           endl)) ; )
         #symScalLoc(2) |-> 8
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

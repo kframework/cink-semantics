@@ -26,10 +26,6 @@
             swap |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(2)
-        swap |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda ( int (* p), int (* q) @ int a ; (a = (*
            p)) ; ((* p) = (* q)) ; ((* q) = a) ; )
@@ -45,4 +41,8 @@
         #symScalLoc(8) |-> #symScalLoc(4)
         #symScalLoc(9) |-> 3
     </store>
+    <genv>
+        main |-> #symScalLoc(2)
+        swap |-> #symScalLoc(1)
+    </genv>
 </T>

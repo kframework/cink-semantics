@@ -25,9 +25,6 @@ x = false
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ bool b ; int x ; (cout << "x = ") ;
            (cin >> x) ; (b = (x > 5)) ; if ( b ) (cout << "true") ; else (cout
@@ -35,4 +32,7 @@ x = false
         #symScalLoc(2) |-> false
         #symScalLoc(3) |-> 3
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

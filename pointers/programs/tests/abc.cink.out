@@ -26,9 +26,6 @@ c = b+1
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ a of pointer to int ; (a = (new int
           )) ; b of pointer to int ; (b = (new int)) ; c of pointer to int ; (
@@ -43,4 +40,7 @@ c = b+1
         #symScalLoc(6) |-> #symScalLoc(7)
         #symScalLoc(7) |-> 9
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

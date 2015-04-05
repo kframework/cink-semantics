@@ -24,9 +24,6 @@ Hello World!<T>
             main |-> #symScalLoc(1)
         </env>
     </control>
-    <genv>
-        main |-> #symScalLoc(1)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ '.Exps(.KList) ; '.Exps(.KList) ; 
           '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; 
@@ -62,4 +59,7 @@ Hello World!<T>
           .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(.KList) ; '.Exps(
           .KList) ; '.Exps(.KList) ; '.Exps(.KList) ; )
     </store>
+    <genv>
+        main |-> #symScalLoc(1)
+    </genv>
 </T>

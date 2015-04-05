@@ -25,10 +25,6 @@
             main |-> #symScalLoc(2)
         </env>
     </control>
-    <genv>
-        f |-> #symScalLoc(1)
-        main |-> #symScalLoc(2)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda ( int x, bool b @ if ( b ) return (x * 2
           ) ; else { } return (x * 3) ; )
@@ -37,4 +33,8 @@
         #symScalLoc(3) |-> 5
         #symScalLoc(4) |-> false
     </store>
+    <genv>
+        f |-> #symScalLoc(1)
+        main |-> #symScalLoc(2)
+    </genv>
 </T>

@@ -26,10 +26,6 @@
             main |-> #symScalLoc(2)
         </env>
     </control>
-    <genv>
-        f |-> #symScalLoc(1)
-        main |-> #symScalLoc(2)
-    </genv>
     <store>
         #symScalLoc(1) |-> lambda (  @ p of pointer to int ; (p = (new int
           )) ; ((* p) = 10) ; return p ; )
@@ -39,4 +35,8 @@
         #symScalLoc(4) |-> #symScalLoc(5)
         #symScalLoc(5) |-> 10
     </store>
+    <genv>
+        f |-> #symScalLoc(1)
+        main |-> #symScalLoc(2)
+    </genv>
 </T>

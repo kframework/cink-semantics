@@ -25,10 +25,6 @@
             main |-> #symScalLoc(2)
         </env>
     </control>
-    <genv>
-        f |-> #symScalLoc(1)
-        main |-> #symScalLoc(2)
-    </genv>
     <store>
         seq-array ( 7 , #symLoc(3) ) |-> store ( const-array ( 7 , 0 ) , 3
            , 5 )
@@ -39,4 +35,8 @@
         #symScalLoc(4) |-> 3
         #symScalLoc(5) |-> 5
     </store>
+    <genv>
+        f |-> #symScalLoc(1)
+        main |-> #symScalLoc(2)
+    </genv>
 </T>
